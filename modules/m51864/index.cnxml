@@ -1,0 +1,1786 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Json0140-Calling External JavaScript Functions</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m51864</md:content-id>
+  <md:title>Json0140-Calling External JavaScript Functions</md:title>
+  <md:abstract>Learn how to write and call external JavaScript functions when working with JSON strings.</md:abstract>
+  <md:uuid>208099c2-2175-4927-a50e-59d3d3bf7fcc</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1002">
+<link id="a1002" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1003">
+<link id="a1003" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1004">
+<link id="a1004" target-id="Preview">
+
+Preview
+
+</link>
+
+ 
+
+</item>
+
+
+	
+
+<item id="li1005">
+<link id="a1005" target-id="Discussion_and_sample_code">
+
+Discussion and sample code
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1006">
+<link id="a1006" target-id="Program_output">
+
+Program output
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1007">
+<link id="a1007" target-id="Will_explain_in_fragments">
+
+Will explain in fragments
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1008">
+<link id="a1008" target-id="Call_a_function_named_objToStr">
+
+Call a function named objToStr
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1009">
+<link id="a1009" target-id="The_function_named_objToStr">
+
+The function named objToStr
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1010">
+<link id="a1010" target-id="Call_a_function_named_strToObj">
+
+Call a function named strToObj
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1011">
+<link id="a1011" target-id="Run_the_program">
+
+Run the program
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1012">
+<link id="a1012" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1013">
+<link id="a1013" target-id="Complete_program_listing">
+
+Complete program listings
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+	
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1000">
+This module is one in a collection of modules designed for teaching 
+	
+
+<emphasis id="strong1000" effect="bold">
+ITSE 1356 Introduction to XML
+
+</emphasis>
+ at Austin 
+	Community College in Austin, TX. 
+
+</para>
+
+
+	
+
+<section id="h21000">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1001">
+I recommend that you open another copy of this module in a separate 
+browser window and use the following links to easily find and view the Figures 
+and the Listings while you are reading about them.
+
+</para>
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1004" list-type="bulleted">
+
+		
+
+<item id="li1014">
+<link id="a1014" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Program output.
+
+</item>
+
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+<section id="h31001">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1005" list-type="bulleted">
+
+		
+
+<item id="li1015">
+<link id="a1015" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. Beginning of the file named Asg.htm. 
+
+</item>
+
+
+		
+
+<item id="li1016">
+<link id="a1016" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. Call a function named objToStr. 
+
+</item>
+
+
+		
+
+<item id="li1017">
+<link id="a1017" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. Call a function named strToObj. 
+
+</item>
+
+
+		
+
+<item id="li1018">
+<link id="a1018" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+. The HTML file named Asg.htm.
+
+</item>
+
+
+		
+
+<item id="li1019">
+<link id="a1019" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+. The JavaScript file named Asg.js.
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="Preview" effect="bold">
+
+Preview
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1002">
+Previous modules in this collection have shown you how to transform 
+	JavaScript objects into JSON strings, and how to transform JSON strings into 
+	JavaScript objects. Those program placed all of the JavaScript code in an 
+	HTML file. Sometimes you will need to break some of the JavaScript code out 
+	into a separate file. You will learn how to do that in this module.
+
+</para>
+
+
+	
+	
+
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Discussion_and_sample_code" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1003">
+This module will show you how to create an HTML file 
+
+<emphasis id="em1000" effect="italics">
+(
+
+<emphasis id="strong1001" effect="bold">
+Asg.htm
+
+</emphasis>
+)
+
+</emphasis>
+ and a separate 
+	JavaScript file 
+
+<emphasis id="em1001" effect="italics">
+(
+
+<emphasis id="strong1002" effect="bold">
+Asg.js
+
+</emphasis>
+)
+
+</emphasis>
+ containing functions that are called by 
+	JavaScript code in the HTML file. The JavaScript file will contain two functions:
+
+</para>
+
+
+
+
+<list id="ul1006" list-type="bulleted">
+
+	
+
+<item id="li1020">
+A function named 
+
+<emphasis id="strong1003" effect="bold">
+objToStr
+
+</emphasis>
+ receives a JavaScript object 
+	as an incoming parameter and returns a JSON string that represents the 
+	object.
+
+</item>
+
+
+	
+
+<item id="li1021">
+A function named 
+
+<emphasis id="strong1004" effect="bold">
+strToObj
+
+</emphasis>
+ receives a JSON string as an 
+	incoming parameter and returns a JavaScript object that represents the string.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1004">
+A complete listing of the HTML file is provided in 
+
+<link id="a1020" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ near the end of 
+the lesson. A complete listing of the JavaScript file is provided in 
+
+<link id="a1021" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ 
+near the end of the lesson.
+
+</para>
+
+
+
+
+<section id="h21001">
+<title>
+<emphasis id="Program_output" effect="bold">
+
+Program output
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1005">
+<link id="a1022" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ shows the text that appears in a browser window when the files 
+	named 
+
+<emphasis id="strong1005" effect="bold">
+Asg.htm
+
+</emphasis>
+ and 
+
+<emphasis id="strong1006" effect="bold">
+Asg.js
+
+</emphasis>
+ are stored in the 
+	same folder and the file named 
+
+<emphasis id="strong1007" effect="bold">
+Asg.htm
+
+</emphasis>
+ is opened in a 
+	browser. Keep this figure handy so that you can refer to it while viewing 
+	the code.
+
+</para>
+
+
+
+
+	
+
+<table id="table1000" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1000">
+
+			
+
+<row id="tr1000">
+
+				
+
+<entry id="th1000">
+<emphasis id="Figure_1" effect="bold">
+
+Figure 1
+
+</emphasis>
+
+. Program output.
+
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1000">
+
+			
+
+<row id="tr1001">
+
+				
+
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">
+Display keys in object: name age
+Display values in object: Bill, 31
+Transform JavaScript object into a JSON string.
+
+In objToStr
+
+Display JSON string {"name":"Bill","age":31}
+Transform the JSON string into a JavaScript object.
+
+In strToObj
+
+Display values in object: Bill, 31
+Display keys in object: name age 
+</code>
+
+
+
+							
+
+</entry>
+
+						
+
+</row>
+
+					
+
+</tbody>
+
+
+				
+
+</tgroup>
+</table>
+
+
+	
+
+</section>
+<section id="h21002">
+<title>
+<emphasis id="Will_explain_in_fragments" effect="bold">
+
+Will explain in fragments
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1006">
+As is often the case, I will explain this program in fragments. The 
+	beginning of the file named 
+
+<emphasis id="strong1008" effect="bold">
+Asg.htm
+
+</emphasis>
+ is shown in 
+
+<link id="a1023" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+.
+
+</para>
+
+
+	
+
+<table id="table1001" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1001">
+
+			
+
+<row id="tr1002">
+
+				
+
+<entry id="th1001">
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1
+
+</emphasis>
+
+. Beginning of the file 
+				named Asg.htm.
+
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1001">
+
+			
+
+<row id="tr1003">
+
+				
+
+<entry id="td1001">
+
+				
+
+<code id="pre1001" display="block">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    	&lt;title&gt;ITSE 1356&lt;/title&gt;
+        &lt;script type='text/javascript' src='Asg.js'&gt;&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+	   &lt;script&gt;
+	      var obj01 = {name:"Bill",age:31};
+	      document.write("&lt;br/&gt;Display keys in object: ");
+	      for (var key in obj01) {
+	        if (obj01.hasOwnProperty(key)) {
+	          document.write(key + " ");
+	        }//end if
+	      }//end for loop
+	      document.write("&lt;br/&gt;Display values in object: ");
+	      document.write(obj01.name + ", " + obj01.age);
+	
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1007">
+The only new code in 
+
+<link id="a1024" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ is the fifth line, which 
+	declares that a 
+	file named
+
+<emphasis id="strong1009" effect="bold">
+ Asg.js
+
+</emphasis>
+ contains JavaScript code that may be 
+	called by JavaScript code in the HTML file. Otherwise, the code in 
+
+<link id="a1025" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ 
+	simply creates a JavaScript object and displays its contents. You have seen code 
+	like that before.
+
+</para>
+
+
+
+
+</section>
+<section id="h21003">
+<title>
+<emphasis id="Call_a_function_named_objToStr" effect="bold">
+
+Call a function named objToStr
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1008">
+The second statement in 
+
+<link id="a1026" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ is new to this module. This statement calls 
+a JavaScript function named 
+
+<emphasis id="strong1010" effect="bold">
+objToStr
+
+</emphasis>
+ passing the JavaScript 
+object as a parameter.
+
+</para>
+
+
+
+
+	
+
+<table id="table1002" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1002">
+
+			
+
+<row id="tr1004">
+
+				
+
+<entry id="th1002">
+<emphasis id="Listing_2" effect="bold">
+
+Listing 2
+
+</emphasis>
+
+. Call a function named objToStr.
+
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1002">
+
+			
+
+<row id="tr1005">
+
+				
+
+<entry id="td1002">
+
+				
+
+<code id="pre1002" display="block">	      document.write("&lt;br/&gt;Transform JavaScript object " +
+	                                    "into a JSON string.");
+	      var jsonstring = objToStr(obj01);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1009">
+When the JavaScript interpreter encounters this statement, it searches 
+	the current file 
+
+<emphasis id="em1002" effect="italics">
+(
+
+<emphasis id="strong1011" effect="bold">
+Asg.htm
+
+</emphasis>
+)
+
+</emphasis>
+ for a function having 
+	that name. When it doesn't find the function in the current file, it 
+	searches the file named 
+
+<emphasis id="strong1012" effect="bold">
+Asg.js
+
+</emphasis>
+, which was declared in 
+	
+
+<link id="a1027" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. It finds the function in that file 
+
+<emphasis id="em1003" effect="italics">
+(see 
+
+<link id="a1028" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+)
+
+</emphasis>
+ and 
+	executes it.
+
+</para>
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="The_function_named_objToStr" effect="bold">
+
+The function named objToStr
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1010">
+The code in the function named 
+
+<emphasis id="strong1013" effect="bold">
+objToStr
+
+</emphasis>
+ is straightforward. 
+You have seen code like this before. After announcing that it has been called, 
+the 
+
+<emphasis id="strong1014" effect="bold">
+objToStr
+
+</emphasis>
+ function calls the 
+
+<emphasis id="strong1015" effect="bold">
+JSON.stringify
+
+</emphasis>
+ 
+method to create and return a JSON string based on the contents of the 
+JavaScript object.
+
+</para>
+
+
+
+
+</section>
+<section id="h21005">
+<title>
+<emphasis id="Call_a_function_named_strToObj" effect="bold">
+
+Call a function named strToObj
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1011">
+Returning to the code in the file named 
+
+<emphasis id="strong1016" effect="bold">
+Asg.htm
+
+</emphasis>
+, the third 
+statement in 
+
+<link id="a1029" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ calls a function named 
+
+<emphasis id="strong1017" effect="bold">
+strToObj
+
+</emphasis>
+ passing 
+the JSON string as a parameter.
+
+</para>
+
+
+
+
+	
+
+<table id="table1003" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1003">
+
+			
+
+<row id="tr1006">
+
+				
+
+<entry id="th1003">
+<emphasis id="Listing_3" effect="bold">
+
+Listing 3
+
+</emphasis>
+
+. Call a function named strToObj.
+
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1003">
+
+			
+
+<row id="tr1007">
+
+				
+
+<entry id="td1003">
+
+				
+
+<code id="pre1003" display="block">	      document.write(
+	                "&lt;br/&gt;Display JSON string " + jsonstring );
+	
+	      document.write("&lt;br/&gt;Transform the JSON string " +
+	                              "into a JavaScript object.");
+	      var obj02 = strToObj(jsonstring);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1012">
+The function named 
+
+<emphasis id="strong1018" effect="bold">
+strToObj
+
+</emphasis>
+ is also shown in 
+
+<link id="a1030" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+. 
+	The code in this function is also straightforward and you have seen code 
+	like this before. The 
+
+<emphasis id="strong1019" effect="bold">
+strToObj
+
+</emphasis>
+ function calls the 
+
+<emphasis id="strong1020" effect="bold">
+
+	JSON.parse
+
+</emphasis>
+ method to create and return a JavaScript object based on the 
+	contents of the JSON string.
+
+</para>
+
+
+
+
+<para id="p1013">
+Following that, the code in the file named 
+
+<emphasis id="strong1021" effect="bold">
+Asg.htm
+
+</emphasis>
+ simply displays 
+the contents of the JavaScript object. You can view that code in 
+
+<link id="a1031" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1014">
+I encourage you to copy the code from 
+
+<link id="a1032" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ and
+
+
+<link id="a1033" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ and 
+execute it by opening the HTML file in your browser. Experiment with the code, 
+making changes, and observing the results of your changes. Make certain that you 
+can explain why your changes behave as they do.
+
+</para>
+
+
+	
+
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1015">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1000" type="miscellaneous">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1022" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1007" list-type="bulleted">
+
+					
+
+<item id="li1022">
+Module name: Json0140-External JavaScript Functions
+
+</item>
+
+
+					
+
+<item id="li1023">
+File: Json0140.htm
+
+
+</item>
+
+
+					
+
+<item id="li1024">
+Published: 11/02/14
+
+</item>
+
+
+
+				
+
+</list>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+	
+
+<note id="note1001" type="miscellaneous">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1023" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1016">
+<emphasis id="strong1024" effect="bold">
+Financial
+
+</emphasis>
+: Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+</para>
+
+
+				
+
+<para id="p1017">
+I also want you to know that, I receive no financial compensation from the Connexions website even if you purchase 
+	the PDF version of the module.
+
+</para>
+
+
+				
+
+<para id="p1018">
+In the past, unknown individuals have copied my modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing me as the author. I 
+				neither receive compensation for those sales nor do I know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a module that is freely 
+				available on cnx.org and that it was made and published without 
+				my prior knowledge.
+
+</para>
+
+
+				
+
+<para id="p1019">
+<emphasis id="strong1025" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Complete_program_listing" effect="bold">
+
+Complete program listings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1020">
+Complete listings of the HTML file and the JavaScript file are shown below.
+
+</para>
+
+
+
+
+
+
+	
+
+<table id="table1004" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1004">
+
+			
+
+<row id="tr1008">
+
+				
+
+<entry id="th1004">
+<emphasis id="Listing_4" effect="bold">
+
+Listing 4
+
+</emphasis>
+
+. The HTML file named Asg.htm.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1004">
+
+			
+
+<row id="tr1009">
+
+				
+
+<entry id="td1004">
+
+
+
+<code id="pre1004" display="block">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    	&lt;title&gt;ITSE 1356&lt;/title&gt;
+        &lt;script type='text/javascript' src='Asg.js'&gt;&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+	   &lt;script&gt;
+	      var obj01 = {name:"Bill",age:31};
+	      document.write("&lt;br/&gt;Display keys in object: ");
+	      for (var key in obj01) {
+	        if (obj01.hasOwnProperty(key)) {
+	          document.write(key + " ");
+	        }//end if
+	      }//end for loop
+	      document.write("&lt;br/&gt;Display values in object: ");
+	      document.write(obj01.name + ", " + obj01.age);
+	
+	      document.write("&lt;br/&gt;Transform JavaScript object " +
+	                                    "into a JSON string.");
+	      var jsonstring = objToStr(obj01);
+	      
+	      document.write(
+	                "&lt;br/&gt;Display JSON string " + jsonstring );
+	
+	      document.write("&lt;br/&gt;Transform the JSON string " +
+	                              "into a JavaScript object.");
+	      var obj02 = strToObj(jsonstring);
+	      
+	      document.write("&lt;br/&gt;Display values in object: ");
+	      document.write(obj02.name + ", " + obj02.age);
+	
+	      document.write("&lt;br/&gt;Display keys in object: ");;
+	      for (var key in obj02) {
+	        if (obj02.hasOwnProperty(key)) {
+	          document.write(key + " ");
+	        }//end if
+	      }//end for loop
+	   &lt;/script&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+
+	
+
+<table id="table1005" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1005">
+
+			
+
+<row id="tr1010">
+
+				
+
+<entry id="th1005">
+<emphasis id="Listing_5" effect="bold">
+
+Listing 5
+
+</emphasis>
+
+. The JavaScript file named 
+				Asg.js.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1005">
+
+			
+
+<row id="tr1011">
+
+				
+
+<entry id="td1005">
+
+
+
+<code id="pre1005" display="block">
+function objToStr(obj){
+	document.write("&lt;br/&gt;&lt;br/&gt;In objToStr&lt;br/&gt;");
+	var str = JSON.stringify(obj);
+	return str;
+}
+
+function strToObj(str){
+	document.write("&lt;br/&gt;&lt;br/&gt;In strToObj&lt;br/&gt;");
+	var obj = JSON.parse(str);
+	return obj;
+}
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1021">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

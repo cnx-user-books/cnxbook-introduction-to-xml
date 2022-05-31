@@ -1,0 +1,1525 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>A Brief Introduction to XML</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m34546</md:content-id>
+  <md:title>A Brief Introduction to XML</md:title>
+  <md:abstract>This module is part of a collection dedicated to learning XML.</md:abstract>
+  <md:uuid>8e1cc59a-71f5-455f-a778-312de12c440f</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+  
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+ 
+    
+
+<list id="ul1001" list-type="bulleted">
+
+      
+
+<item id="li1001">
+<link id="a1001" target-id="General">
+
+General
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1002">
+<link id="a1002" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1003">
+<link id="a1003" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+      
+
+<item id="li1004">
+<link id="a1004" target-id="Supplementary_material">
+
+Supplemental material
+
+</link>
+
+
+</item>
+
+
+    
+
+</list>
+
+
+  
+
+</item>
+
+
+  
+
+<item id="li1005">
+<link id="a1005" target-id="A_brief_introduction_to_XML">
+
+A brief introduction to XML
+
+</link>
+
+
+</item>
+
+
+
+	
+
+<item id="li1006">
+<link id="a1006" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+
+
+
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+
+</emphasis>
+
+Preface
+
+</title>
+
+
+
+
+
+
+
+<section id="h21000">
+<title>
+<emphasis id="General" effect="bold">
+
+General
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1000">
+This module is part of a collection dedicated to learning XML. 
+
+</para>
+
+
+
+
+</section>
+<section id="h21001">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1001">
+I recommend that you open another copy of this document in a separate browser 
+window and use the following links to easily find and view the figures while you 
+are reading about them.
+
+</para>
+
+
+
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1003" list-type="bulleted">
+
+	
+
+<item id="li1007">
+<link id="a1007" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. The structure of a simple book. 
+
+</item>
+
+
+	
+
+<item id="li1008">
+<link id="a1008" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. Very simple XML syntax. 
+
+</item>
+
+
+	
+
+<item id="li1009">
+<link id="a1009" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. XML syntax with attributes. 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+</section>
+</section>
+<section id="h21002">
+<title>
+<emphasis id="Supplementary_material" effect="bold">
+
+Supplemental material
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1002">
+I recommend that you also 
+study the other lessons in my extensive collection of online programming 
+tutorials. You will find a consolidated index at 
+
+<link id="a1010" url="http://www.dickbaldwin.com/toc.htm">
+
+www.DickBaldwin.com
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+</section>
+</section>
+<section id="h11002">
+<title>
+
+
+
+<emphasis id="A_brief_introduction_to_XML" effect="bold">
+
+A 
+brief introduction to XML
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1003">
+The name 
+
+<emphasis id="strong1000" effect="bold">
+XML
+
+</emphasis>
+ derives from e
+
+<emphasis id="strong1001" effect="bold">
+X
+
+</emphasis>
+tensible
+
+
+<emphasis id="strong1002" effect="bold">
+M
+
+</emphasis>
+arkup 
+
+<emphasis id="strong1003" effect="bold">
+L
+
+</emphasis>
+anguage. According to Wikipedia, 
+
+</para>
+
+
+
+
+
+<quote id="blockquote1000" display="block">
+
+	
+
+<emphasis id="em1000" effect="italics">
+"A markup language is a system for annotating text 
+in a way which is syntactically distinguishable from that text." 
+
+</emphasis>
+
+
+
+</quote>
+
+
+
+
+
+<para id="p1004">
+In other words, when text has been annotated or marked up, the annotations 
+can be easily distinguished from the original text. For example, if you turn in a term 
+paper and the professor annotates it with a red pencil, you can easily 
+distinguish her annotations from your original text. However, XML doesn't use 
+color to annotate text. Instead, XML uses specially formatted text to annotate 
+text.
+
+</para>
+
+
+
+
+
+<para id="p1005">
+<emphasis id="strong1004" effect="bold">
+Structured documents
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1006">
+XML gives us a way to create and maintain structured documents in plain text 
+that can be rendered in a variety of different ways. For example, before I 
+upload this document to the 
+
+<link id="a1011" url="http://cnx.org/content/col11207/latest/">
+
+
+Connexions
+
+</link>
+
+ website for publishing, I will convert into 
+
+<emphasis id="strong1005" effect="bold">
+CNXML
+
+</emphasis>
+, 
+which is one of the many flavors of XML. Once the document is on the website in 
+that format, programs on the website have the ability to render it in the form 
+of a web page 
+
+<emphasis id="em1001" effect="italics">
+(which you are probably reading right now)
+
+</emphasis>
+ or in the form 
+of a PDF document, which you can download and 
+print if you choose to do so.
+
+</para>
+
+
+
+
+
+<para id="p1007">
+There is a lot of jargon involved in XML. One of my objectives will be to 
+explain the jargon.
+
+</para>
+
+
+
+
+
+<para id="p1008">
+<emphasis id="strong1006" effect="bold">
+What do I mean by a "structured 
+document?"
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1009">
+I will answer this question by providing an example. A book is a structured 
+document. In its simplest form, a book may be composed of chapters. The chapters 
+may be composed of sections. The sections may contain illustrations and tables. 
+The tables are composed of rows and columns. Thus, it would be possible to draw 
+a picture that illustrates the structure of a book.
+
+</para>
+
+
+
+
+
+<para id="p1010">
+<emphasis id="strong1007" effect="bold">
+What do I mean by "plain text?"
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1011">
+Characters such as the letters of the alphabet and punctuation marks are 
+represented in the computer by numeric values, similar to a simple substitution 
+code that a child might devise. For example in one popular encoding scheme 
+(ASCII), the upper-case version of the character "A" is represented by the value 
+65, a "B" is represented by the value 66, a "C" is represented by 67, etc.
+
+</para>
+
+
+
+
+
+<para id="p1012">
+<emphasis id="strong1008" effect="bold">
+Different encoding schemes
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1013">
+The actual correspondence between the characters and the specific numeric 
+values representing the characters has been described by several different 
+encoding schemes over the years. One of the most common and enduring schemes is 
+a scheme that was devised a number of years ago by an organization known as the 
+American Standards Committee on Information Interchange. This encoding scheme is 
+commonly known as the ASCII code.
+
+</para>
+
+
+
+
+
+<para id="p1014">
+<emphasis id="strong1009" effect="bold">
+XML supports several encoding schemes
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1015">
+XML is not confined to the use of the ASCII encoding scheme. Several 
+different encoding schemes can be used. However, all of them have been selected 
+to make it possible to read a raw XML document without the requirement for any 
+special software.
+
+</para>
+
+
+
+
+
+<para id="p1016">
+<emphasis id="strong1010" effect="bold">
+What do I mean by a raw XML document?
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1017">
+By a raw XML document, I am referring to the string of sequential characters 
+that makes up the document, before any specific rendering has been applied to 
+the document.
+
+</para>
+
+
+
+
+
+<para id="p1018">
+<emphasis id="strong1011" effect="bold">
+What do I mean by rendering?
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1019">
+The most common use of the word rendering in the information technology world 
+means to present something for human consumption. Thus, we render the 
+specifications for a new house as a set of drawings.
+
+</para>
+
+
+
+
+
+<para id="p1020">
+When we speak of rendering a drawing or an image, we usually mean that we are 
+going to present it in a way that makes it look like a drawing or an image to a 
+human observer.
+
+</para>
+
+
+
+
+
+<para id="p1021">
+When we speak of rendering a document, we usually mean that we are going to 
+present it in a way that a human will recognize such as a book, a newspaper, a 
+web page, or some other document style.
+
+</para>
+
+
+
+
+
+<para id="p1022">
+<emphasis id="strong1012" effect="bold">
+Consider a newspaper, for example
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1023">
+There are at least two different ways to render a newspaper. One way is to 
+print the information 
+
+<emphasis id="em1002" effect="italics">
+(daily news)
+
+</emphasis>
+, mostly in black and white, on large sheets 
+of low-grade paper commonly known as newsprint. This is the rendering format 
+that ends up on my driveway each morning.
+
+</para>
+
+
+
+
+
+<para id="p1024">
+<emphasis id="strong1013" effect="bold">
+Render on a computer screen
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1025">
+Another way to render a newspaper is to present the information on a computer 
+screen, usually in full color, with the information content trying to fight its 
+way through dozens of animated advertisements. This is the rendering
+
+
+<link id="a1012" url="http://www.foxnews.com/">
+
+format
+
+</link>
+
+ that ends up on my computer screen 
+each day when I check for the news of the day.
+
+</para>
+
+
+
+
+
+<para id="p1026">
+<emphasis id="strong1014" effect="bold">
+The base information doesn't change
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1027">
+The base information for the newspaper doesn't 
+
+<emphasis id="em1003" effect="italics">
+(or shouldn't)
+
+</emphasis>
+ change for 
+these two renderings. After all, news is news and the content of the news 
+shouldn't depend on how it is presented. What does change is the manner in which 
+that information is presented.
+
+</para>
+
+
+
+
+
+<para id="p1028">
+<emphasis id="strong1015" effect="bold">
+A newspaper is a structured document
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1029">
+A newspaper is a structured document consisting of pages, columns, etc. When 
+the information content of a newspaper is created and maintained in XML, that 
+same information content can be rendered either on newsprint paper or on your 
+computer screen without having to rewrite the information content.
+
+</para>
+
+
+
+
+
+<para id="p1030">
+<emphasis id="strong1016" effect="bold">
+<emphasis id="Achieving" effect="bold">
+
+Achieving 
+Structure
+
+</emphasis>
+
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1031">
+Consider the simple structure shown in Figure 1 that represents a book having 
+two chapters with some text in each chapter:
+
+</para>
+
+
+
+
+
+
+
+<table id="table1000" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1000">
+<row id="tr1000">
+<entry id="th1000">
+
+	
+
+<emphasis id="Figure_1" effect="bold">
+
+Figure 1
+
+</emphasis>
+
+. The structure of a simple book.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1000">
+<row id="tr1001">
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">Begin Book
+
+  Begin Chapter 1
+    Text for Chapter 1
+  End Chapter 1
+  
+  Begin Chapter 2
+    Text for Chapter 2
+  End Chapter 2
+  
+End Book</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+
+
+
+<para id="p1032">
+Obviously a real book has a lot more structure than this, such as the 
+preface, the table of contents, paragraphs in the text, and an alphabetical 
+index. However, I am trying to keep this example as simple as possible.
+
+</para>
+
+
+
+
+
+<para id="p1033">
+<emphasis id="strong1017" effect="bold">
+The Objective of XML
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1034">
+Perhaps the primary reason for using XML is to make it possible to share the 
+same physical document among different computer systems in a way that they all 
+understand. 
+
+</para>
+
+
+
+
+
+<para id="p1035">
+<emphasis id="strong1018" effect="bold">
+No small task
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1036">
+That is no small task. Over the years, dozens of different types of computers 
+have been built, operating under several different operating systems, and 
+running thousands of different programs. As a result, insofar as the exchange of 
+structured documents is concerned, the computer world is a modern manifestation 
+of the "Tower of Babel" where everyone spoke a different language. XML attempts 
+to rectify this situation by providing a common language for structured 
+documents.
+
+</para>
+
+
+
+
+
+<para id="p1037">
+<emphasis id="strong1019" effect="bold">
+What Does XML Contribute?
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1038">
+Without getting into the technical details at this point, XML provides a 
+definition of a simple scheme by which the structure and the content of a 
+document can be established. The resulting physical document is so simple that 
+any computer 
+
+<emphasis id="em1004" effect="italics">
+(or any human)
+
+</emphasis>
+ can read it with only a modest amount of 
+preparation. You will sometimes see XML referred to as a "meta" language.
+
+</para>
+
+
+
+
+
+<para id="p1039">
+<emphasis id="strong1020" effect="bold">
+What Does Meta Mean?
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1040">
+In computer jargon, the term meta is often used to identify something that 
+provides information about something else. 
+
+<emphasis id="em1005" effect="italics">
+(If you want to impress someone at 
+your next cocktail party, mention that meta information is information about 
+information.)
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1041">
+For example, consider the listings of stock prices, bond prices, and mutual 
+fund prices that commonly appear in most daily newspapers. The various tables on 
+the page provide information about the bid and ask prices for the various stock, 
+bond, and mutual fund instruments.
+
+</para>
+
+
+
+
+
+<para id="p1042">
+Usually somewhere on the page, you will find an explanation as to how to 
+interpret the information presented throughout the remainder of the page. You 
+could probably think of the information contained in the explanation as meta 
+information. It provides information about other information.
+
+</para>
+
+
+
+
+
+<para id="p1043">
+<emphasis id="strong1021" effect="bold">
+So, why might people refer to XML as a meta 
+language?
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1044">
+If you write a book, XML doesn't tell you how to structure the document that 
+represents your book. Rather, it provides you with a set of rules that you can 
+use to establish structure and content when you create the document that 
+represents your book. It is up to you to decide how you will use those rules to 
+establish the structure and content of your book.
+
+</para>
+
+
+
+
+
+<para id="p1045">
+<emphasis id="strong1022" effect="bold">
+Information about new languages
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1046">
+You might say that XML is a language that provides information about a new 
+language that you are free to invent. For example, Flex is a specialized 
+programming language that is based on XML. XML doesn't specify the language. 
+Instead, XML provides the tools used by the inventors of the Flex programming 
+language to specify the structure of the language.
+
+</para>
+
+
+
+
+<para id="p1047">
+<emphasis id="strong1023" effect="bold">
+Different flavors of XML
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1048">
+Similarly, XML doesn't specify CNXML. Instead, XML provides the tools used by 
+the inventors of CNXML to specify the format of documents suitable for 
+publication on the 
+
+<link id="a1013" url="http://cnx.org/content/col11207/latest/">
+
+Connexions
+
+</link>
+
+ 
+website. In the past, I have also published documents on a particular IBM 
+website. That website uses a different flavor of XML to specify the format of 
+documents suitable for publication on the website.
+
+</para>
+
+
+
+
+
+<para id="p1049">
+<emphasis id="strong1024" effect="bold">
+Transportable
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1050">
+If you follow the rules for creating an XML document, the document that you 
+create can be easily transported among various computers and rendered in a 
+variety of different ways.
+
+</para>
+
+
+
+
+
+<para id="p1051">
+<emphasis id="strong1025" effect="bold">
+Multiple renderings
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1052">
+For example, you might want to have two different renderings of your book. 
+One rendering might be in conventional printed format and the other rendering 
+might be in an online format. The use of XML makes it practical to render your 
+book in two or more different ways without any requirement to modify the 
+original document that you produce.
+
+</para>
+
+
+
+
+
+<para id="p1053">
+<emphasis id="strong1026" effect="bold">
+Applying XML
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1054">
+At this point, I am going to provide two different examples of actual XML 
+code, either of which might reasonably represent the simple book example 
+presented earlier in Figure 1. The first example is shown in Figure 2.
+
+</para>
+
+
+
+
+
+
+
+<table id="table1001" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1001">
+<row id="tr1002">
+<entry id="th1001">
+
+	
+
+<emphasis id="Figure_2" effect="bold">
+
+Figure 2
+
+</emphasis>
+
+. Very simple XML syntax.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1001">
+<row id="tr1003">
+<entry id="td1001">
+
+
+
+<code id="pre1001" display="block">&lt;book&gt;
+  &lt;chap&gt;
+    Text for Chapter 1
+  &lt;/chap&gt;
+
+  &lt;chap&gt;
+    Text for Chapter 2
+  &lt;/chap&gt;
+&lt;/book&gt;</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+
+
+
+<para id="p1055">
+If you compare this example with the book example given 
+
+<link id="a1014" target-id="Achieving">
+
+earlier
+
+</link>
+
+, you should be able to see a one-to-one 
+correspondence between the "elements" in this XML code and the description of 
+the book presented earlier.
+
+</para>
+
+
+
+
+
+<para id="p1056">
+<emphasis id="strong1027" effect="bold">
+Introducing attributes
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1057">
+The example in Figure 3 provides an improvement over the example in Figure 2. 
+Figure 3 provides an "attribute" in each of the chapter elements. Each attribute 
+specifies the chapter number. 
+
+</para>
+
+
+
+
+
+
+
+<table id="table1002" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1002">
+<row id="tr1004">
+<entry id="th1002">
+
+	
+
+<emphasis id="Figure_3" effect="bold">
+
+Figure 3
+
+</emphasis>
+
+. XML syntax with attributes.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1002">
+<row id="tr1005">
+<entry id="td1002">
+
+
+
+<code id="pre1002" display="block">&lt;book&gt;
+  &lt;chap number="1"&gt;
+    Text for Chapter 1
+  &lt;/chap&gt;
+
+  &lt;chap number="2"&gt;
+    Text for Chapter 2
+  &lt;/chap&gt;
+&lt;/book&gt;</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+
+
+
+<para id="p1058">
+<emphasis id="strong1028" effect="bold">
+That's a wrap
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1059">
+That's enough for this module. In the next module, I will begin discussing 
+the syntax shown in Figure 3 and begin the explanation of 
+
+<emphasis id="em1006" effect="italics">
+tags
+
+</emphasis>
+,
+
+
+<emphasis id="em1007" effect="italics">
+elements
+
+</emphasis>
+, 
+
+<emphasis id="em1008" effect="italics">
+content
+
+</emphasis>
+, and 
+
+<emphasis id="em1009" effect="italics">
+attributes
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+<para id="p1060">
+This section contains a variety of miscellaneous materials.
+
+</para>
+
+
+
+
+
+
+
+<note id="note1000" type="miscellaneous">
+
+
+
+
+
+
+
+<emphasis id="strong1029" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+
+
+<list id="ul1004" list-type="bulleted">
+
+
+
+<item id="li1010">
+Module name: A Brief Introduction to XML
+
+</item>
+
+
+
+
+<item id="li1011">
+File: FlexXhtml0080.htm
+
+
+</item>
+
+
+	
+
+<item id="li1012">
+Revised: 12/02/14
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</note>
+
+
+
+
+
+
+
+
+
+<note id="note1001" type="miscellaneous">
+
+
+
+
+<emphasis id="strong1030" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1061">
+<emphasis id="strong1031" effect="bold">
+Financial
+
+</emphasis>
+: 
+			Although the Connexions site makes it possible for you to download a 
+			PDF file for this module at no charge, and also makes it possible 
+			for you to purchase a pre-printed version of the PDF file, you 
+			should be aware that some of the HTML elements in this module may 
+			not translate well into PDF.
+
+</para>
+
+
+			
+
+<para id="p1062">
+I also want you to know that, I receive no financial compensation 
+			from the Connexions website even if you purchase the PDF version of 
+			the module.
+
+</para>
+
+
+			
+
+<para id="p1063">
+In the past, unknown individuals have copied my modules from 
+			cnx.org, converted them to Kindle books, and placed them for sale on 
+			Amazon.com showing me as the author. I neither receive compensation 
+			for those sales nor do I know who does receive compensation. If you 
+			purchase such a book, please be aware that it is a copy of a module 
+			that is freely available on cnx.org and that it was made and 
+			published without my prior knowledge.
+
+</para>
+
+
+			
+
+<para id="p1064">
+<emphasis id="strong1032" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer 
+			Information Technology at Austin Community College in Austin, TX.
+
+</para>
+
+
+			
+
+</note>
+
+
+
+
+
+
+
+
+
+<para id="p1065">
+-end-
+
+</para>
+
+
+
+
+
+<para id="p1066">
+</para>
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

@@ -1,0 +1,5449 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>The Default Application Container - Flex 3 and Flex 4</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m34604</md:content-id>
+  <md:title>The Default Application Container - Flex 3 and Flex 4</md:title>
+  <md:abstract>Learn about some of the differences between Flex 3 and Flex 4. Learn how to write a Flex application that controls the color, color gradient, and transparency of the background of the main window when a Flex application is played in Flash Player.</md:abstract>
+  <md:uuid>ecffe202-d6c2-4bf0-9a9a-6045dc65fd0e</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<note id="note1000" type="miscellaneous">
+
+
+
+
+
+	
+
+<emphasis id="Click" effect="bold">
+
+Click
+
+</emphasis>
+
+ 
+
+<link id="a1000" url="AppBackground01.html">
+
+AppBackground01
+
+</link>
+
+
+	and 
+
+<link id="a1001" url="AppBackground04.html">
+
+AppBackground04
+
+</link>
+
+
+to run the Flex 3 and Flex 4 projects discussed in this lesson. 
+
+<emphasis id="em1000" effect="italics">
+
+(Click the "Back" button in your browser
+to return to this page.)
+
+</emphasis>
+
+
+
+</note>
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+  
+
+<item id="li1000">
+<link id="a1002" target-id="Preface">
+
+Preface
+
+</link>
+
+ 
+    
+
+<list id="ul1001" list-type="bulleted">
+
+      
+
+<item id="li1001">
+<link id="a1003" target-id="General">
+
+General
+
+</link>
+
+ 
+
+</item>
+
+
+      
+
+<item id="li1002">
+<link id="a1004" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+ 
+        
+
+<list id="ul1002" list-type="bulleted">
+
+          
+
+<item id="li1003">
+<link id="a1005" target-id="Figures">
+
+Figures
+
+</link>
+
+ 
+
+</item>
+
+
+          
+
+<item id="li1004">
+<link id="a1006" target-id="Listings">
+
+Listings
+
+</link>
+
+ 
+
+</item>
+
+
+        
+
+</list>
+
+
+      
+
+</item>
+
+
+      
+
+<item id="li1005">
+<link id="a1007" target-id="Supplementary_material">
+
+Supplemental material
+
+</link>
+
+ 
+
+</item>
+
+
+    
+
+</list>
+
+
+  
+
+</item>
+
+
+  
+
+<item id="li1006">
+<link id="a1008" target-id="GeneralBackgroundInformation">
+
+General background 
+  information
+
+</link>
+
+ 
+
+</item>
+
+
+  
+
+<item id="li1007">
+<link id="a1009" target-id="Preview">
+
+Preview
+
+</link>
+
+ 
+
+</item>
+
+
+  
+
+<item id="li1008">
+<link id="a1010" target-id="DiscussionAndSamplePrograms">
+
+Discussion and sample code
+
+</link>
+
+
+  
+
+<list id="ul1003" list-type="bulleted">
+
+	  
+
+<item id="li1009">
+<link id="a1011" target-id="The_Flex_3_version">
+
+The Flex 3 version
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1010">
+<link id="a1012" target-id="The_Flex_4_version">
+
+The Flex 4 version
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1011">
+<link id="a1013" target-id="Another_Flex_4_application">
+
+Another Flex 4 application
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+  
+
+<item id="li1012">
+<link id="a1014" target-id="Runtheprogram">
+
+Run the programs
+
+</link>
+
+ 
+
+</item>
+
+
+  
+
+<item id="li1013">
+<link id="a1015" target-id="Resources">
+
+Resources
+
+</link>
+
+ 
+
+</item>
+
+
+	
+
+<item id="li1014">
+<link id="a1016" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+<para id="p1000">
+</para>
+
+
+
+
+
+
+
+
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+
+</emphasis>
+
+Preface
+
+</title>
+
+
+
+
+
+
+
+<section id="h21000">
+<title>
+<emphasis id="General" effect="bold">
+
+General
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1001">
+This lesson is part of a series of tutorial lessons dedicated to programming 
+with Adobe Flex.
+
+</para>
+
+
+
+
+
+<para id="p1002">
+<emphasis id="strong1000" effect="bold">
+What is Adobe Flex?
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1003">
+The previous lessons in this series have primarily dealt with XML issues and 
+have nibbled around the edges of Flex. At this point, it is time to get really 
+serious about Flex and start understanding what Flex, 
+
+<emphasis id="em1001" effect="italics">
+(as an XML programming language)
+
+</emphasis>
+, is 
+all about.
+
+</para>
+
+
+
+
+<para id="p1004">
+According to one of the pages on the Adobe website,
+
+</para>
+
+
+
+
+
+<quote id="blockquote1000" display="block">
+
+  
+
+<para id="p1005">
+<emphasis id="em1002" effect="italics">
+"Flex is a highly productive, free open source framework for building 
+  and maintaining expressive web applications that deploy consistently on all 
+  major browsers, desktops, and operating systems. While Flex applications can 
+  be built using only the free open source framework, developers can use Adobe 
+  Flex Builder software to dramatically accelerate development."
+
+</emphasis>
+</para>
+
+
+
+
+</quote>
+
+
+
+
+
+<note id="note1001" type="miscellaneous">
+
+
+
+
+
+	
+
+<para id="p1006">
+Subsequent to the original publication of this lesson, Adobe has released Flex 
+	version 4 
+
+<emphasis id="em1003" effect="italics">
+(in addition to Flex version 3)
+
+</emphasis>
+ and has replaced the Flex Builder 3 
+	IDE with a new IDE named Flash Builder 4.
+
+</para>
+
+
+	
+
+<para id="p1007">
+Flash Builder 4 supports both Flex 3 and Flex 4.
+
+</para>
+
+
+	
+
+<para id="p1008">
+As of June 2010, Flex Builder 3 is no longer available, but 
+	Flash Builder 4 is
+			available for downloading and is
+	
+
+<link id="a1017" url="http://www.adobe.com/devnet/flex/free/index.html">
+
+free for 
+	educational use
+
+</link>
+
+.
+
+</para>
+
+
+	
+
+<para id="p1009">
+I have updated this lesson to accommodate the availability of Flex 4 and 
+	Flash Builder 4 in addition to Flex 3.
+
+</para>
+
+
+			
+
+<para id="p1010">
+Although Flash Builder 4 is very similar to Flex Builder 3 from a 
+			user perspective, there are numerous differences between Flex 3 and 
+			Flex 4. I will touch on some of these differences in this lesson and 
+			will explore them in more detail in future lessons.
+
+</para>
+
+
+</note>
+
+
+
+
+	
+	
+
+<para id="p1011">
+<emphasis id="strong1001" effect="bold">
+Download links
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1012">
+Download links for the free Flex 3 and Flex 4 frameworks, as well as the 
+	Flash Builder 4 IDE are provided in 
+
+<link id="a1018" target-id="Resources">
+
+Resources
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1013">
+<emphasis id="strong1002" effect="bold">
+Powerful but more complicated
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1014">
+Flex 4 is more powerful, but also significantly more complicated than Flex 3. 
+	Therefore, it isn't clear to me that developers will want to make an 
+	immediate switch to Flex 4. Therefore, I will continue publishing material 
+	on Flex 3 in addition to Flex 4.
+
+</para>
+
+
+
+
+<para id="p1015">
+<emphasis id="strong1003" effect="bold">
+Is there a tipping point?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1016">
+Anything that can be programmed in Flex can also be programmed directly in 
+ActionScript, but the reverse is not true. It occurs to me that at some point, as 
+Flex becomes more complicated, there may be a tipping point where developers will simply switch to ActionScript 
+instead of expending the effort necessary to learn about new more-complicated 
+aspects of Flex.
+
+</para>
+
+
+
+
+
+<para id="p1017">
+<emphasis id="strong1004" effect="bold">
+One of several ways to create applications for Flash 
+Player 
+
+<emphasis id="em1004" effect="italics">
+(version 10 or later)
+
+</emphasis>
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1018">
+Flex 3 and Flex 4 
+
+<emphasis id="em1005" effect="italics">
+(combined with ActionScript 3)
+
+</emphasis>
+ 
+simply 
+provide one of several ways that developers can produce downloadable 
+applications that will run in Adobe's Flash Player 
+
+<emphasis id="em1006" effect="italics">
+(version 10 or later)
+
+</emphasis>
+
+or Adobe Air 
+
+<emphasis id="em1007" effect="italics">
+(see 
+
+<link id="a1019" target-id="Resources">
+
+Resources
+
+</link>
+
+)
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+
+<para id="p1019">
+<emphasis id="strong1005" effect="bold">
+<emphasis id="Running_Flash_Player_9" effect="bold">
+
+Running Flash 
+Player
+
+</emphasis>
+
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1020">
+Very briefly, Adobe Flash Player normally runs applications in a web browser 
+while Adobe Air runs applications in a stand alone mode from the desktop. 
+However, if you have installed Flex Builder 3 or Flash Builder 4, it is usually possible to cause Flash Player to start and run in a 
+stand alone mode by double clicking on an swf file. 
+
+<emphasis id="em1008" effect="italics">
+(See Figure 1.)
+
+</emphasis>
+ 
+If double clicking doesn't work, you can locate and run the file named 
+FlashPlayer.exe. Once the Flash Player is running, you can open and run other swf files.
+
+</para>
+
+
+
+
+
+<para id="p1021">
+<emphasis id="strong1006" effect="bold">
+Why do I care about Flex and Flash Player?
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1022">
+One of the fastest growing segments of the game programming industry is the area of social 
+games that typically run in Flash Player. I currently teach a course 
+titled 
+
+<emphasis id="em1009" effect="italics">
+"Game Development using C++"
+
+</emphasis>
+ and another course titled
+
+
+<emphasis id="em1010" effect="italics">
+"Game and Simulation Programming I : C#"
+
+</emphasis>
+ based on Microsoft's XNA Game 
+Studio. I have a long-term interest in 
+possibly also teaching a course in 
+
+<emphasis id="em1011" effect="italics">
+"Game Development using Flex and 
+ActionScript."
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1023">
+<emphasis id="strong1007" effect="bold">
+Flex and ActionScript
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1024">
+However, my more immediate interest is related to two other courses that I 
+teach. One of those courses is an introduction to XML. The other course is 
+Object-Oriented Programming using ActionScript 3.
+
+</para>
+
+
+
+
+
+<para id="p1025">
+Flex is an XML-based language that is used to produce 
+
+<emphasis id="em1012" effect="italics">
+mxml
+
+</emphasis>
+ files. 
+
+<emphasis id="em1013" effect="italics">
+(In 
+fact, Flex is simply a shorthand way of writing ActionScript program files. When 
+you compile Flex MXML files, they are automatically converted into ActionScript files 
+before compilation.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1026">
+The resulting ActionScript 
+files, along with other resources, are compiled into swf files that can be 
+executed in Flash Player or Adobe Air.
+
+</para>
+
+
+
+
+<para id="p1027">
+Most of the lab projects in my XML course require the students to create Flex 
+projects using both Flex 3 and Flex 4. Most of the lab projects in my more advanced ActionScript programming course require the 
+students to use Flex as a launch pad for their ActionScript programs.
+
+</para>
+
+
+
+
+
+<para id="p1028">
+<emphasis id="strong1008" effect="bold">
+Flex SDK versus Flash Builder
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1029">
+Although it is possible to create Flex applications using 
+nothing more than the free open source Flex SDKs 
+
+<emphasis id="em1014" effect="italics">
+(see 
+
+<link id="a1020" target-id="Resources">
+
+Resources
+
+</link>
+
+)
+
+</emphasis>
+ and a text editor, that can be tedious. 
+Flash Builder 4 helps you to write mxml files containing layout and controls and makes the 
+process somewhat more enjoyable. It will probably also help you to be more 
+productive.
+
+</para>
+
+
+
+
+
+<para id="p1030">
+<emphasis id="strong1009" effect="bold">
+A complete Flex application
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1031">
+A complete Flex application consists of
+
+</para>
+
+
+
+
+<list id="ul1004" list-type="bulleted">
+
+  
+
+<item id="li1015">
+One or more mxml files that may or may not embed ActionScript 3 code.
+
+</item>
+
+
+  
+
+<item id="li1016">
+None, one or more ActionScript 3 files.
+
+</item>
+
+
+  
+
+<item id="li1017">
+Various resource files such as image files, sound files, etc. 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+<para id="p1032">
+As mentioned earlier, these are compiled into a Flash swf file, 
+which can be executed in either a Flash player or 
+
+<emphasis id="em1015" effect="italics">
+(in some cases)
+
+</emphasis>
+ Adobe 
+Air.
+
+</para>
+
+
+
+
+
+<para id="p1033">
+<emphasis id="strong1010" effect="bold">
+Division of responsibility
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1034">
+Flex provides the layout and control structure for the 
+application in an XML format while ActionScript provides the program logic. 
+
+<emphasis id="em1016" effect="italics">
+
+(Of course, the whole thing can be written in ActionScript if you choose to do 
+so.)
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1035">
+<emphasis id="strong1011" effect="bold">
+ActionScript is an issue for my XML 
+students
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1036">
+While earlier versions of ActionScript may have been simple and easy to 
+learn, ActionScript 3 is a fully object-oriented programming language with a 
+complexity level on par with C++.
+
+</para>
+
+
+
+
+
+<para id="p1037">
+Students in my XML class aren't required to have any programming knowledge, 
+and aren't expected to have the prerequisite knowledge that would qualify them to 
+learn ActionScript 3 while learning XML at the same time. Therefore, the 
+early lessons in this series concentrate on the use of mxml for 
+layout and control and forego any requirement to understand ActionScript 3. As I 
+mentioned earlier, I teach object-oriented programming using ActionScript in a 
+different course.
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21001">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1038">
+I recommend that you open another copy of this document in a separate browser 
+window and use the following links to easily find and view the figures and 
+listings while you are reading about them.
+
+</para>
+
+
+
+
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1005" list-type="bulleted">
+
+  
+
+<item id="li1018">
+<link id="a1021" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Flash Player output for a new Flex 
+  project. 
+
+</item>
+
+
+  
+
+<item id="li1019">
+<link id="a1022" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. Browser output for a new Flex project.
+  
+
+</item>
+
+
+  
+
+<item id="li1020">
+<link id="a1023" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. Application window background for alpha 
+  values of 0.0, 0.33, 0.66, and 1.0. 
+
+</item>
+
+
+	
+
+<item id="li1021">
+<link id="a1024" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. Gradient output for narrow ratio zone. 
+
+</item>
+
+
+	
+
+<item id="li1022">
+<link id="a1025" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. Flash window for Flex 4 project named 
+	AppBackground04. 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+</section>
+<section id="h31001">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1006" list-type="bulleted">
+
+  
+
+<item id="li1023">
+<link id="a1026" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. Skeleton mxml code for a new Flex 
+  3 project. 
+
+</item>
+
+
+  
+
+<item id="li1024">
+<link id="a1027" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. Flex 3 application named 
+  AppBackground01. 
+
+</item>
+
+
+	
+
+<item id="li1025">
+<link id="a1028" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. Skeleton mxml code for a new Flex 4 project.
+
+</item>
+
+
+	
+
+<item id="li1026">
+<link id="a1029" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+. Flex 4 application named 
+	AppBackground03. 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+</section>
+</section>
+<section id="h21002">
+<title>
+<emphasis id="Supplementary_material" effect="bold">
+
+Supplemental material
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1039">
+I recommend that you also study the other lessons in my extensive collection 
+of online programming tutorials. You will find a consolidated index at 
+
+<link id="a1030" url="http://www.dickbaldwin.com/toc.htm">
+
+www.DickBaldwin.com
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="GeneralBackgroundInformation" effect="bold">
+
+General background information
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1040">
+<emphasis id="strong1012" effect="bold">
+Download Flex
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1041">
+I have provided download links in 
+
+<link id="a1031" target-id="Resources">
+
+Resources
+
+</link>
+
+ for both 
+the free open source Flex SDKs and Flash Builder 4.
+
+</para>
+
+
+
+
+
+<para id="p1042">
+Flash Builder 4 includes the SDKs for both Flex 3 and Flex 4 along with an IDE that is useful for creating 
+Flex applications. Both the raw SDK downloads and the Flash Builder 4 download includes a debug version of the Adobe 
+Flash Player.
+
+</para>
+
+
+
+
+
+<para id="p1043">
+<emphasis id="strong1013" effect="bold">
+Install the Flex SDK
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1044">
+Installation of the free open source Flex SDKs 
+is a little complicated 
+
+<emphasis id="em1017" effect="italics">
+(but I will explain how to do it in a future lesson)
+
+</emphasis>
+. I have provided a link in 
+
+<link id="a1032" target-id="Resources">
+
+Resources
+
+</link>
+
+ for Installation and Release Notes.
+
+</para>
+
+
+
+
+
+<para id="p1045">
+Installation of Flash Builder 4 is straightforward, at least that 
+is true for Windows. The download is an exe file. Just execute the 
+downloaded file and follow the installation instructions.
+
+</para>
+
+
+
+
+
+<para id="p1046">
+<emphasis id="strong1014" effect="bold">
+Getting started with the free SDKs
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1047">
+If you are using the free stand-alone SDKs, I will provide instructions for 
+getting started creating applications with them in a future lesson. Those 
+versions include a command-line compiler. You will need to create 
+your mxml files using a text editor and compile them using the command-line 
+compiler.
+
+</para>
+
+
+
+
+
+<para id="p1048">
+<emphasis id="strong1015" effect="bold">
+Getting started with Flash Builder 4
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1049">
+If you are using Flash Builder 4, I have provided several links in 
+
+<link id="a1033" target-id="Resources">
+
+Resources
+
+</link>
+
+ that will help you get started using the IDE. 
+Perhaps the quickest way to get started is to view some of the videos at the 
+link titled 
+
+<link id="a1034" url="http://www.adobe.com/devnet/flex/videotraining/">
+
+Flex in a 
+Week video training
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+<para id="p1050">
+<emphasis id="strong1016" effect="bold">
+Create a new project
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1051">
+Once you have Flash Builder 4 running, pull down the 
+
+<emphasis id="strong1017" effect="bold">
+File
+
+</emphasis>
+ menu and 
+select 
+
+<emphasis id="strong1018" effect="bold">
+New/Flex Project
+
+</emphasis>
+. Enter the name of your new project into 
+the dialog box, make certain that the radio button for 
+
+<emphasis id="strong1019" effect="bold">
+Web application
+
+</emphasis>
+ is 
+selected, specify the compiler that you want to use 
+
+<emphasis id="em1018" effect="italics">
+(Flex 3 or Flex 4)
+
+</emphasis>
+ and click the 
+
+<emphasis id="strong1020" effect="bold">
+Finish
+
+</emphasis>
+ button. If you wish, you can specify 
+a disk location for your project other than the default location.
+
+</para>
+
+
+	
+
+
+<para id="p1052">
+<emphasis id="strong1021" effect="bold">
+The project tree
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1053">
+A 
+
+<emphasis id="directory_tree" effect="bold">
+
+directory tree
+
+</emphasis>
+
+ for your new project will be 
+created having at least the following folders:
+
+</para>
+
+
+
+
+<list id="ul1007" list-type="bulleted">
+
+    
+
+<item id="li1027">
+.settings
+
+</item>
+
+
+  
+
+<item id="li1028">
+bin-debug
+
+</item>
+
+
+  
+
+<item id="li1029">
+html-template
+
+</item>
+
+
+  
+
+<item id="li1030">
+libs
+
+</item>
+
+
+  
+
+<item id="li1031">
+src
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+<para id="p1054">
+This directory tree appears in the upper-left panel of the IDE. 
+
+<emphasis id="em1019" effect="italics">
+(Note 
+that the tree shows some other nodes such as default package and Flex x.x, but 
+they aren't actually disk folders.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1055">
+<emphasis id="strong1022" effect="bold">
+Flash Player output for a new Flex project
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1056">
+The 
+
+<emphasis id="strong1023" effect="bold">
+bin-debug
+
+</emphasis>
+ folder will contain several files including one with an 
+swf extension and one with an 
+
+<emphasis id="html_extension" effect="bold">
+
+html extension
+
+</emphasis>
+
+. 
+As I mentioned 
+
+<link id="a1035" target-id="Running_Flash_Player_9">
+
+earlier
+
+</link>
+
+, if you 
+double-click the file with the swf extension, it should open in Adobe Flash 
+Player
+looking something like Figure 1.
+
+</para>
+
+
+
+
+<quote id="blockquote1001" display="block">
+<emphasis id="em1020" effect="italics">
+(Note that the default background color for a new Flex 3 
+project is the gray color shown in Figure 1 while the default background color 
+for a new Flex 4 project is white.)
+
+</emphasis>
+</quote>
+
+
+
+
+
+<figure id="figure1000" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_1" effect="bold">
+</emphasis>
+Flash Player output for a new Flex  	project.
+</title>
+
+
+
+			
+
+<media id="media1000" alt="Missing image." display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/flex0102a.jpg" width="474" height="402"/>
+</media>
+
+
+
+
+
+<caption>Flash Player output for a new Flex  	project.</caption>
+</figure>
+
+
+
+
+
+
+
+<para id="p1057">
+<emphasis id="strong1024" effect="bold">
+Browser output for a new Flex project
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1058">
+When you installed Flash Builder 4, you should have been given an opportunity 
+to update one or more browsers to include a special version of the Flash Player that supports debugging. If you open 
+the html file mentioned 
+
+<link id="a1036" target-id="html_extension">
+
+above
+
+</link>
+
+ in one of those 
+browsers, the output should look something like Figure 2 
+
+<emphasis id="em1021" effect="italics">
+(with either a gray 
+or white background depending on which version of the Flex compiler was used to 
+create the project)
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+
+<figure id="figure1001" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_2" effect="bold">
+</emphasis>
+Browser output for a new Flex project.
+</title>
+
+
+
+
+
+
+
+<media id="media1001" alt="Missing image." display="block">
+<image id="img1001" mime-type="image/jpeg" src="../../media/flex0102b.jpg" width="473" height="430"/>
+</media>
+
+
+
+
+<caption>Browser output for a new Flex project.</caption>
+</figure>
+
+
+
+
+
+
+
+<para id="p1059">
+<emphasis id="strong1025" effect="bold">
+The bin-release output
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1060">
+After you are satisfied with your program, you can create an output folder 
+named 
+
+<emphasis id="strong1026" effect="bold">
+bin-release
+
+</emphasis>
+ by selecting 
+
+<emphasis id="strong1027" effect="bold">
+Project/Export Release Build...
+
+</emphasis>
+ The files in this folder are similar to 
+the files in the 
+
+<emphasis id="strong1028" effect="bold">
+bin-debug
+
+</emphasis>
+ folder, but they may be smaller. This folder has been purged of debug information, and is the folder that is intended 
+for deployment on a website.
+
+</para>
+
+
+
+
+<para id="p1061">
+<emphasis id="strong1029" effect="bold">
+Boring!
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1062">
+
+Granted, these outputs aren't all that exciting. However, they should help to 
+confirm that you have Flash Builder 4 and Flash Player 
+
+<emphasis id="em1022" effect="italics">
+(version 10 or 
+later)
+
+</emphasis>
+ properly installed and linked to your browser.
+
+</para>
+
+
+
+
+
+<para id="p1063">
+<emphasis id="strong1030" effect="bold">
+The src folder
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1064">
+The folder in the 
+
+<link id="a1037" target-id="directory_tree">
+
+directory tree
+
+</link>
+
+ mentioned 
+earlier that will probably command most of your attention is the folder named 
+src. When you create a new Flex project, this folder will contain a file 
+with an extension of mxml. If you double click on that file name in the 
+upper-left IDE window, the mxml file will open in the text editor window of the 
+IDE. If you selected the Flex 3 compiler, the skeleton code will look something like Listing 1.
+
+
+<emphasis id="em1023" effect="italics">
+(It will be different for Flex 4, but I will get into that later.)
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1065">
+<emphasis id="strong1031" effect="bold">
+A skeleton mxml file
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1066">
+
+Listing 1 shows the skeleton mxml code for a new Flex 3 project. This is 
+the XML code that you will modify and supplement as you add features to your 
+project.
+
+</para>
+
+
+
+
+
+<example id="listing1000" type="listing">
+<label>Listing</label>
+
+
+
+
+<title>
+<emphasis id="Listing_1" effect="bold">
+</emphasis>
+Skeleton mxml code for a new Flex    3 project.
+</title>
+
+
+
+
+
+
+
+<code id="pre1000" display="block">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;mx:Application 
+  xmlns:mx="http://www.adobe.com/2006/mxml" 
+  layout="absolute"
+  minWidth="955"
+  minHeight="600"&gt;
+  
+&lt;/mx:Application&gt;</code>
+
+
+
+
+</example>
+
+
+
+
+
+
+
+<para id="p1067">
+<emphasis id="strong1032" effect="bold">
+Compile and run the project
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1068">
+You can compile and run the new project by selecting either 
+
+<emphasis id="strong1033" effect="bold">
+Run
+
+</emphasis>
+ or
+
+
+<emphasis id="strong1034" effect="bold">
+Debug
+
+</emphasis>
+ on the 
+
+<emphasis id="strong1035" effect="bold">
+Run
+
+</emphasis>
+ menu. 
+
+<emphasis id="em1024" effect="italics">
+(The IDE provides a 
+few other ways to run the project as well.)
+
+</emphasis>
+ The new project should open in your 
+browser looking pretty much like Figure 2. 
+
+<emphasis id="em1025" effect="italics">
+(Remember, gray background for 
+Flex 3 and white background for Flex 4.)
+
+</emphasis>
+ If you selected 
+
+<emphasis id="strong1036" effect="bold">
+Debug
+
+</emphasis>
+, 
+some debug text information should be displayed in the 
+
+<emphasis id="strong1037" effect="bold">
+Console
+
+</emphasis>
+ tab at the 
+bottom of the IDE.
+
+</para>
+
+
+
+
+
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Preview" effect="bold">
+
+Preview
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1069">
+In this lesson, I will explain how to create two Flex projects. 
+One is a simple Flex 3 project named 
+
+<emphasis id="strong1038" effect="bold">
+
+AppBackground01
+
+</emphasis>
+. The other is a 
+
+<emphasis id="em1026" effect="italics">
+(not so simple)
+
+</emphasis>
+ Flex 4 project named 
+
+
+<emphasis id="strong1039" effect="bold">
+AppBackground03
+
+</emphasis>
+ that replicates the output from the Flex 3 
+project.
+
+</para>
+
+
+
+
+<para id="p1070">
+Both projects are designed to produce the same output. To create the project 
+using Flex 3, you will simply add attributes 
+to the 
+
+<emphasis id="strong1040" effect="bold">
+Application
+
+</emphasis>
+ element shown in Listing 1, resulting in the XML code 
+shown in Listing 2. However, you will need to do more than that to create the 
+project in Flex 4. 
+
+<emphasis id="em1027" effect="italics">
+(Remember, Flex 4 is more powerful but also more 
+complicated to use.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1071">
+Finally, I will show you the output from another Flex 4 project and challenge 
+you as the student to write a Flex 4 project that produces a matching output.
+
+</para>
+
+
+
+
+
+<para id="p1072">
+<emphasis id="strong1041" effect="bold">
+More complex Flex projects
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1073">
+In general, to create more complex Flex projects, you will also need to add 
+child elements, 
+
+<emphasis id="em1028" effect="italics">
+(which may or may not include attributes)
+
+</emphasis>
+, to the
+
+
+<emphasis id="strong1042" effect="bold">
+Application
+
+</emphasis>
+  element.
+
+</para>
+
+
+
+
+<para id="p1074">
+To incorporate logic in your Flex projects, you will need to learn how to write 
+some ActionScript code and embed ActionScript code in your Flex code 
+
+<emphasis id="em1029" effect="italics">
+(or 
+integrate ActionScript code in other ways)
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+
+<para id="p1075">
+<emphasis id="strong1043" effect="bold">
+Layout versus behavior
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1076">
+As I mentioned earlier, you can develop your Flex applications using the 
+XML-based Flex language to establish the layout for your application.
+
+</para>
+
+
+
+
+
+<para id="p1077">
+Although it is possible to use Flex alone to provide simple behavior for your 
+applications 
+
+<emphasis id="em1030" effect="italics">
+(simple event handling for example)
+
+</emphasis>
+, you will probably need 
+to use ActionScript 3 to produce more complex behavior for your applications. 
+
+<emphasis id="em1031" effect="italics">
+
+(Even the simple behavior requires some ActionScript, but it's not so obvious 
+where the Flex code ends and the ActionScript code begins.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1078">
+
+The layout capability in Flex 3 consists of containers 
+
+<emphasis id="em1032" effect="italics">
+(that may contain other containers)
+
+</emphasis>
+
+with names like 
+
+<emphasis id="strong1044" effect="bold">
+Canvas
+
+</emphasis>
+, 
+
+<emphasis id="strong1045" effect="bold">
+HBox
+
+</emphasis>
+, 
+
+<emphasis id="strong1046" effect="bold">
+VBox
+
+</emphasis>
+, etc. The 
+containers can also contain controls with names like 
+
+<emphasis id="strong1047" effect="bold">
+Button
+
+</emphasis>
+, 
+
+<emphasis id="strong1048" effect="bold">
+CheckBox
+
+</emphasis>
+,
+
+
+<emphasis id="strong1049" effect="bold">
+ComboBox
+
+</emphasis>
+, etc.
+
+</para>
+
+
+
+
+
+<para id="p1079">
+<emphasis id="strong1050" effect="bold">
+The text editor
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1080">
+The upper-middle pane in the Flash Builder 4 IDE has two tabs labeled 
+
+<emphasis id="strong1051" effect="bold">
+Source
+
+</emphasis>
+ and
+
+
+<emphasis id="strong1052" effect="bold">
+Design
+
+</emphasis>
+. If you select the 
+
+<emphasis id="strong1053" effect="bold">
+Source
+
+</emphasis>
+ tab, this upper-middle pane 
+becomes a text editor in which you can edit XML and ActionScript code. In 
+addition, the lower-left pane becomes an outline showing the hierarchical 
+structure of your XML or ActionScript code.
+
+</para>
+
+
+
+
+
+<para id="p1081">
+<emphasis id="strong1054" effect="bold">
+<emphasis id="The_visual_design_editor" effect="bold">
+
+The visual design 
+editor
+
+</emphasis>
+
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1082">
+If you select the 
+
+<emphasis id="strong1055" effect="bold">
+Design
+
+</emphasis>
+ tab, the upper-middle pane becomes a visual 
+design editor and the lower-left pane becomes a toolbox containing a variety of
+
+
+<emphasis id="em1033" effect="italics">
+components
+
+</emphasis>
+ including Controls, Layouts, Navigators, and Charts. 
+
+<emphasis id="em1034" effect="italics">
+
+(Note that there are differences in the component sets for Flex 3 and Flex 4.)
+
+</emphasis>
+ In 
+this mode, you can drag components from the lower-left pane into the design pane 
+and make physical adjustments to their location, length, width, etc.
+
+</para>
+
+
+
+
+
+<para id="p1083">
+In addition, in design mode, the lower-right pane becomes a property window. 
+You can select a component in the design pane and then set various properties 
+such as font, color, etc., in the properties window.
+
+</para>
+
+
+
+
+
+<para id="p1084">
+<emphasis id="strong1056" effect="bold">
+XML code is automatically updated
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1085">
+When you drag a component into the design pane and set properties on that 
+component, the XML code is automatically updated to reflect the addition of that 
+component with the specified properties. Therefore, when using Flash Builder 4 
+in design mode, 
+you can largely avoid having to write raw XML code.
+
+</para>
+
+
+
+
+
+<para id="p1086">
+<emphasis id="strong1057" effect="bold">
+Flash Builder 4 versus the free open-source SDK
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1087">
+
+This visual design capability is probably the most important feature of Flash 
+Builder 4 that separates it from the free open-source Flex 3 and Flex 4 SDKs. Flash Builder 
+4 lets you design your layout visually and it writes much of the XML 
+code for you.
+
+</para>
+
+
+
+
+<para id="p1088">
+
+
+
+<emphasis id="strong1058" effect="bold">
+Documentation
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1089">
+
+
+
+<emphasis id="strong1059" effect="bold">
+The
+
+</emphasis>
+  Adobe site provides extensive online documentation for Flex, Flash 
+Builder, and ActionScript. You will find numerous links to documentation 
+in 
+
+<link id="a1038" target-id="Resources">
+
+Resources
+
+</link>
+
+. This is where you go to learn how to use 
+the Flex language in detail.
+
+</para>
+
+
+
+
+
+<para id="p1090">
+<emphasis id="strong1060" effect="bold">
+Documentation format
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1091">
+
+In its default form, much of the documentation is divided into three frames, two 
+stacked vertically on the left and one on the right. If you select 
+
+<emphasis id="strong1061" effect="bold">
+All 
+Packages
+
+</emphasis>
+ and 
+
+<emphasis id="strong1062" effect="bold">
+Frames
+
+</emphasis>
+ 
+
+<emphasis id="em1035" effect="italics">
+(or something similar)
+
+</emphasis>
+ at the top of the rightmost frame, you will see 
+Flex XML elements 
+
+<emphasis id="em1036" effect="italics">
+(classes)
+
+</emphasis>
+ listed in the 
+lower-left frame.
+
+</para>
+
+
+
+
+
+<para id="p1092">
+<emphasis id="strong1063" effect="bold">
+Select 
+
+<emphasis id="em1037" effect="italics">
+No Frames
+
+</emphasis>
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1093">
+If you select 
+
+<emphasis id="strong1064" effect="bold">
+No Frames
+
+</emphasis>
+  at the top, 
+
+<emphasis id="em1038" effect="italics">
+(which is not always 
+available)
+
+</emphasis>
+ the two frames on the left will 
+disappear. This is useful if you want to use the 
+
+<emphasis id="strong1065" effect="bold">
+Find
+
+</emphasis>
+ capability of 
+your browser to search for a word in the right frame. You can restore the 
+three-frame format by selecting 
+
+<emphasis id="strong1066" effect="bold">
+Frames
+
+</emphasis>
+ at the top of the page.
+
+</para>
+
+
+
+
+
+<para id="p1094">
+<emphasis id="strong1067" effect="bold">
+Select a class
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1095">
+If you select a class, such as 
+
+<emphasis id="strong1068" effect="bold">
+Application
+
+</emphasis>
+, in the lower-left frame, 
+information about that class appears in the rightmost frame. If you find two or 
+more classes with the same name in the lower-left frame, one probably refers to 
+the Flex 3 version of the class and the other probably refers to the Flex 4 
+version of the class. You must be very careful to make certain that you know 
+which you are reading about. Reading about one and thinking that you are reading 
+about the other can lead to very frustrating programming errors.
+
+</para>
+
+
+
+
+<para id="p1096">
+<emphasis id="strong1069" effect="bold">
+Styles
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1097">
+Many of the 
+
+<link id="a1039" target-id="The_visual_design_editor">
+
+components
+
+</link>
+
+ in Flex 3 have a variety of 
+styles that can be applied to the component either through the specification of 
+attributes in the XML element or the use of a 
+
+<emphasis id="strong1070" effect="bold">
+Style
+
+</emphasis>
+ element that 
+resembles a style sheet. 
+
+<emphasis id="em1039" effect="italics">
+(That is much less true for Flex 4, which takes a 
+different approach.)
+
+</emphasis>
+ The Flex 3 example that I will explain in the next 
+section will illustrate the relationship among the following properties and styles for the
+
+
+<emphasis id="Application_element" effect="bold">
+
+
+
+
+<emphasis id="strong1071" effect="bold">
+Application
+
+</emphasis>
+ element
+
+</emphasis>
+
+:
+
+</para>
+
+
+
+
+<list id="ul1008" list-type="bulleted">
+
+  
+
+<item id="li1032">
+backgroundColor
+
+</item>
+
+
+  
+
+<item id="li1033">
+backgroundGradientColors
+
+</item>
+
+
+  
+
+<item id="li1034">
+backgroundAlpha
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+
+
+</section>
+<section id="h11004">
+<title>
+<emphasis id="DiscussionAndSamplePrograms" effect="bold">
+
+
+</emphasis>
+
+Discussion and sample code
+
+</title>
+
+
+
+
+
+
+<para id="p1098">
+The 
+
+<emphasis id="strong1072" effect="bold">
+Application
+
+</emphasis>
+  element 
+
+<emphasis id="em1040" effect="italics">
+(see Listing 2)
+
+</emphasis>
+ is a container into which you can place other 
+components including other containers. Future lessons will be concerned with 
+the containment properties of the 
+
+<emphasis id="strong1073" effect="bold">
+Application
+
+</emphasis>
+ element. In this lesson, I 
+will concentrate on the properties and styles listed 
+
+
+<link id="a1040" target-id="Application_element">
+
+above
+
+</link>
+
+ that can be applied to that 
+element.
+
+</para>
+
+
+
+
+
+<para id="p1099">
+<emphasis id="strong1074" effect="bold">
+Run the program
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1100">
+
+Before continuing, I suggest that you 
+
+<link id="a1041" target-id="Click">
+
+run
+
+</link>
+
+ the 
+program named 
+
+<emphasis id="strong1075" effect="bold">
+AppBackground01
+
+</emphasis>
+ to familiarize yourself with the screen output.
+
+</para>
+
+
+
+
+<section id="h21003">
+<title>
+
+
+
+<emphasis id="The_Flex_3_version" effect="bold">
+
+The Flex 3 version
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1101">
+<emphasis id="strong1076" effect="bold">
+The mxml file
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1102">
+An XML listing for the Flex 3 application named 
+
+<emphasis id="strong1077" effect="bold">
+AppBackground01
+
+</emphasis>
+ is shown 
+in Listing 2.
+
+</para>
+
+
+
+
+<example id="listing1001" type="listing">
+<label>Listing</label>
+
+
+
+
+<title>
+<emphasis id="Listing_2" effect="bold">
+</emphasis>
+Flex 3 application  	namedAppBackground01.
+</title>
+
+
+
+
+
+
+
+<code id="pre1001" display="block">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"
+         
+        backgroundColor="#FF0000"
+        backgroundGradientColors="[#00FF00, #0000FF]"
+        backgroundAlpha="1.0"&gt;
+&lt;/mx:Application&gt;</code>
+
+
+
+
+</example>
+
+
+
+
+
+
+
+<para id="p1103">
+<emphasis id="strong1078" effect="bold">
+Background color, color gradient, and 
+transparency
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1104">
+The output for this application is similar to that shown in Figure 2 except 
+that in this case, the color, color gradient, and transparency for the 
+background is being controlled through the use of the following attributes:
+
+</para>
+
+
+
+
+<list id="ul1009" list-type="bulleted">
+
+  
+
+<item id="li1035">
+backgroundColor
+
+</item>
+
+
+  
+
+<item id="li1036">
+backgroundGradientColors
+
+</item>
+
+
+  
+
+<item id="li1037">
+backgroundAlpha
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+<para id="p1105">
+The code in Listing 2 uses the 
+
+<emphasis id="strong1079" effect="bold">
+backgroundColor
+
+</emphasis>
+ attribute of 
+the 
+
+<emphasis id="strong1080" effect="bold">
+Application
+
+</emphasis>
+ element to set the background color of the 
+Flash window to pure 
+red using the hexadecimal notation #FF0000.
+
+</para>
+
+
+
+
+
+<para id="p1106">
+<emphasis id="strong1081" effect="bold">
+A few words about color
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1107">
+For those who may not be familiar with this concept, the overall background 
+color is controlled by a mixture of different contributions of the red, green, 
+and blue primary colors. For example, pure red plus pure blue produces a 
+color commonly known as 
+
+<emphasis id="em1041" effect="italics">
+magenta
+
+</emphasis>
+. Pure green plus 
+pure blue produces 
+
+<emphasis id="em1042" effect="italics">
+cyan
+
+</emphasis>
+. 
+Pure red plus pure green produces 
+
+<emphasis id="em1043" effect="italics">
+yellow
+
+</emphasis>
+. Pure red plus pure 
+green plus pure blue produces 
+
+<emphasis id="em1044" effect="italics">
+white
+
+</emphasis>
+. The absence of all three 
+colors produces black.
+
+</para>
+
+
+
+
+
+<para id="p1108">
+<emphasis id="strong1082" effect="bold">
+Three eight-bit bytes
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1109">
+The values for red, green, and blue respectively are specified by the values 
+of three eight-bit bytes. The value of each byte can range from 0 to 255 
+decimal 
+
+<emphasis id="em1045" effect="italics">
+(00 to FF in hexadecimal)
+
+</emphasis>
+. A value of 0 
+
+<emphasis id="em1046" effect="italics">
+(00 in hexadecimal)
+
+</emphasis>
+ means that the 
+primary color is not included in the mixture and a value of 255 
+
+<emphasis id="em1047" effect="italics">
+(FF in 
+hexadecimal)
+
+</emphasis>
+  means that 
+the primary color is included full strength in the mixture.
+
+</para>
+
+
+
+
+
+<para id="p1110">
+Using this scheme, it is possible to generate more than sixteen million 
+different colors.
+
+</para>
+
+
+
+
+
+<para id="p1111">
+The order of the red, green, and blue contributions to the overall color in 
+hexadecimal notation is RRGGBB, where the letter pairs stand for red, green, and 
+blue respectively.
+
+</para>
+
+
+
+
+
+<para id="p1112">
+<emphasis id="strong1083" effect="bold">
+A color gradient
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1113">
+The Flex 3 application shown in Listing 2 sets the 
+
+<emphasis id="strong1084" effect="bold">
+backgroundGradientColors
+
+</emphasis>
+
+attribute of the 
+
+<emphasis id="strong1085" effect="bold">
+Application
+
+</emphasis>
+ element
+to range from pure green 
+
+<emphasis id="em1048" effect="italics">
+(#00FF00)
+
+</emphasis>
+ at the top of the Flash window to 
+pure blue 
+
+<emphasis id="em1049" effect="italics">
+(#0000FF)
+
+</emphasis>
+ at the bottom. As mentioned earlier, the 
+application sets the 
+
+<emphasis id="strong1086" effect="bold">
+backgroundColor
+
+</emphasis>
+ to pure red using the hexadecimal 
+notation #FF0000.
+
+</para>
+
+
+
+
+<quote id="blockquote1002" display="block">
+<emphasis id="em1050" effect="italics">
+As you will see later, the 
+
+<emphasis id="strong1087" effect="bold">
+Application
+
+</emphasis>
+ element 
+	of a Flex 4 application doesn't have an attribute named 
+
+<emphasis id="strong1088" effect="bold">
+
+	backgroundGradientColors
+
+</emphasis>
+, so we will have to find another way to 
+	create a color gradient in the Flash window for a Flex 4 application.
+
+</emphasis>
+</quote>
+
+
+
+
+<para id="p1114">
+<emphasis id="strong1089" effect="bold">
+Alpha
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1115">
+<emphasis id="strong1090" effect="bold">
+The
+
+</emphasis>
+ appearance of the resulting mix of colors can be controlled by changing 
+the value of the 
+
+<emphasis id="strong1091" effect="bold">
+backgroundAlpha
+
+</emphasis>
+ attribute of the 
+
+<emphasis id="strong1092" effect="bold">
+
+Application
+
+</emphasis>
+ element. This attribute can take on values ranging between 0.0 
+and 1.0. 
+
+<emphasis id="em1051" effect="italics">
+(In other programming systems, alpha is often allowed to vary 
+between 0 and 255 decimal, or between 00 and FF hexadecimal.)
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1116">
+<emphasis id="strong1093" effect="bold">
+Transparency or opacity
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1117">
+For those not familiar with the concepts surrounding screen color and 
+transparency, the value of alpha 
+specifies a transparency or opacity level. When an attempt is made to draw 
+a pixel in the same screen location as an existing pixel, the color 
+of the last pixel drawn will be completely opaque and will dominate if it has an 
+alpha value of 1.0. In that case, the first pixel drawn will no longer be 
+visible.
+
+</para>
+
+
+
+
+
+<para id="p1118">
+If the last pixel drawn has an alpha value of 0, it will be totally 
+transparent and the first pixel drawn will continue to be totally visible.
+
+</para>
+
+
+
+
+
+<para id="p1119">
+For values between 0.0 and 1.0, the first pixel drawn will show through to 
+some extent and the final color of the pixel will be a mix of the original color 
+and the new color.
+
+</para>
+
+
+
+
+
+<para id="p1120">
+<emphasis id="strong1094" effect="bold">
+Four runs with different alpha values
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1121">
+For this example, the Flex 3 application was modified, compiled, and run four times 
+in succession by substituting four different values of 
+
+<emphasis id="strong1095" effect="bold">
+backgroundAlpha
+
+</emphasis>
+
+into the code in Listing 2. The results are shown in Figure 3.
+
+</para>
+
+
+
+
+<figure id="figure1002" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_3" effect="bold">
+</emphasis>
+Application window background for alpha  	values of 0.0, 0.33, 0.66, and 1.0.
+</title>
+
+
+
+			
+
+<media id="media1002" alt="Missing image." display="block">
+<image id="img1002" mime-type="image/jpeg" src="../../media/flex0102g.jpg" width="506" height="590"/>
+</media>
+
+
+
+
+<caption>Application window background for alpha  	values of 0.0, 0.33, 0.66, and 1.0.</caption>
+</figure>
+
+
+
+
+
+	
+
+<para id="p1122">
+<emphasis id="strong1096" effect="bold">
+Four output images
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1123">
+The four images shown in Figure 3, going from left to right, top to bottom, 
+represent alpha values of 0.0, 0.33, 0.66, and 1.0 respectively.
+
+</para>
+
+
+
+
+
+<para id="p1124">
+<emphasis id="strong1097" effect="bold">
+An alpha value of 0.0
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1125">
+For an alpha value of 0.0, the output color is pure red as shown by the 
+top-left image in Figure 3. In this case, the gradient color scheme is 
+totally transparent.
+
+</para>
+
+
+
+
+
+<para id="p1126">
+<emphasis id="strong1098" effect="bold">
+An alpha value of 1.0
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1127">
+For an alpha value of 1.0, the output colors range from pure green at the top 
+to pure blue at the bottom as shown in the bottom-right image in Figure 3. 
+In this case, the gradient color scheme is totally opaque and the red background 
+color doesn't show through at all.
+
+</para>
+
+
+
+
+
+<para id="p1128">
+<emphasis id="strong1099" effect="bold">
+Alpha values of 0.33 and 0.66
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1129">
+For alpha values of 0.33 and 0.66, the output is a mix of the red background 
+and the green/blue gradient as shown by the top-right and bottom-left images in 
+Figure 3.
+
+</para>
+
+
+
+
+
+<quote id="blockquote1003" display="block">
+
+  
+
+<emphasis id="em1052" effect="italics">
+(The image in the bottom-left corner of Figure 3 corresponds to what you 
+  should see if you 
+
+<link id="a1042" target-id="Click">
+
+run
+
+</link>
+
+ the online version of this application.)
+
+</emphasis>
+
+
+
+</quote>
+
+
+
+
+
+<para id="p1130">
+<emphasis id="strong1100" effect="bold">
+Conclusion regarding the Flex 3 version
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1131">
+These results suggest that the alpha value specified by
+
+
+<emphasis id="strong1101" effect="bold">
+backgroundAlpha
+
+</emphasis>
+ in Flex 3 applies to the colors specified by
+
+
+<emphasis id="strong1102" effect="bold">
+backgroundGradientColors
+
+</emphasis>
+ and does not apply to the color specified by
+
+
+<emphasis id="strong1103" effect="bold">
+backgroundColor
+
+</emphasis>
+. .
+
+</para>
+
+
+
+
+
+<para id="p1132">
+In other words, the gradient colors can be made more or less transparent by 
+changing the value of 
+
+<emphasis id="strong1104" effect="bold">
+backgroundAlpha
+
+</emphasis>
+ allowing the red
+
+
+<emphasis id="strong1105" effect="bold">
+backgroundColor
+
+</emphasis>
+ to show through the gradient colors. However, the 
+value of alpha doesn't appear to affect the background color.
+
+</para>
+
+
+
+
+
+<para id="p1133">
+If you modify the code in Listing 2 by removing the 
+
+<emphasis id="strong1106" effect="bold">
+backgroundColor
+
+</emphasis>
+ 
+attribute, and then compile and run it for different values of alpha, you will 
+see a similar result. In that case, however, the resulting colors will be 
+a mixture of the default gray background color shown in Figure 1 and the 
+green/blue gradient shown in the bottom right corner of Figure 3.
+
+</para>
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="The_Flex_4_version" effect="bold">
+
+The Flex 4 version
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1134">
+The Flex 4 program named 
+
+<emphasis id="strong1107" effect="bold">
+AppBackground03
+
+</emphasis>
+ replicates the 
+behavior of the Flex 3 version named 
+
+<emphasis id="strong1108" effect="bold">
+AppBackground01
+
+</emphasis>
+. By 
+necessity, this version of the program is significantly more complicated than 
+the Flex 3 version.
+
+</para>
+
+
+
+
+<para id="p1135">
+<emphasis id="strong1109" effect="bold">
+The skeleton code
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1136">
+The skeleton code for a Flex 4 project is shown in Listing 3.
+
+</para>
+
+
+
+
+<example id="listing1002" type="listing">
+<label>Listing</label>
+
+
+
+
+<title>
+<emphasis id="Listing_3" effect="bold">
+</emphasis>
+Skeleton mxml code for a new Flex 4 project.
+</title>
+
+
+
+
+
+
+
+<code id="pre1002" display="block">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+               xmlns:s="library://ns.adobe.com/flex/spark" 
+               xmlns:mx="library://ns.adobe.com/flex/mx" 
+               minWidth="955" 
+               minHeight="600"&gt;
+  &lt;fx:Declarations&gt;
+    &lt;!-- Place non-visual elements (e.g., services, 
+    value objects) here --&gt;
+  &lt;/fx:Declarations&gt;
+  
+&lt;/s:Application&gt;</code>
+
+
+
+
+</example>
+
+
+
+
+
+
+
+<para id="p1137">
+This is not the first time that you have seen this code. I discussed the 
+skeleton code for a Flex 4 project in an earlier lesson having to do with 
+namespaces in Flex 4. Therefore, Listing 3 shouldn't require any further 
+discussion
+
+</para>
+
+
+	
+
+<para id="p1138">
+<emphasis id="strong1110" effect="bold">
+The mxml file for AppBackground03 
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1139">
+An XML listing for the Flex 4 application named 
+
+<emphasis id="strong1111" effect="bold">
+AppBackground03
+
+</emphasis>
+ 
+is shown in Listing 4.
+
+</para>
+
+
+
+
+<example id="listing1003" type="listing">
+<label>Listing</label>
+
+
+
+
+<title>
+<emphasis id="Listing_4" effect="bold">
+</emphasis>
+Flex 4 application named AppBackground03.
+</title>
+
+
+
+
+
+
+
+<code id="pre1003" display="block">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;!--AppBackground03.mxml
+This is a Flex 4 replica of the Flex 3 project named 
+AppBackground01.
+--&gt;
+&lt;s:Application 
+    xmlns:fx="http://ns.adobe.com/mxml/2009" 
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    backgroundColor="#ff0000"&gt;
+
+  &lt;s:Rect width="100%" height="100%"&gt;
+    &lt;s:fill&gt;
+      &lt;s:LinearGradient rotation="90"&gt;
+        &lt;s:entries&gt;
+          &lt;s:GradientEntry color="0x00FF00" 
+                           ratio="0.0" 
+                           alpha="0.66"/&gt;
+          &lt;s:GradientEntry color="0x0000FF" 
+                           ratio="1.0" 
+                           alpha="0.66"/&gt;
+        &lt;/s:entries&gt;
+      &lt;/s:LinearGradient&gt;
+
+    &lt;/s:fill&gt;
+  &lt;/s:Rect&gt;
+&lt;/s:Application&gt;
+
+</code>
+
+
+
+
+</example>
+
+
+
+
+
+
+
+<para id="p1140">
+<emphasis id="strong1112" effect="bold">
+Essentially the same output
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1141">
+This Flex 4 code produces essentially the same visual output as the Flex 3 code 
+shown in Listing 2. As you can see, however, this code is much more complicated 
+than the code in Listing 2. 
+
+<emphasis id="em1053" effect="italics">
+(Remember, Flex 4 is more powerful but is also more 
+complicated.)
+
+</emphasis>
+ Not only is the code more complicated, but the concepts 
+behind the code are also more complicated.
+
+</para>
+
+
+
+
+<para id="p1142">
+<emphasis id="strong1113" effect="bold">
+A style named backgroundGradientColors in Flex 3
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1143">
+The Flex 3 
+
+<emphasis id="strong1114" effect="bold">
+Application
+
+</emphasis>
+ class has a property named 
+
+<emphasis id="strong1115" effect="bold">
+
+backgroundColor
+
+</emphasis>
+, and a large number of styles including 
+
+<emphasis id="strong1116" effect="bold">
+
+backgroundGradientColors 
+
+</emphasis>
+and 
+
+<emphasis id="strong1117" effect="bold">
+backgroundAlpha
+
+</emphasis>
+. The code 
+in Listing 2 uses that property and those styles to control the appearance of 
+the Flash window in Flex 3. Of particular significance here is the style named 
+
+<emphasis id="strong1118" effect="bold">
+
+backgroundGradientColors
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1144">
+<emphasis id="strong1119" effect="bold">
+No style named backgroundGradientColors in Flex 4
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1145">
+The Flex 4 
+
+<emphasis id="strong1120" effect="bold">
+Application
+
+</emphasis>
+ class also has a property named
+
+
+<emphasis id="strong1121" effect="bold">
+backgroundColor
+
+</emphasis>
+. The value of that property is set to red in 
+Listing 4. It also has a style named 
+
+<emphasis id="strong1122" effect="bold">
+backgroundAlpha 
+
+</emphasis>
+but I'm 
+not sure what its purpose is. However, 
+it does not have a style named 
+
+<emphasis id="strong1123" effect="bold">
+backgroundGradientColors
+
+</emphasis>
+. 
+Therefore, some other way must be found to implement a gradient color scheme in 
+Flex 4 in order to replicate the behavior of the Flex 3 project shown in Listing 
+2.
+
+</para>
+
+
+
+
+<para id="p1146">
+<emphasis id="strong1124" effect="bold">
+Replicating the behavior of AppBackground01
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1147">
+There may be a variety of ways to accomplish this. One of those ways is to 
+cover the entire Flash window with a rectangle and cause the rectangle to 
+exhibit the desired gradient characteristics. This is illustrated in Listing 4.
+
+</para>
+
+
+
+
+<para id="p1148">
+Listing 4 begins by adding a 
+
+<emphasis id="strong1125" effect="bold">
+Rect
+
+</emphasis>
+ object whose dimensions 
+cover one-hundred percent of the Flash window. 
+
+<emphasis id="em1054" effect="italics">
+(Note that all of the 
+elements in Listing 4 are in the spark namespace named "s".)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1149">
+<emphasis id="strong1126" effect="bold">
+What is a fill element?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1150">
+Unfortunately, this is the point where you need become heavily involved in 
+the concepts of object-oriented programming in ActionScript for the code in Listing 4 to make 
+sense. I apologize in advance for the explanation that follows. However, I don't know 
+any other way to explain it, so I will explain it using a combination ActionScript OOP 
+terminology and mxml terminology.
+
+</para>
+
+
+
+
+<para id="p1151">
+<emphasis id="strong1127" effect="bold">
+What is a Rect element?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1152">
+<emphasis id="strong1128" effect="bold">
+Rect
+
+</emphasis>
+ is a class that represents a rectangle in the 
+ActionScript package 
+named 
+
+<emphasis id="strong1129" effect="bold">
+spark.primitives
+
+</emphasis>
+. The mxml code in Listing 4 causes an 
+object of the 
+
+<emphasis id="strong1130" effect="bold">
+Rect
+
+</emphasis>
+ class to be placed in the Flash window in 
+front of the white default background. As mentioned above, the dimensions of the 
+rectangle are such as to cover the entire Flash window, even when the size of the 
+window is changed by the user. 
+
+<emphasis id="em1055" effect="italics">
+(Note that the name 
+
+<emphasis id="strong1131" effect="bold">
+Rect
+
+</emphasis>
+ begins with an upper-case 
+character. That is a clue as to what is going on.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1153">
+<emphasis id="strong1132" effect="bold">
+Once again, what is a 
+
+<emphasis id="em1056" effect="italics">
+fill
+
+</emphasis>
+ element?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1154">
+Note that the name of this element begins with a lower-case character. That is 
+also a clue as to what is going on. The 
+
+<emphasis id="strong1133" effect="bold">
+fill
+
+</emphasis>
+ element refers to 
+a property of the 
+
+<emphasis id="strong1134" effect="bold">
+Rect
+
+</emphasis>
+ object. According to the
+
+
+<link id="a1043" url="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/spark/primitives/supportClasses/FilledElement.html#fill">
+
+
+documentation
+
+</link>
+
+, the value of this property must be of type 
+
+<emphasis id="strong1135" effect="bold">
+IFill
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1155">
+<emphasis id="strong1136" effect="bold">
+<emphasis id="What_is_type_IFill" effect="bold">
+
+What is type IFill
+
+</emphasis>
+
+?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1156">
+<emphasis id="strong1137" effect="bold">
+IFill
+
+</emphasis>
+ is the name of an ActionScript 
+
+<emphasis id="em1057" effect="italics">
+interface
+
+</emphasis>
+. 
+
+<emphasis id="em1058" effect="italics">
+(Note 
+that IFill begins with an upper-case character. Once again, that is a clue.)
+
+</emphasis>
+ 
+Declaring that the value of the property named 
+
+<emphasis id="strong1138" effect="bold">
+fill
+
+</emphasis>
+ must be of 
+type 
+
+<emphasis id="strong1139" effect="bold">
+IFill
+
+</emphasis>
+ means that the value must be a reference to 
+an object of any class that satisfies the interface requirements defined by
+
+
+<emphasis id="strong1140" effect="bold">
+IFill
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1157">
+According to the
+
+
+<link id="a1044" url="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/graphics/IFill.html">
+
+
+documentation
+
+</link>
+
+, the following classes satisfy that requirement:
+
+</para>
+
+
+
+
+<list id="ul1010" list-type="bulleted">
+
+	
+
+<item id="li1038">
+
+	
+
+<link id="a1045" url="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/graphics/BitmapFill.html">
+
+
+	BitmapFill
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1039">
+
+	
+
+<link id="a1046" url="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/graphics/LinearGradient.html">
+
+
+	LinearGradient
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1040">
+
+	
+
+<link id="a1047" url="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/graphics/RadialGradient.html">
+
+
+	RadialGradient
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1041">
+
+	
+
+<link id="a1048" url="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/graphics/SolidColor.html">
+
+
+	SolidColor
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1158">
+<emphasis id="strong1141" effect="bold">
+Add a LinearGradient object
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1159">
+The next thing that appears in Listing 4 is an element named
+
+
+<emphasis id="strong1142" effect="bold">
+LinearGradient
+
+</emphasis>
+. 
+
+<emphasis id="em1059" effect="italics">
+(Note that LinearGradient begins with an 
+upper-case character.)
+
+</emphasis>
+ According to the
+
+
+<link id="a1049" url="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/graphics/LinearGradient.html">
+
+
+documentation
+
+</link>
+
+, 
+
+<emphasis id="strong1143" effect="bold">
+LinearGradient
+
+</emphasis>
+ is a class in the 
+ActionScript package named 
+
+<emphasis id="strong1144" effect="bold">
+mx.graphics
+
+</emphasis>
+. 
+
+<emphasis id="em1060" effect="italics">
+(It isn't clear how it can be accessed 
+via the spark namespace, but as you can see in Listing 4, that is obviously the 
+case.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1160">
+<emphasis id="strong1145" effect="bold">
+What have we accomplished so far?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1161">
+Up to this point, the interpretation of 
+the code in Listing 4 is that we have:
+
+</para>
+
+
+
+
+<list id="ol1000" list-type="enumerated">
+
+	
+
+<item id="li1042">
+Created a 
+
+<emphasis id="strong1146" effect="bold">
+Rect
+
+</emphasis>
+ object, set its width and height 
+	attributes to completely cover the Flash window, and added it to the Flash 
+	Window.
+
+</item>
+
+
+	
+
+<item id="li1043">
+Created a 
+
+<emphasis id="strong1147" effect="bold">
+LinearGradient
+
+</emphasis>
+ object, set its
+
+<emphasis id="strong1148" effect="bold">
+ 
+	rotation
+
+</emphasis>
+ attribute to 90,
+
+<emphasis id="strong1149" effect="bold">
+ 
+
+</emphasis>
+and assigned its 
+	reference to the 
+
+<emphasis id="strong1150" effect="bold">
+fill
+
+</emphasis>
+ property of the 
+
+<emphasis id="strong1151" effect="bold">
+Rect
+
+</emphasis>
+ 
+	object.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1162">
+<emphasis id="strong1152" effect="bold">
+The element named entries
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1163">
+The next thing that we see in Listing 4 is an element named 
+
+<emphasis id="strong1153" effect="bold">
+entries
+
+</emphasis>
+ 
+that is added to the
+
+<emphasis id="strong1154" effect="bold">
+ LinearGradient
+
+</emphasis>
+ element. Once again, note that 
+this name begins with a lower-case character.
+
+</para>
+
+
+
+
+<para id="p1164">
+The
+
+
+<link id="a1050" url="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/graphics/LinearGradient.html">
+
+
+documentation
+
+</link>
+
+ tells us that the 
+
+<emphasis id="strong1155" effect="bold">
+LinearGradient
+
+</emphasis>
+ class has a property named 
+
+<emphasis id="strong1156" effect="bold">
+
+entries
+
+</emphasis>
+. The documentation further tells us that the value of this 
+property must be an array containing references to objects of the class named
+
+
+<emphasis id="strong1157" effect="bold">
+GradientEntry
+
+</emphasis>
+. These objects 
+
+<emphasis id="em1061" effect="italics">
+"define the fill pattern for the 
+gradient fill."
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1165">
+<emphasis id="strong1158" effect="bold">
+Two GradientEntry elements
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1166">
+Referring back to Listing 4, we see that the two inner-most elements are two 
+elements named 
+
+<emphasis id="strong1159" effect="bold">
+GradientEntry
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1167">
+We can now update the list of things that we have accomplished to read as 
+follows:
+
+</para>
+
+
+
+
+<list id="ol1001" list-type="enumerated">
+
+	
+
+<item id="li1044">
+Created a 
+
+<emphasis id="strong1160" effect="bold">
+Rect
+
+</emphasis>
+ object, set its width and height 
+	attributes to completely cover the Flash window, and added it to the Flash 
+	Window.
+
+</item>
+
+
+	
+
+<item id="li1045">
+Created a 
+
+<emphasis id="strong1161" effect="bold">
+LinearGradient
+
+</emphasis>
+ object, set its
+
+<emphasis id="strong1162" effect="bold">
+ 
+	rotation
+
+</emphasis>
+ attribute to 90,
+
+<emphasis id="strong1163" effect="bold">
+ 
+
+</emphasis>
+and assigned its 
+	reference to the 
+
+<emphasis id="strong1164" effect="bold">
+fill
+
+</emphasis>
+ property of the 
+
+<emphasis id="strong1165" effect="bold">
+Rect
+
+</emphasis>
+ 
+	object.
+
+</item>
+
+
+	
+
+<item id="li1046">
+Created two 
+
+<emphasis id="strong1166" effect="bold">
+GradientEntry
+
+</emphasis>
+ objects, set the values of 
+	three attributes on each object with values that I will explain later, 
+	placed those objects in a two-element array, and assigned that array to the
+
+<emphasis id="strong1167" effect="bold">
+ 
+	entries
+
+</emphasis>
+ property of the
+
+<emphasis id="strong1168" effect="bold">
+ LinearGradient
+
+</emphasis>
+ object 
+	created earlier.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1168">
+<emphasis id="strong1169" effect="bold">
+The rotation attribute of the LinearGradient object
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1169">
+Before getting into the attributes of the 
+
+<emphasis id="strong1170" effect="bold">
+GradientEntry
+
+</emphasis>
+ 
+objects, let's go back and take a look at the 
+
+<emphasis id="em1062" effect="italics">
+rotation
+
+</emphasis>
+ attribute of the
+
+
+<emphasis id="strong1171" effect="bold">
+LinearGradient
+
+</emphasis>
+ object.
+
+</para>
+
+
+
+
+<para id="p1170">
+According to the
+
+
+<link id="a1051" url="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/graphics/LinearGradient.html">
+
+
+documentation
+
+</link>
+
+:
+
+</para>
+
+
+
+
+<quote id="blockquote1004" display="block">
+The LinearGradient class lets you specify the fill of a graphical 
+element, where a gradient specifies a gradual color transition in the fill 
+color. You add a series of GradientEntry objects to the LinearGradient object's
+entries Array to define the colors that make up the gradient fill.
+
+</quote>
+
+
+
+
+<para id="p1171">
+By default, the color transition is from left to right. However, by 
+specifying a rotation value in degrees for the 
+
+<emphasis id="strong1172" effect="bold">
+rotation
+
+</emphasis>
+ 
+property, you can cause the color transition to take place along an invisible 
+line that is rotated by that amount relative to the horizontal.
+
+</para>
+
+
+
+
+<para id="p1172">
+Setting the rotation attribute to 90 degrees in Listing 4 causes the invisible line 
+to be vertical and causes the color transition to take place from the top to the 
+bottom of the Flash window as shown in Figure 3.
+
+</para>
+
+
+
+
+<para id="p1173">
+<emphasis id="strong1173" effect="bold">
+The color attributes of the GradientEntry elements
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1174">
+According to the
+
+
+<link id="a1052" url="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/graphics/GradientEntry.html">
+
+
+documentation
+
+</link>
+
+, 
+
+<emphasis id="strong1174" effect="bold">
+GradientEntry
+
+</emphasis>
+ is a class in the 
+
+<emphasis id="strong1175" effect="bold">
+
+mx.graphics
+
+</emphasis>
+ package. 
+
+<emphasis id="em1063" effect="italics">
+(Note that the name begins with an upper-case 
+character.)
+
+</emphasis>
+ A 
+
+<emphasis id="strong1176" effect="bold">
+GradientEntry
+
+</emphasis>
+ element can define several attributes, 
+including 
+
+<emphasis id="strong1177" effect="bold">
+color
+
+</emphasis>
+, 
+
+<emphasis id="strong1178" effect="bold">
+ratio
+
+</emphasis>
+, and 
+
+<emphasis id="strong1179" effect="bold">
+alpha
+
+</emphasis>
+. 
+Let's begin by taking a look at the 
+
+<emphasis id="strong1180" effect="bold">
+color
+
+</emphasis>
+ attribute.
+
+</para>
+
+
+
+
+<para id="p1175">
+<emphasis id="strong1181" effect="bold">
+The color attributes of the GradientEntry elements
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1176">
+The array of 
+
+<emphasis id="strong1182" effect="bold">
+GradientEntry
+
+</emphasis>
+ objects assigned to the 
+
+<emphasis id="strong1183" effect="bold">
+
+entries
+
+</emphasis>
+ property of the 
+
+<emphasis id="strong1184" effect="bold">
+LinearGradient
+
+</emphasis>
+ object can 
+contain a large number of objects. Each object has a 
+
+<emphasis id="strong1185" effect="bold">
+color
+
+</emphasis>
+ 
+property, which is black by default.
+
+</para>
+
+
+
+
+<para id="p1177">
+The color transition produced by the 
+
+<emphasis id="strong1186" effect="bold">
+LinearGradient
+
+</emphasis>
+ object 
+will begin with the color property of the first object in the array, transition 
+through the colors specified by each successive object, and end up at the color 
+specified by the last object in the array.
+
+</para>
+
+
+
+
+<para id="p1178">
+<emphasis id="strong1187" effect="bold">
+Only two colors for this case
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1179">
+The code in Listing 4 places only two 
+
+<emphasis id="strong1188" effect="bold">
+GradientEntry
+
+</emphasis>
+ objects in the array. The color 
+property for the first one is pure green and the color property for the second 
+one is pure blue. That means that the color will transition from pure green at 
+the top of the Flash window to pure blue at the bottom of the Flash window as 
+shown by the bottom right image in Figure 3.
+
+</para>
+
+
+
+
+<para id="p1180">
+<emphasis id="strong1189" effect="bold">
+The alpha attributes of the GradientEntry elements
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1181">
+The 
+
+<emphasis id="strong1190" effect="bold">
+alpha
+
+</emphasis>
+ attributes shouldn't require much of an 
+explanation. They mean essentially the same thing that the 
+
+<emphasis id="strong1191" effect="bold">
+
+backgroundAlpha
+
+</emphasis>
+ attribute means in Listing 2. The difference is 
+that in Listing 2, the same alpha value is applied to both colors involved in 
+the color transition while in Listing 4, each color involved in the transition 
+has its own alpha value.
+
+</para>
+
+
+
+
+<para id="p1182">
+<emphasis id="strong1192" effect="bold">
+Replicate the behavior of the Flex 3 program
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1183">
+Setting the pair of alpha values in Listing 4 to 0.0, 0.33, 0.66, and 1.0 and 
+then recompiling and re-running the program for each value causes the Flash window to take on 
+the same four appearances shown from left to right, top to bottom in Figure 3.
+
+</para>
+
+
+
+
+<para id="p1184">
+<emphasis id="strong1193" effect="bold">
+The ratio attributes of the GradientEntry elements
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1185">
+The 
+
+<emphasis id="strong1194" effect="bold">
+ratio
+
+</emphasis>
+ attributes are a little more difficult to explain than the 
+
+<emphasis id="strong1195" effect="bold">
+color
+
+</emphasis>
+ 
+attributes or the 
+
+<emphasis id="strong1196" effect="bold">
+alpha
+
+</emphasis>
+ attributes. 
+
+</para>
+
+
+
+
+<para id="p1186">
+The
+
+
+<link id="a1053" url="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/graphics/GradientEntry.html#ratio">
+
+
+documentation
+
+</link>
+
+ describes the 
+
+<emphasis id="strong1197" effect="bold">
+ratio
+
+</emphasis>
+ property in the following 
+way:
+
+</para>
+
+
+
+
+<quote id="blockquote1005" display="block">
+Where in the graphical element, as a percentage from 0.0 to 1.0, 
+Flex samples the associated color at 100%. For example, a ratio of 0.33 means 
+Flex begins the transition to that color 33% of the way through the graphical 
+element.
+
+</quote>
+
+
+
+
+<para id="p1187">
+<emphasis id="strong1198" effect="bold">
+A picture is worth...
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1188">
+Let's see if I can illustrate this with a picture. I will change both 
+
+<emphasis id="strong1199" effect="bold">
+
+alpha
+
+</emphasis>
+ values in Listing 4 to 1.0 to cause the gradient colors to be 
+totally opaque. Then I will change the 
+
+<emphasis id="strong1200" effect="bold">
+ratio
+
+</emphasis>
+ value to 0.2 for the 
+first 
+
+<emphasis id="em1064" effect="italics">
+(green)
+
+</emphasis>
+ 
+
+<emphasis id="strong1201" effect="bold">
+GradientEntry
+
+</emphasis>
+ object and change the
+
+
+<emphasis id="strong1202" effect="bold">
+ratio
+
+</emphasis>
+ value to 0.8 for the second 
+
+<emphasis id="strong1203" effect="bold">
+GradientEntry
+
+</emphasis>
+ object.
+
+</para>
+
+
+
+
+<para id="p1189">
+The output produced by the program with these attribute values is shown in 
+Figure 4.
+
+</para>
+
+
+
+
+<figure id="figure1003" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_4" effect="bold">
+</emphasis>
+Gradient output for narrow ratio zone.
+</title>
+
+
+
+		
+
+<media id="media1003" alt="Missing image." display="block">
+<image id="img1003" mime-type="image/jpeg" src="../../media/flex0102h.jpg" width="251" height="296"/>
+</media>
+
+
+
+
+<caption>Gradient output for narrow ratio zone.</caption>
+</figure>
+
+
+
+
+
+
+
+<para id="p1190">
+<emphasis id="strong1204" effect="bold">
+Comparison with earlier results
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1191">
+The image shown in Figure 4 will be most meaningful if you compare it with 
+the lower-right image in Figure 3. Although that image was actually produced by 
+the Flex 3 program, the code in Listing 4 would produce the same output for
+
+
+<emphasis id="strong1205" effect="bold">
+alpha
+
+</emphasis>
+ values of 1.0 and 
+
+<emphasis id="strong1206" effect="bold">
+ratio
+
+</emphasis>
+ values of 0.0 
+and 1.0 respectively.
+
+</para>
+
+
+
+
+<para id="p1192">
+For that case, there is a smooth gradient from the very top to the very 
+bottom of the Flash window. In Figure 4, however, there is no gradient in the 
+top twenty-percent or the bottom twenty-percent of the Flash window. Instead the 
+entire gradient is squeezed in between those two limits.
+
+</para>
+
+
+
+
+<para id="p1193">
+<emphasis id="strong1207" effect="bold">
+End of this program
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1194">
+That ends my explanation of the Flex 4 project named 
+
+<emphasis id="strong1208" effect="bold">
+AppBackground03
+
+</emphasis>
+ 
+shown in Listing 4. I hope that this explanation hasn't been too steeped in 
+technical ActionScript details to be understandable, but as I told you earlier, 
+I don't know any other way to explain it. In fact, if it were not for the fact 
+that I am very experienced in ActionScript object-oriented programming, I doubt 
+that I could have understood, much less explained the code in Listing 4.
+
+</para>
+
+
+
+
+<para id="p1195">
+<emphasis id="strong1209" effect="bold">
+Upper case versus lower case
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1196">
+Oops, I almost forgot to explain the upper-case versus lower-case thing that 
+I mentioned several times above.
+
+</para>
+
+
+
+
+<para id="p1197">
+<emphasis id="strong1210" effect="bold">
+Element names and class names
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1198">
+Objects in Flex mxml are represented by element names. Objects are created 
+from classes and the mxml element names mirror the class names from which the 
+objects are created. By convention, class names 
+
+<emphasis id="em1065" effect="italics">
+(and interface names)
+
+</emphasis>
+ 
+begin with an upper-case character in ActionScript.
+
+</para>
+
+
+
+
+<para id="p1199">
+<emphasis id="strong1211" effect="bold">
+Properties and styles
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1200">
+Most objects have properties 
+
+<emphasis id="em1066" effect="italics">
+(such as the 
+
+<emphasis id="strong1212" effect="bold">
+color
+
+</emphasis>
+ property 
+of a 
+
+<emphasis id="strong1213" effect="bold">
+GradientEntry
+
+</emphasis>
+ object)
+
+</emphasis>
+ and some objects have styles
+
+
+<emphasis id="em1067" effect="italics">
+(such as the 
+
+<emphasis id="strong1214" effect="bold">
+backgroundColor
+
+</emphasis>
+ style of an 
+
+<emphasis id="strong1215" effect="bold">
+Application
+
+</emphasis>
+ 
+object)
+
+</emphasis>
+. By convention, property and style names in ActionScript begin with 
+a lower-case character.
+
+</para>
+
+
+
+
+<para id="p1201">
+<emphasis id="strong1216" effect="bold">
+Representation of properties in Flex mxml code
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1202">
+Typically, object properties and styles are represented by attributes having 
+the same names in Flex mxml. However, as illustrated by Listing 4, in some 
+cases, properties can also be represented by elements in Flex 4. 
+
+<emphasis id="em1068" effect="italics">
+(I don't 
+recall having seen this in Flex 3 but that doesn't mean that it is not 
+possible.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1203">
+<emphasis id="strong1217" effect="bold">
+Conclusions regarding upper-case versus lower-case
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1204">
+If you see an element name that begins with an upper-case character, 
+
+<emphasis id="em1069" effect="italics">
+
+(such as 
+
+<emphasis id="strong1218" effect="bold">
+Rect
+
+</emphasis>
+, 
+
+<emphasis id="strong1219" effect="bold">
+LinearGradient
+
+</emphasis>
+, and 
+
+<emphasis id="strong1220" effect="bold">
+
+GradientEntry
+
+</emphasis>
+ in Listing 4)
+
+</emphasis>
+, that probably means that it 
+represents an object.
+
+</para>
+
+
+
+
+<para id="p1205">
+If you see an element name that begins with a lower-case character, 
+
+<emphasis id="em1070" effect="italics">
+(such 
+as 
+
+<emphasis id="strong1221" effect="bold">
+fill
+
+</emphasis>
+ and 
+
+<emphasis id="strong1222" effect="bold">
+entries
+
+</emphasis>
+ in Listing 4)
+
+</emphasis>
+, that 
+probably means that it represents a property.
+
+</para>
+
+
+
+
+</section>
+<section id="h21005">
+<title>
+<emphasis id="Another_Flex_4_application" effect="bold">
+
+Another Flex 4 application
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1206">
+I told you 
+
+<link id="a1054" target-id="What_is_type_IFill">
+
+earlier
+
+</link>
+
+ that in addition to the
+
+
+<link id="a1055" url="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/graphics/LinearGradient.html">
+
+
+LinearGradient
+
+</link>
+
+ class, another of the classes that satisfy the interface 
+requirements of the interface named 
+
+<emphasis id="strong1223" effect="bold">
+<emphasis id="What_is_type_IFill0" effect="bold">
+
+IFill
+
+</emphasis>
+
+
+
+
+</emphasis>
+is
+
+
+<link id="a1056" url="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/mx/graphics/RadialGradient.html">
+
+
+RadialGradient
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1207">
+Figure 5 shows the Flash window for a Flex 4 project that I wrote using the
+
+
+<emphasis id="strong1224" effect="bold">
+RadialGradient
+
+</emphasis>
+ class.
+
+</para>
+
+
+
+
+<figure id="figure1004" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_5" effect="bold">
+</emphasis>
+Flash window for Flex 4 project named  	AppBackground04.
+</title>
+
+
+
+		
+
+<media id="media1004" alt="Missing image." display="block">
+<image id="img1004" mime-type="image/jpeg" src="../../media/flex0102j.jpg" width="251" height="294"/>
+</media>
+
+
+
+
+<caption>Flash window for Flex 4 project named  	AppBackground04.</caption>
+</figure>
+
+
+
+
+
+
+
+<para id="p1208">
+<emphasis id="strong1225" effect="bold">
+An exercise for the student
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1209">
+However, this time I am not going to explain the code that produced the 
+output shown in Figure 5. Instead, I am going to leave it as an exercise for the 
+student to dig into the documentation and figure out how to write the code to 
+produce that output on her own.
+
+</para>
+
+
+
+
+
+
+
+</section>
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Runtheprogram" effect="bold">
+
+
+</emphasis>
+
+Run the programs
+
+</title>
+
+
+
+
+
+
+
+<para id="p1210">
+I encourage you to 
+
+<link id="a1057" target-id="Click">
+
+run
+
+</link>
+
+ the online versions of the 
+programs that I have explained in this lesson. Then copy the code from Listing 2 
+and Listing 4. Use that code to create Flex 
+projects of your own. Compile and run your projects. Experiment with the code, 
+making changes, and observing the results of your changes. For example, you 
+might try changing the value of the rotation attribute in Listing 4 to see what 
+that does. Make certain 
+that you can explain why your changes behave as they do.
+
+</para>
+
+
+
+
+
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Resources" effect="bold">
+
+Resources
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1211">
+I will publish a list containing links to Flex resources as a separate 
+document. Search for Flex Resources in the Connexions search box.
+
+</para>
+
+
+
+
+
+</section>
+<section id="h11007">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+<note id="note1002" type="miscellaneous">
+
+
+
+
+
+
+
+<emphasis id="strong1226" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+
+
+<list id="ul1011" list-type="bulleted">
+
+
+
+<item id="li1047">
+Module name: The Default Application Container - Flex 3 and Flex 4
+
+</item>
+
+
+
+
+<item id="li1048">
+Files:
+
+<list id="ul1012" list-type="bulleted">
+
+
+
+<item id="li1049">
+Flex0102\Flex0102.htm
+
+</item>
+
+
+
+
+<item id="li1050">
+Flex0102\Connexions\FlexXhtml0102.htm
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</note>
+
+
+
+
+
+
+
+
+
+<note id="note1003" type="miscellaneous">
+
+
+
+
+<emphasis id="strong1227" effect="bold">
+PDF disclaimer:
+
+</emphasis>
+ Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+
+</note>
+
+
+
+
+
+
+	
+
+<para id="p1212">
+-end- 
+
+</para>
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

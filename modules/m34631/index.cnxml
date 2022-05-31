@@ -1,0 +1,3512 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Using Flex 3 in a Flex 4 World</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m34631</md:content-id>
+  <md:title>Using Flex 3 in a Flex 4 World</md:title>
+  <md:abstract>Learn how to continue using Flex 3 even after the release of Flash Builder 4 and the disappearance of Flex Builder 3.</md:abstract>
+  <md:uuid>693a6f0a-5b8c-4bcd-9e2d-0b979c697d3d</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<note id="note1000" type="miscellaneous">
+
+
+
+
+
+	
+
+<emphasis id="Click" effect="bold">
+
+Click
+
+</emphasis>
+
+ 
+
+<link id="a1000" url="index.html">
+
+test
+
+</link>
+
+
+to run this Flex program. 
+
+<emphasis id="em1000" effect="italics">
+
+(Click the "Back" button in your browser
+to return to this page.)
+
+</emphasis>
+
+
+
+</note>
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+  
+
+<item id="li1000">
+<link id="a1001" target-id="Preface">
+
+Preface
+
+</link>
+
+ 
+    
+
+<list id="ul1001" list-type="bulleted">
+
+      
+
+<item id="li1001">
+<link id="a1002" target-id="General">
+
+General
+
+</link>
+
+ 
+
+</item>
+
+
+      
+
+<item id="li1002">
+<link id="a1003" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+ 
+        
+
+<list id="ul1002" list-type="bulleted">
+
+          
+
+<item id="li1003">
+<link id="a1004" target-id="Figures">
+
+Figures
+
+</link>
+
+ 
+
+</item>
+
+
+          
+
+<item id="li1004">
+<link id="a1005" target-id="Listings">
+
+Listings
+
+</link>
+
+ 
+
+</item>
+
+
+        
+
+</list>
+
+
+      
+
+</item>
+
+
+      
+
+<item id="li1005">
+<link id="a1006" target-id="Supplementary_material">
+
+Supplemental material
+
+</link>
+
+ 
+
+</item>
+
+
+    
+
+</list>
+
+
+  
+
+</item>
+
+
+  
+
+<item id="li1006">
+<link id="a1007" target-id="Preview">
+
+Preview
+
+</link>
+
+ 
+
+</item>
+
+
+  
+
+<item id="li1007">
+<link id="a1008" target-id="Discussion_and_sample_code">
+
+Discussion and sample code
+
+</link>
+
+
+  
+
+<list id="ul1003" list-type="bulleted">
+
+	  
+
+<item id="li1008">
+<link id="a1009" target-id="Download_and_use_the_free_open-source_Adobe_Flex_3.x_SDK">
+
+
+	  Download and use the free open-source Adobe Flex 3 SDK
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1009">
+<link id="a1010" target-id="Download_and_use_the_free_FlashDevelop_IDE">
+
+Download and 
+		use the free FlashDevelop IDE
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1010">
+<link id="a1011" target-id="Download_and_use_Flash_Player_4_with_the_Flex_3.x_SDK">
+
+
+		Download and use Flash Player 4 with the Flex 3 SDK
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+    
+
+<item id="li1011">
+<link id="a1012" target-id="Run_the_program">
+
+Run the program
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1012">
+<link id="a1013" target-id="Resources">
+
+Resources
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1013">
+<link id="a1014" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+
+</emphasis>
+
+Preface
+
+</title>
+
+
+
+
+
+
+
+<section id="h21000">
+<title>
+<emphasis id="General" effect="bold">
+
+General
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1000">
+This lesson is part of a series of tutorial lessons dedicated to programming 
+with Adobe Flex. The main purpose of this lesson is to supplement the earlier 
+lesson titled 
+
+<link url="/content/m34604/latest/" id="a1015">
+
+The 
+Default Application Container - Flex 3 and Flex 4
+
+</link>
+
+ with more information 
+about the 
+
+<emphasis id="strong1000" effect="bold">
+Flash Builder 4
+
+</emphasis>
+ IDE as well as information about the
+
+
+<emphasis id="strong1001" effect="bold">
+FlashDevelop 
+
+</emphasis>
+IDE.
+
+</para>
+
+
+
+
+
+<para id="p1001">
+Adobe released a new product named 
+
+<emphasis id="strong1002" effect="bold">
+Flash Builder 4
+
+</emphasis>
+ in March 
+of 2010 and immediately removed all, or at least most of the references to 
+
+<emphasis id="strong1003" effect="bold">
+
+Flex Builder 3
+
+</emphasis>
+ from their website. Those references that were not 
+removed were converted to references to Flash Builder 4. For example, the link 
+
+<emphasis id="em1001" effect="italics">
+
+(see 
+
+<link id="a1016" target-id="Resources">
+
+Resources
+
+</link>
+
+) 
+
+</emphasis>
+that previously opened an Adobe page for 
+free downloading of Flex Builder 3 
+
+<emphasis id="em1002" effect="italics">
+(for educational use)
+
+</emphasis>
+ now opens a 
+page for free downloading of Flash Builder 4 for educational use.
+
+</para>
+
+
+
+
+
+<para id="p1002">
+<emphasis id="strong1004" effect="bold">
+What is Flash Builder 4?
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1003">
+Flash Builder 4 is an apparently upgraded version of Flex Builder 3 with a 
+new name. Flex Builder 3 was based on Flex version 3, while Flash Builder 4 is 
+primarily based on 
+Flex version 4. However, Flash Builder 4 still supports Flex 3 in addition to 
+Flex 4.
+
+</para>
+
+
+
+
+<para id="p1004">
+Regardless of how you choose to get there, the objective is to create swf 
+files that can be executed in the Flash Player. Flash Builder 4 is only one of 
+several different ways to create applications that will run in the Flash Player.
+
+</para>
+
+
+
+
+<para id="p1005">
+<emphasis id="strong1005" effect="bold">
+The Flex 4 SDK and Flash Player 10
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1006">
+In conjunction with the release of Flash Builder 4, Adobe also released a new 
+version 
+
+<emphasis id="em1003" effect="italics">
+(version 4)
+
+</emphasis>
+ of the free open-source Flex SDK and a new version
+
+
+<emphasis id="em1004" effect="italics">
+(version 10)
+
+</emphasis>
+ of the Flash Player.
+
+</para>
+
+
+
+
+<para id="p1007">
+Flex Builder 3 was based on Flex 3 and required Flash Player 9 
+
+<emphasis id="em1005" effect="italics">
+(or later)
+
+</emphasis>
+ 
+for execution of the swf files produced by compiling a Flex application.
+
+</para>
+
+
+
+
+<para id="p1008">
+Flash Builder 4 is primarily based on Flex 4 and requires Flash Player 10 
+
+<emphasis id="em1006" effect="italics">
+(or 
+later)
+
+</emphasis>
+ for execution of the resulting swf files.
+
+</para>
+
+
+
+
+<para id="p1009">
+<emphasis id="strong1006" effect="bold">
+Flash Builder 4 supports Flex 3
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1010">
+Fortunately, Flash Builder 4 still supports Flex 3 for backward 
+compatibility. I will show you later in this tutorial how to use Flash Builder 4 
+with Flex 3.
+
+</para>
+
+
+
+
+<para id="p1011">
+<emphasis id="strong1007" effect="bold">
+Should you use Flex 4?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1012">
+If you are using Flex to create web applications in a professional capacity, 
+you should probably become familiar with Flex 4. It appears to provide some features that 
+are not available in Flex 3.
+
+</para>
+
+
+
+
+<para id="p1013">
+<emphasis id="strong1008" effect="bold">
+More powerful but also more complicated
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1014">
+Flex 4 is more powerful than Flex 3. However, Flex 4 is also more complicated 
+than Flex 3. In some cases, Flex 4 also appears to create much larger swf files 
+than Flex 3 for solutions to the same problems. Therefore, I suspect that some 
+developers will not make an immediate switch to Flex 4, and that Flex 3 will 
+continue to be commonly used for a few more years.
+
+</para>
+
+
+
+
+<para id="p1015">
+Beginning in the Fall 2010 semester, I will upgrade my Introduction to XML 
+course to include both Flex 3 and Flex 4.
+
+</para>
+
+
+
+
+<para id="p1016">
+<emphasis id="strong1009" effect="bold">
+Flex is a cryptic shorthand programming language
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1017">
+The important thing to remember is that Flex 
+
+<emphasis id="em1007" effect="italics">
+(versions 3 and 4)
+
+</emphasis>
+ is 
+simply cryptic xml-based shorthand programming languages that can be used to 
+create some aspects ActionScript programs. You should also remember that 
+anything that can be programmed in Flex can be programmed directly in 
+ActionScript. However, the reverse is not true.
+
+</para>
+
+
+
+
+<para id="p1018">
+When Adobe released Flex 4 and Flash Builder 4, they actually added a large 
+number of classes to the ActionScript application programming interface 
+
+<emphasis id="em1008" effect="italics">
+
+(API)
+
+</emphasis>
+. So, the real question is not whether you should use Flex 4. The real 
+question is whether the new classes that were added to the API are useful in 
+your application. If so, use them. If not, stick with the classes that were part 
+of the API before the new classes were added.
+
+</para>
+
+
+
+
+<para id="p1019">
+<emphasis id="strong1010" effect="bold">
+Understanding Flex
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1020">
+If you really want to understand Flex 
+
+<emphasis id="em1009" effect="italics">
+(instead of simply using it in 
+cookbook fashion)
+
+</emphasis>
+ you need to learn about object-oriented programming using 
+ActionScript.
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21001">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1021">
+I recommend that you open another copy of this document in a separate browser 
+window and use the following links to easily find and view the figures and 
+listings while you are reading about them.
+
+</para>
+
+
+
+
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1004" list-type="bulleted">
+
+  
+
+<item id="li1014">
+<link id="a1017" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Test program output for alpha values of 
+  0.0, 0.33, 0.66, and 1.0.
+
+</item>
+
+
+  
+
+<item id="li1015">
+<link id="a1018" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. The FlashDevelop IDE at startup.
+
+</item>
+
+
+	
+
+<item id="li1016">
+<link id="a1019" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. The new project dialog.
+
+</item>
+
+
+  
+
+<item id="li1017">
+<link id="a1020" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. The FlashDevelop IDE for a new project 
+  named test.
+
+</item>
+
+
+	
+
+<item id="li1018">
+<link id="a1021" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. FlashDevelop text editor showing 
+	skeleton code for a Flex 3 project.
+
+</item>
+
+
+	
+
+<item id="li1019">
+<link id="a1022" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+. Test program output displayed in the 
+	Flash Player.
+
+</item>
+
+
+	
+
+<item id="li1020">
+<link id="a1023" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+. FlashDevelop showing the Debug/Release 
+	pull-down list.
+
+</item>
+
+
+	
+
+<item id="li1021">
+<link id="a1024" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+. The New Flex Project dialog in Flash 
+	Builder 4.
+
+</item>
+
+
+	
+
+<item id="li1022">
+<link id="a1025" target-id="Figure_9">
+
+Figure 9
+
+</link>
+
+. Contents of the project tree for the 
+	test program with Flash Builder 4.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+</section>
+<section id="h31001">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1005" list-type="bulleted">
+
+  
+
+<item id="li1023">
+<link id="a1026" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. Flex application named test.mxml.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+</section>
+</section>
+<section id="h21002">
+<title>
+<emphasis id="Supplementary_material" effect="bold">
+
+Supplemental material
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1022">
+I recommend that you also study the other lessons in my extensive collection 
+of online programming tutorials. You will find a consolidated index at 
+
+<link id="a1027" url="http://www.dickbaldwin.com/toc.htm">
+
+www.DickBaldwin.com
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="Preview" effect="bold">
+
+Preview
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1023">
+You learned how to create a Flex project named 
+
+<emphasis id="strong1011" effect="bold">
+AppBackground01 
+
+</emphasis>
+using 
+Flex Builder 3 in the earlier lesson titled
+
+
+<link url="/content/m34604/latest/" id="a1028">
+
+The 
+Default Application Container - Flex 3 and Flex 4
+
+</link>
+
+. However, Flex Builder 3 is no longer available from the Adobe website.
+
+</para>
+
+
+
+
+<para id="p1024">
+Therefore, in this lesson, I will explain how to create the same Flex project 
+in three different ways. However, in this lesson, I will shorten the name of the 
+project by changing the project name to 
+
+<emphasis id="strong1012" effect="bold">
+test
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Discussion_and_sample_code" effect="bold">
+
+Discussion and sample 
+code
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1025">
+<emphasis id="strong1013" effect="bold">
+Run the program
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1026">
+Before continuing, I suggest that you 
+
+<link id="a1029" target-id="Click">
+
+run
+
+</link>
+
+ the 
+program to familiarize yourself with the screen output.
+
+</para>
+
+
+
+
+
+<para id="p1027">
+<emphasis id="strong1014" effect="bold">
+Different ways to create Flex 3 applications
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1028">
+Here is a list of four different ways that you can create Flex 3 
+applications:
+
+</para>
+
+
+
+
+<list id="ol1000" list-type="enumerated">
+
+	
+
+<item id="li1024">
+Use 
+
+<emphasis id="strong1015" effect="bold">
+Flex Builder 3 
+
+</emphasis>
+if you already have it or can find 
+	it on the web.
+
+</item>
+
+
+	
+
+<item id="li1025">
+Download and use the free open-source 
+
+<emphasis id="strong1016" effect="bold">
+Adobe Flex 3 SDK
+
+</emphasis>
+ 
+
+<emphasis id="em1010" effect="italics">
+
+	(see 
+	
+
+<link id="a1030" target-id="Resources">
+
+Resources
+
+</link>
+
+).
+
+</emphasis>
+</item>
+
+
+	
+
+<item id="li1026">
+Download and use the free 
+
+<emphasis id="strong1017" effect="bold">
+FlashDevelop IDE
+
+</emphasis>
+ 
+
+<emphasis id="em1011" effect="italics">
+(
+
+<emphasis id="em1012" effect="italics">
+see 
+
+<link id="a1031" target-id="Resources">
+
+
+	Resources
+
+</link>
+
+
+</emphasis>
+)
+
+</emphasis>
+</item>
+
+
+	
+
+<item id="li1027">
+Download and use 
+
+<emphasis id="strong1018" effect="bold">
+Flash Player 4
+
+</emphasis>
+ with the 
+
+<emphasis id="strong1019" effect="bold">
+Flex 
+	3 SDK
+
+</emphasis>
+ 
+
+<emphasis id="em1013" effect="italics">
+(
+
+<emphasis id="em1014" effect="italics">
+see
+	
+
+<link id="a1032" target-id="Resources">
+
+Resources
+
+</link>
+
+
+</emphasis>
+)
+
+</emphasis>
+</item>
+
+
+
+
+</list>
+
+
+
+
+<section id="h21003">
+<title>
+<emphasis id="Download_and_use_the_free_open-source_Adobe_Flex_3.x_SDK" effect="bold">
+
+Download 
+and use the free open-source Adobe Flex 3 SDK
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1029">
+It is relatively easy to use the free open-source Flex 3 SDK to compile an mxml 
+document and create a swf file that can be run stand-alone in the Flash Player. 
+It is more difficult to deploy that swf file on a server.
+
+</para>
+
+
+
+
+<para id="p1030">
+<emphasis id="strong1020" effect="bold">
+Compiling an mxml file from the command line
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1031">
+The main claim to fame for XML is that XML files are plain text files. An 
+mxml file is an XML file. Therefore, you can create an mxml file containing mxml 
+code, 
+
+
+<emphasis id="em1015" effect="italics">
+(such as that shown in Listing 1)
+
+</emphasis>
+, using any plain text editor.
+
+</para>
+
+
+
+
+<para id="p1032">
+<emphasis id="em1016" effect="italics">
+(The code shown in Listing 1 is the same as the code used in the Flex 
+application in the earlier lesson titled
+
+
+<link url="/content/m34604/latest/" id="a1033">
+
+The 
+Default Application Container - Flex 3 and Flex 4
+
+</link>
+
+.)
+
+</emphasis>
+</para>
+
+
+
+
+
+<example id="listing1000" type="listing">
+<label>Listing</label>
+
+
+
+
+<title>
+<emphasis id="Listing_1" effect="bold">
+</emphasis>
+Flex application named test.mxml.
+</title>
+
+
+
+
+
+
+
+<code id="pre1000" display="block">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+
+&lt;mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"
+         
+  backgroundColor="#FF0000"
+  backgroundGradientColors="[#00FF00, #0000FF]"
+  backgroundAlpha="1.0"&gt;
+        
+&lt;/mx:Application&gt;</code>
+
+
+
+
+</example>
+
+
+
+
+
+	
+
+<para id="p1033">
+<emphasis id="strong1021" effect="bold">
+A test program
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1034">
+Assume that you have created such a file named 
+
+<emphasis id="strong1022" effect="bold">
+test.mxml
+
+</emphasis>
+ 
+	and that you have stored the file in the following folder on a Windows 
+	system:
+
+</para>
+
+
+
+
+<code id="pre1001" display="block">C:\jnk\1\test.mxml</code>
+
+
+
+
+
+<para id="p1035">
+Download the zip file containing 
+the Flex 3 SDK 
+
+<emphasis id="em1017" effect="italics">
+(see 
+
+<link id="a1034" target-id="Resources">
+
+Resources
+
+</link>
+
+) 
+
+</emphasis>
+
+and extract the contents of the zip file into a folder of your choosing. That 
+folder will then contain the following file:
+
+</para>
+
+
+
+
+<code id="pre1002" display="block">...\bin\mxmlc.exe</code>
+
+
+<para id="p1036">
+<emphasis id="strong1023" effect="bold">
+Compile 
+the test program
+
+</emphasis>
+</para>
+
+
+<para id="p1037">
+If you open a command-line window in the 
+
+<emphasis id="strong1024" effect="bold">
+bin
+
+</emphasis>
+ 
+folder and execute the following command on the command line, the mxml file will 
+be compiled and a file named 
+
+<emphasis id="strong1025" effect="bold">
+test.swf
+
+</emphasis>
+ 
+	will be created in the same folder as the mxml file:
+
+</para>
+
+
+	
+
+<code id="pre1003" display="block">mxmlc c:\jnk\1\test.mxml</code>
+
+
+
+
+<para id="p1038">
+If you have a stand-alone Flash Player 
+
+<emphasis id="em1018" effect="italics">
+(version 9 or later)
+
+</emphasis>
+ on your 
+system, you can open the file named 
+
+<emphasis id="strong1026" effect="bold">
+test.swf
+
+</emphasis>
+ in that player.
+
+</para>
+
+
+<para id="p1039">
+
+
+
+<emphasis id="strong1027" effect="bold">
+Testing your installation
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1040">
+You should have no difficulty using this approach to modify the 
+
+<emphasis id="strong1028" effect="bold">
+
+backgroundAlpha
+
+</emphasis>
+ values in the mxml code shown in Listing 1 to 
+produce swf files that produce the four gradient images shown in Figure 1 when run in a 
+stand-alone Flash Player version 9 or later. 
+
+<emphasis id="em1019" effect="italics">
+(Note that the four images 
+shown in Figure 1 are actually screen shots of the swf files running in a 
+browser.)
+
+</emphasis>
+</para>
+
+
+
+
+
+
+<figure id="figure1000" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_1" effect="bold">
+</emphasis>
+Test program output for alpha values of 0.0, 0.33, 0.66, and 1.0.
+</title>
+
+
+
+			
+
+<media id="media1000" alt="Missing image." display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/flex0103q.jpg" width="506" height="590"/>
+</media>
+
+
+
+
+<caption>Test program output for alpha values of 0.0, 0.33, 0.66, and 1.0.</caption>
+</figure>
+
+
+
+
+
+	
+
+<para id="p1041">
+<emphasis id="strong1029" effect="bold">
+Four runs with different alpha values
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1042">
+For this example, the mxml code shown in Listing 1 was modified, compiled, 
+and run four times in succession by substituting four different values of 
+
+<emphasis id="strong1030" effect="bold">
+
+backgroundAlpha
+
+</emphasis>
+ into the code.
+
+</para>
+
+
+
+
+<para id="p1043">
+<emphasis id="strong1031" effect="bold">
+Four output images
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1044">
+The four images shown in Figure 1, going from left to right, top to bottom, 
+represent alpha values of 0.0, 0.33, 0.66, and 1.0 respectively.
+
+</para>
+
+
+
+
+
+<para id="p1045">
+<emphasis id="strong1032" effect="bold">
+An alpha value of 0.0
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1046">
+For an alpha value of 0.0, the output color is pure red as shown by the 
+top-left image in Figure 1. In this case, the gradient color scheme is totally 
+transparent.
+
+</para>
+
+
+
+
+
+<para id="p1047">
+<emphasis id="strong1033" effect="bold">
+An alpha value of 1.0
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1048">
+For an alpha value of 1.0, the output colors range from pure green at the top 
+to pure blue at the bottom as shown in the bottom-right image in Figure 1. In 
+this case, the gradient color scheme is totally opaque and the red background 
+color doesn't show through at all.
+
+</para>
+
+
+
+
+
+<quote id="blockquote1000" display="block">
+
+  
+
+<para id="p1049">
+<emphasis id="em1020" effect="italics">
+(The image in the bottom-right corner of Figure 1 corresponds to what 
+  you should see if you run the online version of this application as described   
+
+<link id="a1035" target-id="Click">
+
+
+  earlier
+
+</link>
+
+.)
+
+</emphasis>
+</para>
+
+
+
+
+</quote>
+
+
+
+
+
+<para id="p1050">
+<emphasis id="strong1034" effect="bold">
+Alpha values of 0.33 and 0.66
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1051">
+For alpha values of 0.33 and 0.66, the output is a blend of the red 
+background and the green/blue gradient as shown by the top-right and bottom-left 
+images in Figure 1.
+
+</para>
+
+
+
+
+<para id="p1052">
+<emphasis id="strong1035" effect="bold">
+Deploying the swf file
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1053">
+If you don't have a stand-alone Flash Player on your system, or if you need 
+to make the swf file accessible from a web site, you will need to 
+
+<emphasis id="em1021" effect="italics">
+deploy
+
+</emphasis>
+ 
+the swf file in order to cause it to run in a Flash Player browser 
+
+
+<link id="a1036" url="http://www.adobe.com/products/flashplayer/">
+
+plug-in
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1054">
+<emphasis id="strong1036" effect="bold">
+The simplest case
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1055">
+In the simplest case, this will require you to create a JavaScript file and 
+an html file. Templates for those two files are provided in the Flex SDK folder 
+with the following names and locations:
+
+</para>
+
+
+
+
+<code id="pre1004" display="block">...\flex_sdk_3.5\templates\no-player-detection\AC_OETags.js</code>
+
+
+
+
+<code id="pre1005" display="block">...\flex_sdk_3.5\templates\no-player-detection\index.template.html</code>
+
+
+
+
+<para id="p1056">
+I will leave it as an exercise for the student to read the online deployment 
+instructions 
+
+<emphasis id="em1022" effect="italics">
+(see Application Deployment in 
+
+<link id="a1037" target-id="Resources">
+
+
+Resources
+
+</link>
+
+)
+
+</emphasis>
+ 
+and learn how to deploy the swf file.
+
+</para>
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="Download_and_use_the_free_FlashDevelop_IDE" effect="bold">
+
+Download and use the 
+free FlashDevelop IDE
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1057">
+If you prefer not to work at the command-line level, another option is to 
+download and use the free 
+
+<emphasis id="strong1037" effect="bold">
+FlashDevelop
+
+</emphasis>
+ IDE 
+
+<emphasis id="em1023" effect="italics">
+(see 
+
+<link id="a1038" target-id="Resources">
+
+
+Resources
+
+</link>
+
+)
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1058">
+<emphasis id="strong1038" effect="bold">
+Works with the Flex SDK
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1059">
+The FlashDevelop program works in conjunction with the free open-source Flex 
+SDK to make it easier to create, compile, and deploy Flex applications than is 
+the case when working from the command line. 
+
+<emphasis id="em1024" effect="italics">
+(The version of the 
+FlashDevelop program that is available in June 2010 is not compatible with the 
+Flex 4 SDK.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1060">
+<emphasis id="strong1039" effect="bold">
+See the Getting Started website
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1061">
+After installing the FlashDevelop program, you should open the 
+
+<emphasis id="strong1040" effect="bold">
+
+Getting Started
+
+</emphasis>
+ website 
+
+<emphasis id="em1025" effect="italics">
+(see 
+
+<link id="a1039" target-id="Resources">
+
+Resources
+
+</link>
+
+)
+
+</emphasis>
+ 
+where you will find instructions for configuring the program and getting it 
+ready for use.
+
+</para>
+
+
+
+
+<para id="p1062">
+<emphasis id="strong1041" effect="bold">
+The FlashDevelop IDE at startup
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1063">
+When you first start the FlashDevelop program running, you will see an 
+integrated development environment 
+
+<emphasis id="em1026" effect="italics">
+(IDE)
+
+</emphasis>
+ that looks something like 
+Figure 2.
+
+</para>
+
+
+
+
+<figure id="figure1001" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_2" effect="bold">
+</emphasis>
+The FlashDevelop IDE at startup.
+</title>
+
+
+
+			
+
+<media id="media1001" alt="Missing image." display="block">
+<image id="img1001" mime-type="image/jpeg" src="../../media/flex0103g.jpg" width="475" height="677"/>
+</media>
+
+
+
+
+<caption>The FlashDevelop IDE at startup.</caption>
+</figure>
+
+
+
+
+
+	
+
+<para id="p1064">
+<emphasis id="strong1042" effect="bold">
+Create a new project
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1065">
+Selecting the 
+
+<emphasis id="em1027" effect="italics">
+Create a new project
+
+</emphasis>
+ link on the right side of Figure 
+2 will open a dialog that looks much like the one shown 
+
+<emphasis id="em1028" effect="italics">
+(in reduced form)
+
+</emphasis>
+ 
+in Figure 3.
+
+</para>
+
+
+
+
+
+<figure id="figure1002" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_3" effect="bold">
+</emphasis>
+The new project dialog.
+</title>
+
+
+
+			
+
+<media id="media1002" alt="Missing image." display="block">
+<image id="img1002" mime-type="image/jpeg" src="../../media/flex0103h.jpg" width="475" height="351"/>
+</media>
+
+
+
+
+<caption>The new project dialog.</caption>
+</figure>
+
+
+
+
+
+	
+
+<para id="p1066">
+<emphasis id="strong1043" effect="bold">
+The text is difficult to read
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1067">
+Because of the reduced size, the text in Figure 3 is difficult to read. The 
+highlighted item in the list in the upper left reads "Flex 3 Project."
+
+</para>
+
+
+
+
+<para id="p1068">
+<emphasis id="strong1044" effect="bold">
+Select Flex 3 Project
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1069">
+Then enter the name and location of the new project in the text fields near 
+the bottom of Figure 3, and click the 
+
+<emphasis id="strong1045" effect="bold">
+OK
+
+</emphasis>
+ button. The IDE will 
+change to look something like Figure 4.
+
+</para>
+
+
+
+
+
+<figure id="figure1003" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_4" effect="bold">
+</emphasis>
+The FlashDevelop IDE for a new project named  	test.
+</title>
+
+
+
+			
+
+<media id="media1003" alt="Missing image." display="block">
+<image id="img1003" mime-type="image/jpeg" src="../../media/flex0103i.jpg" width="477" height="686"/>
+</media>
+
+
+
+
+<caption>The FlashDevelop IDE for a new project named  	test.</caption>
+</figure>
+
+
+
+
+
+	
+
+<para id="p1070">
+<emphasis id="strong1046" effect="bold">
+The project tree
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1071">
+Note in particular the tree structure shown on the right side of Figure 4 
+that is rooted in 
+
+<emphasis id="strong1047" effect="bold">
+
+test (AS3)
+
+</emphasis>
+. This tree structure replicates the tree structure that is 
+created in the folder that was earlier specified as the location for the 
+project.
+
+</para>
+
+
+
+
+<para id="p1072">
+<emphasis id="strong1048" effect="bold">
+Re-opening the project later
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1073">
+However, that folder also contains a file named 
+
+<emphasis id="strong1049" effect="bold">
+test.as3proj
+
+</emphasis>
+ 
+that is not shown in Figure 4. You can double-click this file later to re-open 
+the project in FlashDevelop.
+
+</para>
+
+
+
+
+<para id="p1074">
+<emphasis id="strong1050" effect="bold">
+Double-click the mxml file
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1075">
+The next step is to double-click the file shown in Figure 4 named 
+
+<emphasis id="strong1051" effect="bold">
+
+Main.mxml
+
+</emphasis>
+. This will open that file in a text editor as shown in Figure 
+5.
+
+</para>
+
+
+
+
+<figure id="figure1004" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_5" effect="bold">
+</emphasis>
+FlashDevelop text editor showing skeleton code  	for a Flex 3 project.
+</title>
+
+
+
+			
+
+<media id="media1004" alt="Missing image." display="block">
+<image id="img1004" mime-type="image/jpeg" src="../../media/flex0103j.jpg" width="477" height="686"/>
+</media>
+
+
+
+
+<caption>FlashDevelop text editor showing skeleton code  	for a Flex 3 project.</caption>
+</figure>
+
+
+
+
+
+
+
+	
+
+<para id="p1076">
+<emphasis id="strong1052" effect="bold">
+Skeleton code
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1077">
+At this point, the text editor shown in Figure 5 contains the skeleton code 
+for a Flex 3 project similar to what you saw in
+
+
+<link url="/content/m34604/latest/#Listing_1" id="a1040">
+
+Listing 1
+
+</link>
+
+ of the earlier lesson titled
+
+
+<emphasis id="strong1053" effect="bold">
+The 
+Default Application Container - Flex 3 and Flex 4
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1078">
+<emphasis id="strong1054" effect="bold">
+Modify and compile the program
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1079">
+Replace the skeleton code shown in Figure 5 with the code shown in 
+
+
+<link id="a1041" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ above.
+
+</para>
+
+
+
+
+<para id="p1080">
+Then select 
+
+<emphasis id="strong1055" effect="bold">
+Build Project
+
+</emphasis>
+ on the 
+
+<emphasis id="strong1056" effect="bold">
+Project
+
+</emphasis>
+ 
+menu.
+
+</para>
+
+
+
+
+<para id="p1081">
+<emphasis id="strong1057" effect="bold">
+Note the panel at the bottom of the IDE
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1082">
+You can drag and open a panel at the bottom of the IDE, if necessary, to 
+expose the compiler output text.
+
+</para>
+
+
+
+
+<para id="p1083">
+Quite a lot of text will appear in that panel.
+
+</para>
+
+
+
+
+<para id="p1084">
+If everything goes well, the last line of text in that panel will end with 
+the words 
+
+<emphasis id="em1029" effect="italics">
+"Build succeeded"
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1085">
+<emphasis id="strong1058" effect="bold">
+Test the program
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1086">
+Select 
+
+<emphasis id="strong1059" effect="bold">
+Test Movie
+
+</emphasis>
+ on the 
+
+<emphasis id="strong1060" effect="bold">
+Project
+
+</emphasis>
+ menu. If 
+all goes well, The Flash Player should open and display something very similar 
+to Figure 6.
+
+</para>
+
+
+
+
+<figure id="figure1005" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_6" effect="bold">
+</emphasis>
+Test program output displayed in the Flash  	Player.
+</title>
+
+
+
+			
+
+<media id="media1005" alt="Missing image." display="block">
+<image id="img1005" mime-type="image/jpeg" src="../../media/flex0103k.jpg" width="468" height="359"/>
+</media>
+
+
+
+
+<caption>Test program output displayed in the Flash  	Player.</caption>
+</figure>
+
+
+
+
+
+	
+
+<para id="p1087">
+<emphasis id="strong1061" effect="bold">
+Create a Release Build
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1088">
+If you like what you see at this point, select 
+
+<emphasis id="strong1062" effect="bold">
+Release
+
+</emphasis>
+ in 
+the pull-down list shown near the upper-right corner of Figure 7 and build the 
+project again.
+
+</para>
+
+
+
+
+<para id="p1089">
+This will modify the contents of the folder named 
+
+<emphasis id="strong1063" effect="bold">
+bin
+
+</emphasis>
+ shown 
+in Figure 4. This new version of the folder named 
+
+<emphasis id="strong1064" effect="bold">
+bin
+
+</emphasis>
+ can be 
+deployed on a server.
+
+</para>
+
+
+
+
+
+<figure id="figure1006" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_7" effect="bold">
+</emphasis>
+FlashDevelop showing the Debug/Release  	pull-down list.
+</title>
+
+
+
+			
+
+<media id="media1006" alt="Missing image." display="block">
+<image id="img1006" mime-type="image/jpeg" src="../../media/flex0103m.jpg" width="475" height="512"/>
+</media>
+
+
+
+
+<caption>FlashDevelop showing the Debug/Release  	pull-down list.</caption>
+</figure>
+
+
+
+
+
+	
+
+<para id="p1090">
+<emphasis id="strong1065" effect="bold">
+Executing the Flex project
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1091">
+The folder named 
+
+<emphasis id="strong1066" effect="bold">
+bin
+
+</emphasis>
+ contains a file named 
+
+<emphasis id="strong1067" effect="bold">
+
+index.html
+
+</emphasis>
+ as well as a swf file. You can 
+
+<link id="a1042" target-id="Click">
+
+open 
+that html file
+
+</link>
+
+ 
+in a browser to play the Flash movie provided that the Flash Player plug-in, 
+version 9 or later, has been installed in the browser.
+
+</para>
+
+
+
+
+<para id="p1092">
+The swf file can also be opened directly in a stand-alone Flash player, version 9 
+or later.
+
+</para>
+
+
+
+
+<para id="p1093">
+<emphasis id="strong1068" effect="bold">
+What is the difference between the Debug and Release 
+builds?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1094">
+While it is also possible to get an output that can be run in the Flash 
+Player in 
+
+<emphasis id="strong1069" effect="bold">
+Debug
+
+</emphasis>
+ mode 
+
+<emphasis id="em1030" effect="italics">
+(the opposite of 
+
+<emphasis id="strong1070" effect="bold">
+Release
+
+</emphasis>
+ 
+mode)
+
+</emphasis>
+, the output produced in 
+
+<emphasis id="strong1071" effect="bold">
+Release
+
+</emphasis>
+ mode is normally 
+smaller and more compact.
+
+</para>
+
+
+
+
+<para id="p1095">
+<emphasis id="strong1072" effect="bold">
+Pros and cons of the FlashDevelop program
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1096">
+By now, you have probably concluded that the 
+
+<emphasis id="strong1073" effect="bold">
+FlashDevelop
+
+</emphasis>
+ 
+program makes it easier to develop 
+
+<emphasis id="strong1074" effect="bold">
+and deploy
+
+</emphasis>
+ Flex programs 
+than is the case for the developing such programs from the command line.
+
+</para>
+
+
+
+
+<para id="p1097">
+<emphasis id="strong1075" effect="bold">
+Deployment made simple
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1098">
+In addition to providing a nice text editor, the program also handles the 
+tedious task of creating the files necessary to deploy the application and 
+creates a folder named 
+
+<emphasis id="strong1076" effect="bold">
+bin
+
+</emphasis>
+ 
+containing all of the necessary files.
+
+</para>
+
+
+
+
+<para id="p1099">
+<emphasis id="strong1077" effect="bold">
+The downside
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1100">
+The primary downside of FlashDevelop 
+
+<emphasis id="em1031" effect="italics">
+(relative to Flex Builder 3 or Flash 
+Builder 4)
+
+</emphasis>
+, is that the FlashDevelop program does not provide the 
+drag-and-drop visual design mode for GUI components that is provided by the two 
+Adobe builder programs.
+
+</para>
+
+
+
+
+<para id="p1101">
+<emphasis id="strong1078" effect="bold">
+May or may not be important
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1102">
+Whether or not that is important will depend on the intended use of the IDE.
+
+</para>
+
+
+
+
+<para id="p1103">
+For example, students in my 
+
+<emphasis id="em1032" effect="italics">
+Introduction to XML
+
+</emphasis>
+ course may consider 
+that to be a serious shortcoming because most of the lab projects in that course 
+involve layouts for GUI components.
+
+</para>
+
+
+
+
+<para id="p1104">
+On the other hand, students in my 
+
+<emphasis id="em1033" effect="italics">
+ActionScript OOP
+
+</emphasis>
+ programming 
+course shouldn't have much need for the drag-and-drop feature of the builder 
+programs. That course concentrates more on programming theory and less on 
+drag-and-drop GUI construction.
+
+</para>
+
+
+
+
+</section>
+<section id="h21005">
+<title>
+<emphasis id="Download_and_use_Flash_Player_4_with_the_Flex_3.x_SDK" effect="bold">
+
+Download and 
+use Flash Player 4 with the Flex 3 SDK
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1105">
+Since Flex Builder 3 is no longer available for download from the 
+Adobe website, those students who need the drag-and-drop feature have little 
+choice other than to use Flash Builder 4 in conjunction with Flex 3. 
+Therefore, I will tell you what I have learned through experimentation with 
+Flash Builder 4.
+
+</para>
+
+
+
+
+<para id="p1106">
+<emphasis id="strong1079" effect="bold">
+Two different versions
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1107">
+To begin with, Flash Builder 4 can be downloaded in at least two versions. 
+One version is a stand-alone program. The other version is a plug-in for 
+Eclipse. I am running the plug-in version, so some of the screen shots that 
+follow may be different from what you would see with the stand-alone version.
+
+</para>
+
+
+
+
+<para id="p1108">
+<emphasis id="strong1080" effect="bold">
+Similar to Flex Builder 3
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1109">
+Many aspects of Flash Builder 4 are very similar to Flex Builder 3, which you 
+learned about in earlier lessons. Therefore, I will concentrate on the 
+differences that I have identified.
+
+</para>
+
+
+
+
+<para id="p1110">
+<emphasis id="strong1081" effect="bold">
+Switch to the Flash perspective
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1111">
+When you start Flash Builder 4 for the first time, you may be given an 
+opportunity to 
+
+
+<emphasis id="em1034" effect="italics">
+"Switch to the Flash Perspective."
+
+</emphasis>
+ If so, you should make the switch. 
+Otherwise, things probably won't go well at all. 
+
+<emphasis id="em1035" effect="italics">
+(Once I learned that I 
+needed to make the switch, I never saw that option again.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1112">
+<emphasis id="strong1082" effect="bold">
+Create a new Flex project
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1113">
+To create a new Flex project, pull down the 
+
+<emphasis id="strong1083" effect="bold">
+File
+
+</emphasis>
+ menu and 
+select 
+
+
+<emphasis id="strong1084" effect="bold">
+New/Flex Project
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1114">
+<emphasis id="strong1085" effect="bold">
+Specify Flex 3.x
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1115">
+When the 
+
+<emphasis id="strong1086" effect="bold">
+New Flex Project
+
+</emphasis>
+ dialog appears, be sure to select 
+
+
+<emphasis id="strong1087" effect="bold">
+Web
+
+</emphasis>
+ and specify 
+
+
+<emphasis id="strong1088" effect="bold">
+Flex 3.x
+
+</emphasis>
+ 
+
+<emphasis id="em1036" effect="italics">
+(Flex 3.5 as of June 2010 but this may change over 
+time)
+
+</emphasis>
+ as shown in Figure 8.
+
+</para>
+
+
+
+
+
+<figure id="figure1007" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_8" effect="bold">
+</emphasis>
+The New Flex Project dialog in Flash Builder 4.
+</title>
+
+
+
+			
+
+<media id="media1007" alt="Missing image." display="block">
+<image id="img1007" mime-type="image/jpeg" src="../../media/flex0103n.jpg" width="306" height="619"/>
+</media>
+
+
+
+
+<caption>The New Flex Project dialog in Flash Builder 4.</caption>
+</figure>
+
+
+
+
+
+	
+
+<para id="p1116">
+<emphasis id="strong1089" effect="bold">
+The Application server type
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1117">
+Unless you know a good reason to do otherwise, you should accept the default 
+server type of 
+
+<emphasis id="strong1090" effect="bold">
+None/Other
+
+</emphasis>
+ as shown in Figure 8.
+
+</para>
+
+
+
+
+<para id="p1118">
+<emphasis id="strong1091" effect="bold">
+Click the Finish button
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1119">
+After you provide the required information in the 
+
+<emphasis id="strong1092" effect="bold">
+New Flex Project 
+dialog
+
+</emphasis>
+, click the 
+
+<emphasis id="strong1093" effect="bold">
+Finish
+
+</emphasis>
+ button at the bottom of the 
+dialog. 
+
+<emphasis id="em1037" effect="italics">
+
+(Because of the way that I cropped the image, the Finish button is not shown in 
+Figure 8.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1120">
+<emphasis id="strong1094" effect="bold">
+Open the text editor
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1121">
+If necessary, select the 
+
+<emphasis id="strong1095" effect="bold">
+Source
+
+</emphasis>
+ tab at the top of the main 
+panel to open the text editor in the main panel as shown in Figure 9. This is 
+essentially the same as Flex Builder 3. 
+
+<emphasis id="em1038" effect="italics">
+(The alternative is the 
+
+<emphasis id="strong1096" effect="bold">
+
+Design
+
+</emphasis>
+ tab, which I discuss below.)
+
+</emphasis>
+ Enter your mxml code in the 
+text editor.
+
+</para>
+
+
+
+
+<para id="p1122">
+<emphasis id="strong1097" effect="bold">
+The Design tab
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1123">
+If you need to do drag-and-drop component layout, select the 
+
+<emphasis id="strong1098" effect="bold">
+Design
+
+</emphasis>
+ 
+tab at the top of the main panel. This will cause the lower-left panel to become 
+a component panel and will cause the lower-right panel to become a property 
+panel in a manner similar to Flex Builder 3.
+
+</para>
+
+
+
+
+<para id="p1124">
+<emphasis id="strong1099" effect="bold">
+Build your project
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1125">
+Once you are satisfied with your component layout and your mxml source code, 
+select 
+
+<emphasis id="strong1100" effect="bold">
+Build Project
+
+</emphasis>
+ on the 
+
+<emphasis id="strong1101" effect="bold">
+Project
+
+</emphasis>
+ menu.
+
+</para>
+
+
+
+
+<para id="p1126">
+<emphasis id="strong1102" effect="bold">
+Run your project
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1127">
+Then select 
+
+<emphasis id="strong1103" effect="bold">
+Run
+
+</emphasis>
+ on the 
+
+<emphasis id="strong1104" effect="bold">
+Run
+
+</emphasis>
+ menu. This 
+may cause a dialog titled 
+
+<emphasis id="strong1105" effect="bold">
+Run As
+
+</emphasis>
+ to appear on the screen. 
+
+<emphasis id="em1039" effect="italics">
+
+(I don't recall seeing this dialog in Flex Builder 3.)
+
+</emphasis>
+ If the dialog does 
+appear, select 
+
+<emphasis id="strong1106" effect="bold">
+
+Web Application
+
+</emphasis>
+ and click the 
+
+<emphasis id="strong1107" effect="bold">
+OK
+
+</emphasis>
+ button.
+
+</para>
+
+
+
+
+<para id="p1128">
+This should cause the application to open and run in your default browser 
+provided that the browser has the Flash Player plug-in, version 9 or later, 
+installed.
+
+</para>
+
+
+
+
+<para id="p1129">
+<emphasis id="strong1108" effect="bold">
+Create a Release Build
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1130">
+If you are happy with what you see at this point, select 
+
+<emphasis id="strong1109" effect="bold">
+Export 
+Release Build...
+
+</emphasis>
+ on the 
+
+<emphasis id="strong1110" effect="bold">
+Project
+
+</emphasis>
+ menu. This will open 
+another dialog titled 
+
+<emphasis id="strong1111" effect="bold">
+Export Release Build
+
+</emphasis>
+ which will probably 
+contain the correct information. Click the
+
+<emphasis id="strong1112" effect="bold">
+ Finish
+
+</emphasis>
+ button on 
+this dialog to cause the release build to be exported.
+
+</para>
+
+
+
+
+<para id="p1131">
+<emphasis id="strong1113" effect="bold">
+The bin-release folder
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1132">
+Clicking the 
+
+<emphasis id="strong1114" effect="bold">
+Finish
+
+</emphasis>
+ button causes the folder named 
+
+<emphasis id="strong1115" effect="bold">
+
+bin-release
+
+</emphasis>
+ 
+
+<emphasis id="em1040" effect="italics">
+(shown in the project tree in Figure 9)
+
+</emphasis>
+ to be 
+created and populated.
+
+</para>
+
+
+
+
+
+<figure id="figure1008" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_9" effect="bold">
+</emphasis>
+Contents of the project tree for the test  	program with Flash Builder 4.
+</title>
+
+
+
+			
+
+<media id="media1008" alt="Missing image." display="block">
+<image id="img1008" mime-type="image/jpeg" src="../../media/flex0103p.jpg" width="452" height="512"/>
+</media>
+
+
+
+
+<caption>Contents of the project tree for the test  	program with Flash Builder 4.</caption>
+</figure>
+
+
+
+
+
+	
+
+<para id="p1133">
+<emphasis id="strong1116" effect="bold">
+Deploying the project
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1134">
+The 
+
+<emphasis id="strong1117" effect="bold">
+bin-release
+
+</emphasis>
+ folder contains everything necessary to 
+deploy the project on a server. Opening the file named 
+
+<emphasis id="strong1118" effect="bold">
+test.html
+
+</emphasis>
+ 
+in that folder will cause the Flash program to be played in a Flash Player 
+browser plug-in. In addition, the file named 
+
+<emphasis id="strong1119" effect="bold">
+test.swf
+
+</emphasis>
+ can be 
+played in a stand-alone Flash player.
+
+</para>
+
+
+
+
+<para id="p1135">
+<emphasis id="strong1120" effect="bold">
+The bin-debug folder
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1136">
+The 
+
+<emphasis id="strong1121" effect="bold">
+bin-debug
+
+</emphasis>
+ folder that you see in Figure 9 also contains 
+files named
+
+
+<emphasis id="strong1122" effect="bold">
+test.html 
+
+</emphasis>
+and
+
+<emphasis id="strong1123" effect="bold">
+ test.swf
+
+</emphasis>
+. They can be opened in 
+a browser and in a stand-alone Flash player to produce essentially the same 
+results.
+
+</para>
+
+
+
+
+<para id="p1137">
+<emphasis id="strong1124" effect="bold">
+A smaller movie file
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1138">
+However, the 
+
+<emphasis id="strong1125" effect="bold">
+test.swf
+
+</emphasis>
+ file in the 
+
+<emphasis id="strong1126" effect="bold">
+bin-release
+
+</emphasis>
+ 
+folder will often be much smaller and more compact than the 
+
+<emphasis id="strong1127" effect="bold">
+test.swf
+
+</emphasis>
+ 
+file in the
+
+
+<emphasis id="strong1128" effect="bold">
+bin-debug
+
+</emphasis>
+ folder, resulting in shorter download times from the 
+server.
+
+</para>
+
+
+
+
+
+
+
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+
+<para id="p1139">
+I encourage you to 
+
+<link id="a1043" target-id="Click">
+
+run
+
+</link>
+
+ the online version of the 
+program. Then copy the code from Listing 1. Use that code to create Flex 
+projects for all three approaches. Compile and run the projects. Experiment with 
+the code, making changes, and observing the results of your changes. Make 
+certain that you can explain why your changes behave as they do. 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Resources" effect="bold">
+
+Resources
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1140">
+I will publish a list containing links to Flex 
+resources as a separate document. Search for Flex 
+Resources in the Connexions search box
+
+</para>
+
+
+
+
+
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1141">
+This section contains a variety of miscellaneous materials.
+
+</para>
+
+
+
+
+
+
+
+<note id="note1001" type="miscellaneous">
+
+
+
+
+
+
+
+<emphasis id="strong1129" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+
+
+<list id="ul1006" list-type="bulleted">
+
+
+
+<item id="li1028">
+Module name: Using Flex 3 in a Flex 4 World
+
+</item>
+
+
+
+
+<item id="li1029">
+Files:
+
+<list id="ul1007" list-type="bulleted">
+
+
+
+<item id="li1030">
+Flex0103\Flex0103.htm
+
+</item>
+
+
+
+
+<item id="li1031">
+Flex0103\Connexions\FlexXhtml0103.htm
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</note>
+
+
+
+
+
+
+
+
+
+<note id="note1002" type="miscellaneous">
+
+
+
+
+<emphasis id="strong1130" effect="bold">
+PDF disclaimer:
+
+</emphasis>
+ Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+
+</note>
+
+
+
+
+
+
+
+
+<para id="p1142">
+-end- 
+
+</para>
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

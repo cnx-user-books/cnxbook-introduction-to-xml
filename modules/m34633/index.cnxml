@@ -1,0 +1,4995 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Handling Slider Change Events in Flex 3 and Flex 4</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m34633</md:content-id>
+  <md:title>Handling Slider Change Events in Flex 3 and Flex 4</md:title>
+  <md:abstract>Learn how to write inline event handler code to handle slider change events.</md:abstract>
+  <md:uuid>a9375fd0-5b84-49a2-b83c-db226e008140</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<note id="note1000" type="miscellaneous">
+
+
+
+
+
+	
+
+<emphasis id="Click" effect="bold">
+
+Click
+
+</emphasis>
+
+ 
+
+<link id="a1000" url="SliderChangeEvent01.html">
+
+
+	SliderChangeEvent01
+
+</link>
+
+,
+	
+
+<link id="a1001" url="SliderChangeEvent02.html">
+
+SliderChangeEvent02
+
+</link>
+
+, and
+	
+
+<link id="a1002" url="SliderChangeEvent03.html">
+
+SliderChangeEvent03
+
+</link>
+
+
+to run the Flex programs from this lesson. 
+
+<emphasis id="em1000" effect="italics">
+
+(Click the "Back" button in your browser
+to return to this page.)
+
+</emphasis>
+
+
+
+</note>
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+  
+
+<item id="li1000">
+<link id="a1003" target-id="Preface">
+
+Preface
+
+</link>
+
+ 
+    
+
+<list id="ul1001" list-type="bulleted">
+
+      
+
+<item id="li1001">
+<link id="a1004" target-id="General">
+
+General
+
+</link>
+
+ 
+
+</item>
+
+
+      
+
+<item id="li1002">
+<link id="a1005" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+ 
+        
+
+<list id="ul1002" list-type="bulleted">
+
+          
+
+<item id="li1003">
+<link id="a1006" target-id="Figures">
+
+Figures
+
+</link>
+
+ 
+
+</item>
+
+
+          
+
+<item id="li1004">
+<link id="a1007" target-id="Listings">
+
+Listings
+
+</link>
+
+ 
+
+</item>
+
+
+        
+
+</list>
+
+
+      
+
+</item>
+
+
+      
+
+<item id="li1005">
+<link id="a1008" target-id="Supplementary_material">
+
+Supplemental material
+
+</link>
+
+ 
+
+</item>
+
+
+    
+
+</list>
+
+
+  
+
+</item>
+
+
+  
+
+<item id="li1006">
+<link id="a1009" target-id="General_background_information">
+
+General background information
+
+</link>
+
+
+</item>
+
+
+  
+
+<item id="li1007">
+<link id="a1010" target-id="Preview">
+
+Preview
+
+</link>
+
+
+</item>
+
+
+  
+
+<item id="li1008">
+<link id="a1011" target-id="Discussion_and_Sample_Programs">
+
+Discussion and sample code
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+	  
+
+<item id="li1009">
+<link id="a1012" target-id="The_Flex_3_project">
+
+The Flex 3 project named 
+	  SliderChangeEvent01
+
+</link>
+
+
+</item>
+
+
+	  
+
+<item id="li1010">
+<link id="a1013" target-id="The_hybrid_Flex3-4_project_named_SliderChangeEvent02">
+
+The hybrid Flex3-4 project named SliderChangeEvent02
+
+</link>
+
+
+</item>
+
+
+	  
+
+<item id="li1011">
+<link id="a1014" target-id="The_Flex_4_project_named_SliderChangeEvent03">
+
+The Flex 4 
+	  project named SliderChangeEvent03
+
+</link>
+
+
+</item>
+
+
+  
+
+</list>
+
+
+	
+
+</item>
+
+
+  
+
+<item id="li1012">
+<link id="a1015" target-id="Run_the_program">
+
+Run the programs
+
+</link>
+
+
+</item>
+
+
+  
+
+<item id="li1013">
+<link id="a1016" target-id="Resources">
+
+Resources
+
+</link>
+
+
+</item>
+
+
+  
+
+<item id="li1014">
+<link id="a1017" target-id="Complete_Program_Listings">
+
+Complete program listings
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1015">
+<link id="a1018" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+
+</emphasis>
+
+Preface
+
+</title>
+
+
+
+
+
+
+
+<section id="h21000">
+<title>
+<emphasis id="General" effect="bold">
+
+General
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1000">
+This lesson is part of a series of tutorial lessons dedicated to programming 
+with Adobe Flex. The material in this lesson applies to both Flex 3 and Flex 4.
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21001">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1001">
+I recommend that you open another copy of this document in a separate browser 
+window and use the following links to easily find and view the figures and 
+listings while you are reading about them.
+
+</para>
+
+
+
+
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1004" list-type="bulleted">
+
+  
+
+<item id="li1016">
+<link id="a1019" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Browser image at startup for the Flex 3 
+  project. 
+
+</item>
+
+
+  
+
+<item id="li1017">
+<link id="a1020" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. A toolTip on the slider. 
+
+</item>
+
+
+  
+
+<item id="li1018">
+<link id="a1021" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. Changing the height of the image. 
+
+</item>
+
+
+  
+
+<item id="li1019">
+<link id="a1022" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. Flex Builder 3 Components tab exposed. 
+
+</item>
+
+
+  
+
+<item id="li1020">
+<link id="a1023" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. Drag controls onto the Flex Builder 3 Design tab. 
+
+</item>
+
+
+  
+
+<item id="li1021">
+<link id="a1024" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+. The Flex Builder 3 Properties tab exposed.
+
+</item>
+
+
+	
+
+<item id="li1022">
+<link id="a1025" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+. Browser image at startup for the 
+	hybrid project.
+
+</item>
+
+
+	
+
+<item id="li1023">
+<link id="a1026" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+. Flex Builder 4 Components tab exposed. 
+
+</item>
+
+
+	
+
+<item id="li1024">
+<link id="a1027" target-id="Figure_9">
+
+Figure 9
+
+</link>
+
+. Drag controls onto the Flash Builder 4 
+	Design tab. 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+</section>
+<section id="h31001">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1005" list-type="bulleted">
+
+  
+
+<item id="li1025">
+<link id="a1028" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. XML code before setting properties for 
+  SliderChangeEvent01.
+  
+
+</item>
+
+
+  
+
+<item id="li1026">
+<link id="a1029" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. Beginning of XML code for 
+  SliderChangeEvent01. 
+
+</item>
+
+
+  
+
+<item id="li1027">
+<link id="a1030" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. Create and condition the slider. 
+
+</item>
+
+
+  
+
+<item id="li1028">
+<link id="a1031" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+. Import an image. 
+
+</item>
+
+
+	
+
+<item id="li1029">
+<link id="a1032" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+. Mxml code for the layout shown in 
+	Figure 9.
+
+</item>
+
+
+  
+
+<item id="li1030">
+<link id="a1033" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+. Complete listing of 
+  SliderChangeEvent01.
+
+</item>
+
+
+	
+
+<item id="li1031">
+<link id="a1034" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+. Complete listing of 
+	SliderChangeEvent02.
+
+</item>
+
+
+	
+
+<item id="li1032">
+<link id="a1035" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+. Complete listing of 
+	SliderChangeEvent03.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+</section>
+</section>
+<section id="h21002">
+<title>
+<emphasis id="Supplementary_material" effect="bold">
+
+Supplemental material
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1002">
+I also recommend that you study the other lessons in my extensive collection 
+of online programming tutorials. You will find a consolidated index at 
+
+<link id="a1036" url="http://www.dickbaldwin.com/toc.htm">
+
+www.DickBaldwin.com
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="General_background_information" effect="bold">
+
+General background information
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1003">
+If you learn how to program using ActionScript 3, you 
+will probably integrate large amounts of ActionScript code into your Flex projects to provide complex 
+event handling. In the meantime, it is possible to provide simple event handlers 
+in Flex by embedding a very small amount of ActionScript code in your Flex code. 
+I will 
+illustrate and explain that capability in this lesson.
+
+</para>
+
+
+
+
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Preview" effect="bold">
+
+Preview
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1004">
+I encourage you to 
+
+<link id="a1037" target-id="Click">
+
+run
+
+</link>
+
+
+the online version of the programs from this lesson before continuing.
+
+</para>
+
+
+
+
+<para id="p1005">
+<emphasis id="strong1000" effect="bold">
+Three Flex projects
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1006">
+I will present and explain three Flex projects in this lesson. The first project 
+is named 
+
+<emphasis id="strong1001" effect="bold">
+SliderChangeEvent01
+
+</emphasis>
+. This project was first developed using 
+Flex Builder 3 and later developed using the Flex 3 compiler and Flash Builder 4. 
+The results were essentially the same in both cases. This project uses classes from the Flex 3 
+
+<emphasis id="em1001" effect="italics">
+
+(mx)
+
+</emphasis>
+ library exclusively. 
+
+<emphasis id="em1002" effect="italics">
+(The screen shots shown in Figure 4, 
+Figure 5, and Figure 6 are from Flex Builder 3.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1007">
+<emphasis id="strong1002" effect="bold">
+The second project
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1008">
+The second project is named 
+
+<emphasis id="strong1003" effect="bold">
+SliderChangeEvent02
+
+</emphasis>
+. This 
+project was developed using the Flex 4 compiler and Flash Builder 4. This is a 
+hybrid project that uses classes from both the Flex 3 
+
+<emphasis id="em1003" effect="italics">
+(mx)
+
+</emphasis>
+ library and 
+the Flex 4 
+
+<emphasis id="em1004" effect="italics">
+(spark)
+
+</emphasis>
+ library. The behavior of this project is similar to 
+the behavior of the other project, but they look different in several ways that I will explain later.
+
+</para>
+
+
+
+
+<para id="p1009">
+<emphasis id="strong1004" effect="bold">
+The third project
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1010">
+The third project is named 
+
+<emphasis id="strong1005" effect="bold">
+SliderChangeEvent03
+
+</emphasis>
+. This project 
+is a modification of the hybrid project in which the classes used are drawn 
+exclusively from the Flex 4 spark library.
+
+</para>
+
+
+
+
+<para id="p1011">
+<emphasis id="strong1006" effect="bold">
+Order of upcoming explanations
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1012">
+I will explain the Flex 3 project named 
+
+<emphasis id="strong1007" effect="bold">
+SliderChangeEvent01
+
+</emphasis>
+ in 
+detail. Then I will explain the differences between that project and the hybrid project 
+named 
+
+<emphasis id="strong1008" effect="bold">
+SliderChangeEvent02
+
+</emphasis>
+. Finally, I will explain the 
+differences between that project and the project named 
+
+<emphasis id="strong1009" effect="bold">
+
+SliderChangeEvent03
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+
+<para id="p1013">
+<emphasis id="strong1010" effect="bold">
+SliderChangeEvent01 output image at startup
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1014">
+The project named 
+
+<emphasis id="strong1011" effect="bold">
+SliderChangeEvent01
+
+</emphasis>
+ starts running in Flash Player 
+with the image shown in Figure 1 appearing in the browser.
+
+</para>
+
+
+
+
+
+
+<figure id="figure1000" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_1" effect="bold">
+</emphasis>
+Browser image at startup for the Flex 3 project.
+</title>
+
+
+
+			
+
+<media id="media1000" alt="Missing image." display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/flex0104a.jpg" width="467" height="542"/>
+</media>
+
+
+
+
+<caption>Browser image at startup for the Flex 3 project.</caption>
+</figure>
+
+
+
+
+
+
+
+<para id="p1015">
+The image that you see in Figure 1 consists of two Flex 3 
+
+<emphasis id="strong1012" effect="bold">
+Label
+
+</emphasis>
+ controls, one 
+Flex 3 
+
+<emphasis id="strong1013" effect="bold">
+
+HSlider
+
+</emphasis>
+ control, and one Flex 3 
+
+<emphasis id="strong1014" effect="bold">
+Image
+
+</emphasis>
+ control arranged vertically and 
+centered in the browser window.
+
+</para>
+
+
+
+
+
+<para id="p1016">
+<emphasis id="strong1015" effect="bold">
+The Application container
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1017">
+All XML documents must have a root element. The root of a Flex 3 application is a container 
+element that is often 
+called the 
+
+<emphasis id="strong1016" effect="bold">
+Application
+
+</emphasis>
+ container. 
+
+<emphasis id="em1005" effect="italics">
+(You can learn all about the
+
+
+<emphasis id="strong1017" effect="bold">
+Application
+
+</emphasis>
+ container class at 
+
+<link id="a1038" url="http://livedocs.adobe.com/flex/3/langref/index.html">
+
+Adobe Flex 3.5 
+Language Reference
+
+</link>
+
+.)
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1018">
+Briefly, the 
+
+<emphasis id="strong1018" effect="bold">
+Application
+
+</emphasis>
+ container, 
+
+<emphasis id="em1006" effect="italics">
+(which corresponds 
+to the root element in the Flex XML code)
+
+</emphasis>
+, holds all other containers and 
+components.
+
+</para>
+
+
+
+
+
+<para id="p1019">
+<emphasis id="strong1019" effect="bold">
+<emphasis id="Vertical_layout" effect="bold">
+
+Vertical layout
+
+</emphasis>
+
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1020">
+By default, the Flex 3 
+
+<emphasis id="strong1020" effect="bold">
+Application
+
+</emphasis>
+ container lays out all of its 
+children vertically as shown in Figure 1. 
+
+<emphasis id="em1007" effect="italics">
+(As you will see later, this is 
+not the case for the Flex 4 
+
+<emphasis id="strong1021" effect="bold">
+Application
+
+</emphasis>
+ container.)
+
+</emphasis>
+ The default vertical layout 
+occurs when the 
+
+<emphasis id="strong1022" effect="bold">
+layout
+
+</emphasis>
+ attribute is not specified as is the case in this 
+application. According to the 
+
+<link id="a1039" url="http://livedocs.adobe.com/flex/3/langref/index.html">
+
+Adobe Flex 3.5 
+Language Reference
+
+</link>
+
+, the 
+
+<emphasis id="strong1023" effect="bold">
+layout
+
+</emphasis>
+ property:
+
+</para>
+
+
+
+
+
+<quote id="blockquote1000" display="block">
+
+  
+
+<para id="p1021">
+<emphasis id="em1008" effect="italics">
+"Specifies the layout mechanism used for this application. 
+  Applications can use "vertical", "horizontal", or "absolute" positioning. 
+  Vertical positioning lays out each child component vertically from the top of 
+  the application to the bottom in the specified order. Horizontal positioning 
+  lays out each child component horizontally from the left of the application to 
+  the right in the specified order. Absolute positioning does no automatic 
+  layout and requires you to explicitly define the location of each child 
+  component. The default value is vertical."
+
+</emphasis>
+</para>
+
+
+
+
+</quote>
+
+
+
+
+
+<para id="p1022">
+<emphasis id="strong1024" effect="bold">
+A toolTip on the slider
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1023">
+If you point to the slider with your mouse, a tool tip showing the word
+
+
+<emphasis id="em1009" effect="italics">
+Height
+
+</emphasis>
+ will appear as shown in Figure 2.
+
+</para>
+
+
+
+
+<figure id="figure1001" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_2" effect="bold">
+</emphasis>
+A toolTip on the slider.
+</title>
+
+
+
+			
+
+<media id="media1001" alt="Missing image." display="block">
+<image id="img1001" mime-type="image/jpeg" src="../../media/flex0104b.jpg" width="366" height="615"/>
+</media>
+
+
+
+
+<caption>A toolTip on the slider.</caption>
+</figure>
+
+
+
+
+
+
+
+<para id="p1024">
+<emphasis id="strong1025" effect="bold">
+The slider's 
+
+<emphasis id="em1010" effect="italics">
+thumb
+
+</emphasis>
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1025">
+The little triangle that you see on the slider in these images is often 
+referred to as the slider's 
+
+<emphasis id="em1011" effect="italics">
+thumb
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+
+<para id="p1026">
+As you will see later, the position of the thumb is intended to represent the 
+height of the image below the slider. The left end of the slider 
+represents a height of 100 pixels and the right end represents a height of 250 
+pixels 
+
+<emphasis id="em1012" effect="italics">
+(which just happens to be the actual height of the raw image)
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+
+<para id="p1027">
+<emphasis id="strong1026" effect="bold">
+Changing the height of the image
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1028">
+If you grab the thumb with the mouse and move it to the left or the right, 
+two obvious visual effects occur. The first is that the value represented 
+by the current position of the thumb is displayed above the thumb as shown in 
+Figure 3.
+
+</para>
+
+
+
+
+<quote id="blockquote1001" display="block">
+<emphasis id="em1013" effect="italics">
+(As you will see later, the value is also displayed in a Flex 4 
+application, but by default the appearance is white numerals on a black 
+background.)
+
+</emphasis>
+</quote>
+
+
+
+
+
+<figure id="figure1002" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_3" effect="bold">
+</emphasis>
+Changing the height of the image.
+</title>
+
+
+
+			
+
+<media id="media1002" alt="Missing image." display="block">
+<image id="img1002" mime-type="image/jpeg" src="../../media/flex0104c.jpg" width="368" height="618"/>
+</media>
+
+
+
+
+<caption>Changing the height of the image.</caption>
+</figure>
+
+
+
+
+
+
+
+<para id="p1029">
+<emphasis id="strong1027" effect="bold">
+The second visual effect
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1030">
+The second visual effect of moving the thumb is that the height of the image 
+changes to the value represented by the position of the thumb on the slider.
+
+</para>
+
+
+
+
+<quote id="blockquote1002" display="block">
+<emphasis id="em1014" effect="italics">
+(An 
+
+<emphasis id="strong1028" effect="bold">
+Image
+
+</emphasis>
+ object has a property named 
+
+<emphasis id="strong1029" effect="bold">
+maintainAspectRatio
+
+</emphasis>
+. 
+By default, the value of this property
+is true. Therefore, when the height is changed, the width changes in a 
+proportional manner.)
+
+</emphasis>
+</quote>
+
+
+
+
+
+<para id="p1031">
+Note that the upper-left corner of the image remains anchored to the same 
+point as the height of the image changes as shown in Figure 3.
+
+</para>
+
+
+
+
+
+
+
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Discussion_and_Sample_Programs" effect="bold">
+
+
+</emphasis>
+
+Discussion and sample code
+
+</title>
+
+
+
+
+
+
+<section id="h21003">
+<title>
+<emphasis id="The_Flex_3_project" effect="bold">
+
+The Flex 3 project named SliderChangeEvent
+
+</emphasis>
+
+01
+
+</title>
+
+
+
+
+<para id="p1032">
+<emphasis id="strong1030" effect="bold">
+Creating the layout
+
+</emphasis>
+</para>
+
+ 
+
+
+
+<para id="p1033">
+Once you create your new Flex 3 Project, there are at least three ways that you 
+can create your layout using Flex Builder 3:
+
+</para>
+
+
+
+
+<list id="ol1000" list-type="enumerated">
+
+  
+
+<item id="li1033">
+Select the 
+
+<emphasis id="strong1031" effect="bold">
+Design
+
+</emphasis>
+ tab in the upper-middle panel of the IDE 
+
+<emphasis id="em1015" effect="italics">
+(see 
+  Figure 5)
+
+</emphasis>
+ and drag your containers, controls, and other components from 
+  the 
+
+<emphasis id="strong1032" effect="bold">
+Components
+
+</emphasis>
+ tab onto your design window.
+
+</item>
+
+
+  
+
+<item id="li1034">
+Select the 
+
+<emphasis id="strong1033" effect="bold">
+Source
+
+</emphasis>
+ tab in Figure 5 and write the raw XML code that 
+  defines your layout.
+
+</item>
+
+
+  
+
+<item id="li1035">
+A combination of 1 and 2 above
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+<para id="p1034">
+<emphasis id="strong1034" effect="bold">
+Expose the components tab
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1035">
+When you select the 
+
+<emphasis id="strong1035" effect="bold">
+Design
+
+</emphasis>
+ tab in the upper-middle window of the IDE, 
+the lower-left window changes to the appearance shown in Figure 4 with the
+Flex 3 
+
+<emphasis id="em1016" effect="italics">
+(mx)
+
+</emphasis>
+
+
+
+<emphasis id="strong1036" effect="bold">
+Components
+
+</emphasis>
+ tab exposed.
+
+</para>
+
+
+
+
+
+<figure id="figure1003" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_4" effect="bold">
+</emphasis>
+Flex Builder 3 Components tab exposed.
+</title>
+
+
+
+			
+
+<media id="media1003" alt="Missing image." display="block">
+<image id="img1003" mime-type="image/jpeg" src="../../media/flex0104d.jpg" width="268" height="580"/>
+</media>
+
+
+
+
+<caption>Flex Builder 3 Components tab exposed.</caption>
+</figure>
+
+
+
+
+
+
+
+<quote id="blockquote1003" display="block">
+<emphasis id="em1017" effect="italics">
+The list of available components that you see in Figure 4 also 
+appears when you create a new project in Flash Builder 4 and specify the use of 
+the Flex 3 compiler.
+
+</emphasis>
+</quote>
+
+
+
+
+<para id="p1036">
+<emphasis id="strong1037" effect="bold">
+A list of available components
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1037">
+Although they aren't all shown in Figure 4 due to space limitations, the
+Flex Builder 3
+
+
+<emphasis id="strong1038" effect="bold">
+Components
+
+</emphasis>
+ tab lists all of the components that you can use in your Flex 
+application grouped into the following categories:
+
+</para>
+
+
+
+
+<list id="ul1006" list-type="bulleted">
+
+  
+
+<item id="li1036">
+Custom
+
+</item>
+
+
+  
+
+<item id="li1037">
+Controls
+
+</item>
+
+
+  
+
+<item id="li1038">
+Layout
+
+</item>
+
+
+  
+
+<item id="li1039">
+Navigators
+
+</item>
+
+
+  
+
+<item id="li1040">
+Charts
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+<para id="p1038">
+<emphasis id="strong1039" effect="bold">
+Expose the design window
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1039">
+Selecting the 
+
+<emphasis id="strong1040" effect="bold">
+Design
+
+</emphasis>
+ tab mentioned above also exposes the 
+Flex Builder 3 design 
+window shown in Figure 5.
+
+</para>
+
+
+
+
+
+<figure id="figure1004" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_5" effect="bold">
+</emphasis>
+Drag controls onto the Flex Builder 3 Design tab.
+</title>
+
+
+
+			
+
+<media id="media1004" alt="Missing image." display="block">
+<image id="img1004" mime-type="image/jpeg" src="../../media/flex0104e.jpg" width="388" height="329"/>
+</media>
+
+
+
+
+<caption>Drag controls onto the Flex Builder 3 Design tab.</caption>
+</figure>
+
+
+
+
+
+
+
+<quote id="blockquote1004" display="block">
+<emphasis id="em1018" effect="italics">
+A similar design window is exposed when you create a new project 
+in Flash Builder 4 specifying the Flex 3 compiler and then select the 
+
+</emphasis>
+
+
+
+<emphasis id="strong1041" effect="bold">
+<emphasis id="em1019" effect="italics">
+Design
+
+</emphasis>
+</emphasis>
+<emphasis id="em1020" effect="italics">
+ tab. The purpose is the same but some 
+of the items at the top of the design window in Flash Builder 4 are different.
+
+</emphasis>
+</quote>
+
+
+
+
+<para id="p1040">
+<emphasis id="strong1042" effect="bold">
+Drag components onto the Design tab
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1041">
+You can drag components from the 
+
+<emphasis id="strong1043" effect="bold">
+Components
+
+</emphasis>
+ tab shown in Figure 4 onto 
+the 
+
+<emphasis id="strong1044" effect="bold">
+Design
+
+</emphasis>
+ tab shown in Figure 5 to create your layout in the 
+Flex Builder 3 
+design mode or in the Flash Builder 4 design mode. As you do that, the corresponding XML code is automatically 
+generated for you.
+
+</para>
+
+
+
+
+
+<para id="p1042">
+For example, Figure 5 shows the results of dragging two 
+
+<emphasis id="strong1045" effect="bold">
+Label
+
+</emphasis>
+
+controls, one 
+
+<emphasis id="strong1046" effect="bold">
+HSlider
+
+</emphasis>
+ control, and one 
+
+<emphasis id="strong1047" effect="bold">
+Image
+
+</emphasis>
+ control from the
+
+
+<emphasis id="strong1048" effect="bold">
+Components
+
+</emphasis>
+ tab of Figure 4 to the 
+
+<emphasis id="strong1049" effect="bold">
+Design
+
+</emphasis>
+ tab of Figure 5. 
+
+<emphasis id="em1021" effect="italics">
+
+(No attempt has been made to set property values on any of the controls shown in 
+Figure 5.)
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+
+<para id="p1043">
+<emphasis id="strong1050" effect="bold">
+XML code before setting properties
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1044">
+If you select the 
+
+<emphasis id="strong1051" effect="bold">
+Source
+
+</emphasis>
+ tab at this point, you will see the XML code 
+shown in Listing 1.
+
+</para>
+
+
+
+
+
+
+<example id="listing1000" type="listing">
+<label>Listing</label>
+
+
+
+
+<title>
+<emphasis id="Listing_1" effect="bold">
+</emphasis>
+XML code before setting properties for  	SliderChangeEvent01.
+</title>
+
+
+
+
+
+
+
+<code id="pre1000" display="block">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+  
+&lt;mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"&gt;
+    &lt;mx:Label text="Label"/&gt;
+    &lt;mx:Label text="Label"/&gt;
+    &lt;mx:HSlider/&gt;
+    &lt;mx:Image/&gt;
+
+&lt;/mx:Application&gt;</code>
+
+
+
+
+</example>
+
+
+
+
+
+
+
+<para id="p1045">
+<emphasis id="strong1052" effect="bold">
+Compile and run
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1046">
+As you can see, the XML code in Listing 1 is pretty sparse. You could 
+compile and run the application at this point. All you would see would be 
+two labels each containing the text 
+
+<emphasis id="strong1053" effect="bold">
+Label
+
+</emphasis>
+ and a slider covering the default 
+numeric range from 0 to 10.
+
+</para>
+
+
+
+
+
+<para id="p1047">
+<emphasis id="strong1054" effect="bold">
+Put some meat on the bones
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1048">
+We will need to put some meat on the bones of this skeleton mxml code in order 
+to create our Flex application. We can accomplish that by setting 
+attribute values that correspond to properties of the controls.
+
+</para>
+
+
+
+
+
+<para id="p1049">
+<emphasis id="strong1055" effect="bold">
+Setting attribute values
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1050">
+Once again, we have three choices:
+
+</para>
+
+
+
+
+<list id="ol1001" list-type="enumerated">
+
+  
+
+<item id="li1041">
+Go hardcore and edit the XML code shown in Listing 1 to add the necessary 
+  attributes.
+
+</item>
+
+
+  
+
+<item id="li1042">
+Stay in 
+
+<emphasis id="strong1056" effect="bold">
+Design
+
+</emphasis>
+ mode, select each component in the 
+
+<emphasis id="strong1057" effect="bold">
+Design
+
+</emphasis>
+
+    tab, and use the 
+
+<emphasis id="strong1058" effect="bold">
+Flex Properties
+
+</emphasis>
+ tab shown in Figure 6 to set the 
+  properties on that component.
+
+</item>
+
+
+  
+
+<item id="li1043">
+A combination of 1 and 2 above. 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+<figure id="figure1005" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_6" effect="bold">
+</emphasis>
+The Flex Builder 3 Properties tab exposed.
+</title>
+
+
+
+			
+
+<media id="media1005" alt="Missing tab." display="block">
+<image id="img1005" mime-type="image/jpeg" src="../../media/flex0104f.jpg" width="296" height="617"/>
+</media>
+
+
+
+
+<caption>The Flex Builder 3 Properties tab exposed.</caption>
+</figure>
+
+
+
+
+
+
+
+<para id="p1051">
+<emphasis id="strong1059" effect="bold">
+The Flex Properties tab
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1052">
+When you select the 
+
+<emphasis id="strong1060" effect="bold">
+Design
+
+</emphasis>
+ tab shown in Figure 5, the 
+
+<emphasis id="strong1061" effect="bold">
+Flex 
+Properties
+
+</emphasis>
+ tab shown in Figure 6 appears in the bottom-right of the IDE.
+
+</para>
+
+
+
+
+
+<para id="p1053">
+The appearance of the 
+
+<emphasis id="strong1062" effect="bold">
+Flex Properties
+
+</emphasis>
+ tab depends on which component 
+is selected in the 
+
+<emphasis id="strong1063" effect="bold">
+Design
+
+</emphasis>
+ tab. Figure 5 shows one of the 
+
+<emphasis id="strong1064" effect="bold">
+Label
+
+</emphasis>
+
+controls selected, and Figure 6 shows the 
+
+<emphasis id="strong1065" effect="bold">
+Flex Properties
+
+</emphasis>
+ tab 
+corresponding to a 
+
+<emphasis id="strong1066" effect="bold">
+Label
+
+</emphasis>
+ control.
+
+</para>
+
+
+
+
+<quote id="blockquote1005" display="block">
+<emphasis id="em1022" effect="italics">
+You will see a very similar properties tab if you create a new 
+Flash Builder 4 project and specify use of the Flex 3 compiler. Some of the 
+items are in different locations than Figure 6 but it appears that the Flash 
+Builder 4 properties tab has the same items for a Flex 3 project.
+
+</emphasis>
+</quote>
+
+
+
+
+
+<para id="p1054">
+<emphasis id="strong1067" effect="bold">
+A variety of user input controls
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1055">
+The 
+
+<emphasis id="strong1068" effect="bold">
+Flex Properties
+
+</emphasis>
+ tab contains a variety of user input controls that 
+allow you to specify values for many of the commonly used properties that are 
+allowed for the selected component.
+
+</para>
+
+
+
+
+
+<para id="p1056">
+Note, however, that the documentation for the 
+
+<emphasis id="strong1069" effect="bold">
+Label
+
+</emphasis>
+ control lists many 
+properties that are not supported by the 
+
+<emphasis id="strong1070" effect="bold">
+Flex Properties
+
+</emphasis>
+ tab shown in 
+Figure 6. You can increase the number of properties shown in the tab by 
+selecting one of the controls at the top of the tab that converts the display 
+into an alphabetical list of properties. However, even this doesn't seem 
+to show all of the properties defined by and inherited by some components.
+
+</para>
+
+
+
+
+
+<para id="p1057">
+If you need to set properties that are not supported by the 
+
+<emphasis id="strong1071" effect="bold">
+Flex 
+Properties
+
+</emphasis>
+ tab, you probably have no choice but to select the 
+
+<emphasis id="strong1072" effect="bold">
+Source
+
+</emphasis>
+
+tab shown in Figure 5 and write mxml code for those properties.
+
+</para>
+
+
+
+
+
+<para id="p1058">
+<emphasis id="strong1073" effect="bold">
+Will explain the code in fragments
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1059">
+I will explain the code for this Flex application in fragments. A 
+complete listing of the application is provided in Listing 6 near the end of the 
+lesson.
+
+</para>
+
+
+
+
+
+<para id="p1060">
+<emphasis id="strong1074" effect="bold">
+Beginning of XML code for SliderChangeEvent01
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1061">
+The primary purpose of this application is to illustrate the use of inline 
+event handling for Flex 3 slider 
+
+<emphasis id="em1023" effect="italics">
+change
+
+</emphasis>
+ events.
+
+</para>
+
+
+
+
+
+<para id="p1062">
+The application begins in Listing 2 which shows the beginning of the
+
+
+<emphasis id="strong1075" effect="bold">
+Application
+
+</emphasis>
+ element and the two complete 
+
+<emphasis id="strong1076" effect="bold">
+Label
+
+</emphasis>
+ elements shown at 
+the top of Figure 1.
+
+</para>
+
+
+
+
+
+<example id="listing1001" type="listing">
+<label>Listing</label>
+
+
+
+
+<title>
+<emphasis id="Listing_2" effect="bold">
+</emphasis>
+Beginning of XML code for  	SliderChangeEvent01.
+</title>
+
+
+
+
+
+
+
+<code id="pre1001" display="block">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+
+&lt;mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"&gt;
+
+    &lt;mx:Label text="Put your name here" fontSize="16" 
+        fontWeight="bold"/&gt;
+        
+    &lt;mx:Label text="Image Height in Pixels" 
+        fontWeight="bold" fontSize="14"/&gt;</code>
+
+
+
+
+</example>
+
+
+
+
+
+
+
+<para id="p1063">
+<emphasis id="strong1077" effect="bold">
+Make it easy - drag and drop
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1064">
+The two 
+
+<emphasis id="strong1078" effect="bold">
+Label
+
+</emphasis>
+ elements were created by dragging 
+
+<emphasis id="strong1079" effect="bold">
+Label
+
+</emphasis>
+ controls 
+from the 
+
+<emphasis id="strong1080" effect="bold">
+Components
+
+</emphasis>
+ tab shown in Figure 4 onto the 
+
+<emphasis id="strong1081" effect="bold">
+Design
+
+</emphasis>
+ tab 
+shown in Figure 5. Then the attribute values were set using the 
+
+<emphasis id="strong1082" effect="bold">
+Flex 
+Properties
+
+</emphasis>
+ tab shown in Figure 6.
+
+</para>
+
+
+
+
+
+<para id="p1065">
+The attributes shown in Listing 2 represent common properties of a text label 
+and shouldn't require further explanation.
+
+</para>
+
+
+
+
+
+<para id="p1066">
+<emphasis id="strong1083" effect="bold">
+Create and condition the slider
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1067">
+Listing 3 adds a horizontal slider 
+
+<emphasis id="em1024" effect="italics">
+(HSlider)
+
+</emphasis>
+ control to the 
+application and sets the attributes that control both its appearance and its 
+behavior.
+
+</para>
+
+
+
+
+
+<example id="listing1002" type="listing">
+<label>Listing</label>
+
+
+
+
+<title>
+<emphasis id="Listing_3" effect="bold">
+</emphasis>
+Create and condition the slider.
+</title>
+
+
+
+
+
+
+
+<code id="pre1002" display="block">    &lt;mx:HSlider minimum="100" maximum="250" value="250"
+        toolTip="Height"
+        change="myimg.height=event.currentTarget.value"
+        liveDragging="true" /&gt;</code>
+
+
+
+
+</example>
+
+
+
+
+
+
+
+<para id="p1068">
+The slider is a little more complicated than a label and deserves a more 
+thorough explanation.
+
+</para>
+
+
+
+
+
+<para id="p1069">
+<emphasis id="strong1084" effect="bold">
+The numeric properties
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1070">
+Recall that a slider represents a range of numeric values. The position 
+of the thumb at any instant in time selects a value from that range. The 
+following three attributes shown in Listing 3 deal with the slider and its 
+numeric range:
+
+</para>
+
+
+
+
+<list id="ul1007" list-type="bulleted">
+
+  
+
+<item id="li1044">
+<emphasis id="strong1085" effect="bold">
+minimum
+
+</emphasis>
+ - the numeric value represented by the left end of a 
+  horizontal slider.
+
+</item>
+
+
+  
+
+<item id="li1045">
+<emphasis id="strong1086" effect="bold">
+maximum
+
+</emphasis>
+ - the value represented by the right end of a horizontal 
+  slider.
+
+</item>
+
+
+  
+
+<item id="li1046">
+<emphasis id="strong1087" effect="bold">
+value
+
+</emphasis>
+ - the value that specifies the initial position of the thumb 
+  when the slider is constructed and first presented in the application's 
+  window. 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+<para id="p1071">
+<emphasis id="strong1088" effect="bold">
+The toolTip property
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1072">
+As you have probably already guessed, the value of the 
+
+<emphasis id="strong1089" effect="bold">
+toolTip
+
+</emphasis>
+
+property specifies the text that appears in the tool tip when it is visible as 
+shown in Figure 2.
+
+</para>
+
+
+
+
+
+<para id="p1073">
+<emphasis id="strong1090" effect="bold">
+The change property
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1074">
+This is where thing get a little more interesting. As the user moves 
+the thumb to the left or right, the slider fires a 
+
+<emphasis id="continuous_" effect="bold">
+
+continuous
+
+</emphasis>
+
+ stream of 
+
+<emphasis id="strong1091" effect="bold">
+change
+
+</emphasis>
+ events. You 
+might think of this as the slider yelling out 
+
+<emphasis id="em1025" effect="italics">
+"Hey, the position of my thumb 
+has been changed."
+
+</emphasis>
+ over and over as the thumb is being moved. 
+
+<emphasis id="em1026" effect="italics">
+(Also 
+see the discussion of the 
+
+<link id="a1040" target-id="The_liveDragging_property">
+
+liveDragging
+
+</link>
+
+
+property later.)
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1075">
+<emphasis id="strong1092" effect="bold">
+An 
+
+<emphasis id="em1027" effect="italics">
+event handler
+
+</emphasis>
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1076">
+The value that is assigned to the 
+
+<emphasis id="strong1093" effect="bold">
+change
+
+</emphasis>
+ attribute in Listing 3 is 
+often referred to as an 
+
+<emphasis id="em1028" effect="italics">
+event handler
+
+</emphasis>
+. This value specifies what 
+the application will do each time the slider fires a 
+
+<emphasis id="strong1094" effect="bold">
+change
+
+</emphasis>
+ event.
+
+</para>
+
+
+
+
+
+<para id="p1077">
+<emphasis id="strong1095" effect="bold">
+Three ways to handle events in Flex
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1078">
+There are at least three ways to handle event 
+notifications in Flex:
+
+</para>
+
+
+
+
+<list id="ul1008" list-type="bulleted">
+
+  
+
+<item id="li1047">
+Registering an event handler in mxml 
+
+</item>
+
+
+  
+
+<item id="li1048">
+Creating an 
+
+<emphasis id="strong1096" effect="bold">
+inline event handler
+
+</emphasis>
+ in the mxml definition
+
+</item>
+
+
+  
+
+<item id="li1049">
+Registering an event listener through ActionScript
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+<para id="p1079">
+The XML code in Listing 3 uses the inline approach.
+
+</para>
+
+
+
+
+
+<para id="p1080">
+<emphasis id="strong1097" effect="bold">
+The inline approach
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1081">
+The advantage of using the inline approach, 
+
+<emphasis id="em1029" effect="italics">
+(at least insofar as my 
+
+</emphasis>
+
+
+
+<emphasis id="em1030" effect="italics">
+<emphasis id="strong1098" effect="bold">
+Introduction to XML
+
+</emphasis>
+, students are concerned)
+
+</emphasis>
+, 
+is that it doesn't require you to create a 
+
+<emphasis id="strong1099" effect="bold">
+Script
+
+</emphasis>
+ element within the 
+mxml 
+or to create a separate ActionScript file.
+
+</para>
+
+
+
+
+
+<para id="p1082">
+<emphasis id="strong1100" effect="bold">
+Handling the slider's change 
+event
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1083">
+Now consider the code that begins with the word 
+
+<emphasis id="strong1101" effect="bold">
+change
+
+</emphasis>
+ in Listing 3. The code 
+within the quotation marks can be a little hard to explain, but I will give it a 
+try. 
+
+<emphasis id="em1031" effect="italics">
+(The code in quotation marks is actually an ActionScript code 
+fragment.)
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1084">
+<emphasis id="strong1102" effect="bold">
+Think of it this way
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1085">
+There is a Flex/ActionScript class named 
+
+<emphasis id="strong1103" effect="bold">
+Event
+
+</emphasis>
+. The reference to 
+
+<emphasis id="strong1104" effect="bold">
+event
+
+</emphasis>
+ 
+in Listing 3 is a reference to an object of the 
+
+<emphasis id="strong1105" effect="bold">
+Event
+
+</emphasis>
+ class that comes 
+into being each time the slider fires a 
+
+<emphasis id="strong1106" effect="bold">
+change
+
+</emphasis>
+ event
+
+<emphasis id="strong1107" effect="bold">
+. 
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1086">
+The 
+
+<emphasis id="strong1108" effect="bold">
+Event
+
+</emphasis>
+ object encapsulates a property named 
+
+<emphasis id="strong1109" effect="bold">
+currentTarget
+
+</emphasis>
+, 
+which is described in the Flex 3 documentation as follows:
+
+</para>
+
+
+
+
+
+<quote id="blockquote1006" display="block">
+
+  
+
+<para id="p1087">
+<emphasis id="em1032" effect="italics">
+"The object that is actively processing the Event object with an event 
+  listener. For example, if a user clicks an OK button, the current target could 
+  be the node containing that button or one of its ancestors that has registered 
+  an event listener for that event."
+
+</emphasis>
+</para>
+
+
+
+
+</quote>
+
+
+
+
+<para id="p1088">
+<emphasis id="strong1110" effect="bold">
+The currentTarget is the slider
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1089">
+In this application, the value of 
+
+<emphasis id="strong1111" effect="bold">
+currentTarget
+
+</emphasis>
+ points to the slider 
+which is firing 
+
+<emphasis id="strong1112" effect="bold">
+change
+
+</emphasis>
+ events as the user moves the thumb.
+
+</para>
+
+
+
+
+
+<para id="p1090">
+<emphasis id="strong1113" effect="bold">
+The 
+
+<emphasis id="em1033" effect="italics">
+value
+
+</emphasis>
+ property of an HSlider object
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1091">
+The slider is an object of the 
+
+<emphasis id="strong1114" effect="bold">
+HSlider
+
+</emphasis>
+ class, which has a property 
+named 
+
+<emphasis id="strong1115" effect="bold">
+value
+
+</emphasis>
+. The 
+
+<emphasis id="strong1116" effect="bold">
+value
+
+</emphasis>
+ property contains the current 
+position of the thumb and is a number between the 
+
+<emphasis id="em1034" effect="italics">
+minimum
+
+</emphasis>
+ and 
+
+<emphasis id="em1035" effect="italics">
+maximum
+
+</emphasis>
+
+property values.
+
+</para>
+
+
+
+
+
+<para id="p1092">
+<emphasis id="strong1117" effect="bold">
+Get the current value of the thumb
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1093">
+Therefore, each time the slider fires a 
+
+<emphasis id="strong1118" effect="bold">
+change
+
+</emphasis>
+ event, the code on the 
+right side of the assignment operator within the highlighted quotation marks in 
+Listing 3 gets the numeric value that indicates the current position of the 
+thumb.
+
+</para>
+
+
+
+
+
+<para id="p1094">
+<emphasis id="strong1119" effect="bold">
+Cause the image to be resized
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1095">
+This value is assigned to the 
+
+<emphasis id="strong1120" effect="bold">
+height
+
+</emphasis>
+ property of the image, causing 
+the overall size of the image to be adjusted, if necessary, to match the current 
+position of the slider's thumb. 
+
+<emphasis id="em1036" effect="italics">
+(I could go into more detail as to the 
+sequence of events that causes the size of the image to change, but I will leave 
+that as an exercise for the student.)
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1096">
+<emphasis id="strong1121" effect="bold">
+<emphasis id="The_liveDragging_property" effect="bold">
+
+The liveDragging 
+property
+
+</emphasis>
+
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1097">
+That leaves one more attribute or property for us to discuss in Listing 3:
+
+
+<emphasis id="strong1122" effect="bold">
+liveDragging
+
+</emphasis>
+. This one is much easier to understand.
+
+</para>
+
+
+
+
+
+<para id="p1098">
+The Flex 3 documentation has this to say about the 
+
+<emphasis id="strong1123" effect="bold">
+liveDragging
+
+</emphasis>
+
+property:
+
+</para>
+
+
+
+
+
+<quote id="blockquote1007" display="block">
+
+  
+
+<para id="p1099">
+<emphasis id="em1037" effect="italics">
+"Specifies whether live dragging is enabled for the slider. If false, 
+  Flex sets the value and values properties and dispatches the change event when 
+  the user stops dragging the slider thumb. If true, Flex sets the value and 
+  values properties and dispatches the change event continuously as the user 
+  moves the thumb. The default value is false."
+
+</emphasis>
+</para>
+
+
+
+
+</quote>
+
+
+
+
+
+<para id="p1100">
+<emphasis id="strong1124" effect="bold">
+If liveDragging is false...
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1101">
+If you were to modify the code in Listing 3 to cause the value of the
+
+
+<emphasis id="strong1125" effect="bold">
+liveDragging
+
+</emphasis>
+ property to be false 
+
+<emphasis id="em1038" effect="italics">
+(or simply not set the attribute 
+value to true)
+
+</emphasis>
+, the slider would only fire change events each time the thumb 
+stops moving 
+
+<emphasis id="em1039" effect="italics">
+(as opposed to firing a stream of events while the thumb is 
+moving)
+
+</emphasis>
+. This, in turn, would cause the size of the image to change 
+only when the thumb stops moving instead of changing 
+
+<link id="a1041" target-id="continuous_">
+
+continuously
+
+</link>
+
+ while the thumb is moving.
+
+</para>
+
+
+
+
+
+<para id="p1102">
+<emphasis id="strong1126" effect="bold">
+An Image control
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1103">
+The Flex 3 documentation tells us:
+
+</para>
+
+
+
+
+
+<quote id="blockquote1008" display="block">
+
+  
+
+<para id="p1104">
+<emphasis id="em1040" effect="italics">
+The Image control lets you import JPEG, PNG, GIF, and SWF files at 
+  runtime. You can also embed any of these files and SVG files at compile time 
+  by using @Embed(source='filename').
+
+</emphasis>
+</para>
+
+
+
+
+</quote>
+
+
+
+
+
+<para id="p1105">
+The primary output that is produced by compiling a Flex application is an swf 
+file that can be executed in Flash Player.
+
+</para>
+
+
+
+
+
+<para id="p1106">
+The documentation goes on to explain that by using 
+
+<emphasis id="strong1127" effect="bold">
+@Embed
+
+</emphasis>
+, you can 
+cause resources such as images to be embedded in the swf file.
+
+</para>
+
+
+
+
+
+<para id="p1107">
+The advantage to embedding is that embedding the resource eliminates the 
+requirement to distribute the resource files along with the swf files. The 
+disadvantage is that it causes the swf file to be larger.
+
+</para>
+
+
+
+
+
+<para id="p1108">
+<emphasis id="strong1128" effect="bold">
+Import an image
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1109">
+Listing 4 imports an image from the file named 
+
+<emphasis id="strong1129" effect="bold">
+myimage.jpg
+
+</emphasis>
+ that is 
+located in the 
+
+<emphasis id="strong1130" effect="bold">
+src
+
+</emphasis>
+ folder of the project tree. This image is 
+embedded in the swf file when the Flex application is compiled.
+
+</para>
+
+
+
+
+
+<example id="listing1003" type="listing">
+<label>Listing</label>
+
+
+
+
+<title>
+<emphasis id="Listing_4" effect="bold">
+</emphasis>
+Import an image.
+</title>
+
+
+
+
+
+
+
+<code id="pre1003" display="block">    &lt;mx:Image id="myimg" source="@Embed('myimage.jpg')"
+        height="250"&gt;
+    &lt;/mx:Image&gt;
+    
+&lt;/mx:Application&gt;</code>
+
+
+
+
+</example>
+
+
+
+
+
+
+
+<para id="p1110">
+<emphasis id="strong1131" effect="bold">
+The 
+
+<emphasis id="em1041" effect="italics">
+id
+
+</emphasis>
+ property
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1111">
+Setting the 
+
+<emphasis id="strong1132" effect="bold">
+id
+
+</emphasis>
+ property on the image to 
+
+<emphasis id="strong1133" effect="bold">
+myimg
+
+</emphasis>
+ makes it possible 
+to refer to the image in the change-event code in Listing 3.
+
+</para>
+
+
+
+
+
+<quote id="blockquote1009" display="block">
+
+  
+
+<para id="p1112">
+<emphasis id="em1042" effect="italics">
+(Note that there is no requirement to set the value of the 
+
+<emphasis id="strong1134" effect="bold">
+id
+
+</emphasis>
+
+  property to be the same as the name of the image file as was done in Listing 
+  4.)
+
+</emphasis>
+</para>
+
+
+
+
+</quote>
+
+
+
+
+
+<para id="p1113">
+<emphasis id="strong1135" effect="bold">
+The 
+
+<emphasis id="em1043" effect="italics">
+height
+
+</emphasis>
+ property
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1114">
+Setting the 
+
+<emphasis id="strong1136" effect="bold">
+height
+
+</emphasis>
+ property of the image to 250 pixels in Listing 4 
+causes the image height to be 250 pixels when it is first displayed as shown in 
+Figure 1. 
+
+</para>
+
+
+
+
+
+<para id="p1115">
+<emphasis id="strong1137" effect="bold">
+The end of the application
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1116">
+Listing 4 contains the closing tag for the 
+
+<emphasis id="strong1138" effect="bold">
+Application
+
+</emphasis>
+ element 
+signaling the end of the Flex 3 application named 
+
+<emphasis id="strong1139" effect="bold">
+SliderChangeEvent01
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="The_hybrid_Flex3-4_project_named_SliderChangeEvent02" effect="bold">
+
+The hybrid 
+Flex3-4 project named SliderChangeEvent02
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1117">
+<emphasis id="strong1140" effect="bold">
+The mxml project code
+
+</emphasis>
+</para>
+
+
+
+	
+
+<para id="p1118">
+The mxml code for this project is shown in its entirety in Listing 7.
+
+</para>
+
+
+	
+
+<para id="p1119">
+If you examine this code you will see that:
+
+</para>
+
+
+	
+
+<list id="ul1009" list-type="bulleted">
+
+	
+
+<item id="li1050">
+It uses a Flex 4 spark 
+
+<emphasis id="strong1141" effect="bold">
+s:Application
+
+</emphasis>
+ element instead of 
+	a Flex 3 
+
+<emphasis id="strong1142" effect="bold">
+mx:Application
+
+</emphasis>
+ element.
+
+</item>
+
+
+	
+
+<item id="li1051">
+It declares the standard set of Flex 4 namespaces.
+
+</item>
+
+
+	
+
+<item id="li1052">
+It uses a spark 
+
+<emphasis id="strong1143" effect="bold">
+s:VGroup
+
+</emphasis>
+ element as the container for 
+	the following Flex 3 components.
+
+<emphasis id="em1044" effect="italics">
+ (Note that the Flex 3 project in Listing 
+	6 doesn't require another container in addition to the 
+
+<emphasis id="strong1144" effect="bold">
+
+	mx:Application
+
+</emphasis>
+ container.)
+
+</emphasis>
+:
+
+<list id="ul1010" list-type="bulleted">
+
+		
+
+<item id="li1053">
+<emphasis id="strong1145" effect="bold">
+mx:Label
+
+</emphasis>
+</item>
+
+
+		
+
+<item id="li1054">
+<emphasis id="strong1146" effect="bold">
+mx:Label
+
+</emphasis>
+</item>
+
+
+		
+
+<item id="li1055">
+<emphasis id="strong1147" effect="bold">
+mx:HSlider
+
+</emphasis>
+</item>
+
+
+		
+
+<item id="li1056">
+<emphasis id="strong1148" effect="bold">
+mx:Image
+
+</emphasis>
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1120">
+Otherwise, the mxml code for this project is the same as the code for the 
+Flex 3 project shown in Listing 6. The mixture of spark and mx components 
+causes this to be a hybrid Flex 3-4 project.
+
+</para>
+
+
+
+
+<para id="p1121">
+<emphasis id="strong1149" effect="bold">
+Visual appearance of the project
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1122">
+If you 
+
+<link id="a1042" target-id="Click">
+
+run
+
+</link>
+
+ the online version of the project named 
+
+
+<emphasis id="strong1150" effect="bold">
+SliderChangeEvent02
+
+</emphasis>
+, you should see an initial screen display similar to Figure 
+7.
+
+</para>
+
+
+
+
+<figure id="figure1006" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_7" effect="bold">
+</emphasis>
+Browser image at startup for the hybrid  	project.
+</title>
+
+
+
+			
+
+<media id="media1006" alt="Missing image." display="block">
+<image id="img1006" mime-type="image/jpeg" src="../../media/flex0104g.jpg" width="467" height="545"/>
+</media>
+
+
+
+
+<caption>Browser image at startup for the hybrid  	project.</caption>
+</figure>
+
+
+
+
+
+
+
+<para id="p1123">
+<emphasis id="strong1151" effect="bold">
+Compare with the Flex 3 project
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1124">
+By comparing this screen output for the hybrid project with the screen output 
+for the Flex 3 project in Figure 1, you can immediately spot several significant 
+differences:
+
+</para>
+
+
+
+
+<list id="ul1011" list-type="bulleted">
+
+	
+
+<item id="li1057">
+The background is white instead of gray.
+
+</item>
+
+
+	
+
+<item id="li1058">
+The labels, the slider, and the image are not centered horizontally in the browser 
+	window.
+
+</item>
+
+
+	
+
+<item id="li1059">
+The appearance of the thumb on the slider is a circle instead of a 
+	triangle.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1125">
+<emphasis id="strong1152" effect="bold">
+Behavior of the project
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1126">
+If you move the slider with the mouse, you will see that the behavior is 
+essentially the same as the Flex 3 version of the project, including the display 
+of a tool tip as shown in Figure 2 and the display of the slider value as shown 
+in Figure 3.
+
+</para>
+
+
+
+
+<para id="p1127">
+<emphasis id="strong1153" effect="bold">
+The spark s:Application element
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1128">
+The Flex 4 spark 
+
+<emphasis id="strong1154" effect="bold">
+s:Application
+
+</emphasis>
+ element differs from the Flex 
+3 
+
+<emphasis id="strong1155" effect="bold">
+mx:Application
+
+</emphasis>
+ element in several ways including the 
+following:
+
+</para>
+
+
+
+
+<list id="ul1012" list-type="bulleted">
+
+	
+
+<item id="li1060">
+<emphasis id="strong1156" effect="bold">
+Default layout:
+
+</emphasis>
+ Unlike the 
+
+<emphasis id="strong1157" effect="bold">
+mx:Application
+
+</emphasis>
+ 
+	element, the 
+
+<emphasis id="strong1158" effect="bold">
+s:Application
+
+</emphasis>
+ element does not have a
+	
+
+<link id="a1043" target-id="Vertical_layout">
+
+default vertical
+
+</link>
+
+ layout. By default, all 
+	components placed in the 
+
+<emphasis id="strong1159" effect="bold">
+s:application
+
+</emphasis>
+ element are placed 
+	in the upper-left corner. 
+
+<emphasis id="em1045" effect="italics">
+(The 
+
+</emphasis>
+ 
+
+<emphasis id="strong1160" effect="bold">
+<emphasis id="em1046" effect="italics">
+s:VGroup
+
+</emphasis>
+</emphasis>
+<emphasis id="em1047" effect="italics">
+ container element 
+	was used in Listing 7 to resolve this issue.)
+
+</emphasis>
+</item>
+
+
+	
+
+<item id="li1061">
+<emphasis id="strong1161" effect="bold">
+Default background color:
+
+</emphasis>
+ The default background color 
+	of the 
+
+<emphasis id="strong1162" effect="bold">
+s:Application
+
+</emphasis>
+ element is white, whereas the default 
+	background color of the 
+
+<emphasis id="strong1163" effect="bold">
+mx:Application
+
+</emphasis>
+ element is gray.
+
+</item>
+
+
+	
+
+<item id="li1062">
+<emphasis id="strong1164" effect="bold">
+Horizontal positioning:
+
+</emphasis>
+ Unlike the mx:Application 
+	element which centers it components horizontally by default, the default 
+	position of components placed in the 
+
+<emphasis id="strong1165" effect="bold">
+s:Application
+
+</emphasis>
+ element is the upper-left 
+	corner.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1129">
+<emphasis id="strong1166" effect="bold">
+The spark s:VGroup element
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1130">
+As shown in Listing 7, the 
+
+<emphasis id="strong1167" effect="bold">
+s:VGroup
+
+</emphasis>
+ element can be used to 
+arrange the components in a vertical sequence from top to bottom. However, 
+placing components in an 
+
+<emphasis id="strong1168" effect="bold">
+s:VGroup
+
+</emphasis>
+ element does not cause them 
+to be centered horizontally. Instead, by default, the components end up on the 
+left side of the container as shown in Figure 7. If you want the components to 
+be centered, you must write additional code to cause that to happen.
+
+</para>
+
+
+
+
+<para id="p1131">
+<emphasis id="strong1169" effect="bold">
+The Flash Builder 4 Components tab
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1132">
+When you create a new Flex project in Flash Builder 4, if you specify the use 
+of the Flex 3 compiler, the 
+
+<emphasis id="strong1170" effect="bold">
+Components
+
+</emphasis>
+ tab in the resulting IDE 
+will look like Figure 4. However, if you specify the Flex 4 compiler when you 
+create the new project, the 
+
+<emphasis id="strong1171" effect="bold">
+Components
+
+</emphasis>
+ tab will look like 
+Figure 8.
+
+</para>
+
+
+
+
+<figure id="figure1007" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_8" effect="bold">
+</emphasis>
+Flex Builder 4 Components tab exposed.
+</title>
+
+
+
+			
+
+<media id="media1007" alt="Missing image." display="block">
+<image id="img1007" mime-type="image/jpeg" src="../../media/flex0104h.jpg" width="253" height="592"/>
+</media>
+
+
+
+
+<caption>Flex Builder 4 Components tab exposed.</caption>
+</figure>
+
+
+
+
+
+
+
+<para id="p1133">
+<emphasis id="strong1172" effect="bold">
+Numerous differences
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1134">
+If you compare Figure 8 with Figure 4, you will see numerous differences 
+between the two lists. Some of the names are the same and some of the names are 
+different. Even though some of the names are the same, most of the components that you 
+see in Listing 8 are Flex 4 spark components and the components that you see in 
+Figure 4 are Flex 3 mx components and they are represented by different classes 
+in the class library.
+
+</para>
+
+
+
+
+<quote id="blockquote1010" display="block">
+<emphasis id="em1048" effect="italics">
+However, as you will see later, the 
+
+<emphasis id="strong1173" effect="bold">
+Image
+
+</emphasis>
+ 
+component in the Flex 4 Component list is actually a Flex 3 mx component. That 
+may also be the case for some of the other components as well.
+
+</emphasis>
+</quote>
+
+
+
+
+
+<para id="p1135">
+<emphasis id="strong1174" effect="bold">
+Same name doesn't guarantee same appearance or same behavior
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1136">
+While the appearance and behavior of a Flex 4 spark component may be the same as the 
+appearance and 
+behavior of a Flex 3 mx component with the same name, there is no guarantee that 
+will be the case. They are entirely different components and the only way you 
+can be sure is to study the documentation.
+
+</para>
+
+
+
+
+<quote id="blockquote1011" display="block">
+<emphasis id="em1049" effect="italics">
+As you saw earlier, the appearance of an 
+
+<emphasis id="strong1175" effect="bold">
+mx:HSlider
+
+</emphasis>
+ 
+used inside an 
+
+<emphasis id="strong1176" effect="bold">
+s:Application
+
+</emphasis>
+ element is different from an
+
+
+<emphasis id="strong1177" effect="bold">
+mx:HSlider
+
+</emphasis>
+ used inside an 
+
+<emphasis id="strong1178" effect="bold">
+mx:Application
+
+</emphasis>
+ 
+element. Therefore, if the appearance and behavior of the components in your 
+project are really critical, you should probably avoid mixing Flex 3 and Flex 4 
+components.
+
+</emphasis>
+</quote>
+
+
+
+
+<para id="p1137">
+<emphasis id="strong1179" effect="bold">
+No drag-and-drop support for hybrid projects
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1138">
+Another ramification of the fact that the components in Figure 8 are spark 
+components is that you cannot create hybrid projects using drag-and-drop 
+programming alone. If you drag the components in Figure 8 into the 
+
+<emphasis id="strong1180" effect="bold">
+design
+
+</emphasis>
+ 
+pane of Flash Builder 4, your project will be populated with Flex 4 spark components. 
+If you want the project to be populated with Flex 3 mx components, you will have 
+to manually edit the mxml code to accomplish that. That may be another reason to 
+avoid hybrid projects.
+
+</para>
+
+
+
+
+<para id="p1139">
+<emphasis id="strong1181" effect="bold">
+Drag-and-drop results
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1140">
+Figure 9 shows the results of dragging one 
+
+<emphasis id="strong1182" effect="bold">
+VGroup
+
+</emphasis>
+ layout, two 
+
+
+<emphasis id="strong1183" effect="bold">
+Label
+
+</emphasis>
+ controls, 
+one 
+
+<emphasis id="strong1184" effect="bold">
+HSlider
+
+</emphasis>
+ control, and one 
+
+<emphasis id="strong1185" effect="bold">
+Image
+
+</emphasis>
+ control from the Flash Builder 4 
+
+<emphasis id="strong1186" effect="bold">
+Components
+
+</emphasis>
+ 
+panel into the 
+
+<emphasis id="strong1187" effect="bold">
+Design
+
+</emphasis>
+ panel.
+
+</para>
+
+
+
+
+<figure id="figure1008" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_9" effect="bold">
+</emphasis>
+Drag controls onto the Flash Builder 4 Design  	tab.
+</title>
+
+
+
+			
+
+<media id="media1008" alt="Missing image." display="block">
+<image id="img1008" mime-type="image/jpeg" src="../../media/flex0104i.jpg" width="394" height="338"/>
+</media>
+
+
+
+
+<caption>Drag controls onto the Flash Builder 4 Design  	tab.</caption>
+</figure>
+
+
+
+
+
+
+
+<para id="p1141">
+Compare Figure 9 with Figure 5 to see the differences in background color and 
+layout.
+
+</para>
+
+
+
+
+<para id="p1142">
+<emphasis id="strong1188" effect="bold">
+Mxml code for the layout shown in Figure 9
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1143">
+Listing 5 shows the Flex 4 mxml code that corresponds to the layout shown in 
+Figure 9.
+
+</para>
+
+
+
+
+
+<example id="listing1004" type="listing">
+<label>Listing</label>
+
+
+
+
+<title>
+<emphasis id="Listing_5" effect="bold">
+</emphasis>
+Mxml code for the layout shown in Figure 9.
+</title>
+
+
+
+
+
+
+
+<code id="pre1004" display="block">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+               xmlns:s="library://ns.adobe.com/flex/spark"
+               xmlns:mx="library://ns.adobe.com/flex/mx" 
+               minWidth="955" minHeight="600"&gt;
+  &lt;fx:Declarations&gt;
+    &lt;!-- Place non-visual elements (e.g., services, 
+    value objects) here --&gt;
+  &lt;/fx:Declarations&gt;
+  &lt;s:VGroup x="0" y="0" width="200" height="200"&gt;
+    &lt;s:Label text="Label"/&gt;
+    &lt;s:Label text="Label"/&gt;
+    &lt;s:HSlider/&gt;
+    &lt;mx:Image/&gt;
+  &lt;/s:VGroup&gt;
+&lt;/s:Application&gt;</code>
+
+
+
+
+</example>
+
+
+
+
+
+
+
+<para id="p1144">
+Mostly Flex 4 spark components
+
+</para>
+
+
+	
+
+<para id="p1145">
+The most important thing to note about Listing 5 is that the 
+
+<emphasis id="strong1189" effect="bold">
+VGroup
+
+</emphasis>
+,
+
+<emphasis id="strong1190" effect="bold">
+ 
+Label
+
+</emphasis>
+, and 
+
+<emphasis id="strong1191" effect="bold">
+HSlider
+
+</emphasis>
+ components that were dragged from 
+the 
+
+<emphasis id="strong1192" effect="bold">
+Component
+
+</emphasis>
+ tab shown in Figure 8 into the 
+
+<emphasis id="strong1193" effect="bold">
+Design
+
+</emphasis>
+ 
+panel shown in Figure 9 are all declared using the spark 
+
+<emphasis id="em1050" effect="italics">
+(s)
+
+</emphasis>
+ namespace. 
+	Curiously, however, the 
+
+<emphasis id="strong1194" effect="bold">
+Image
+
+</emphasis>
+ control shows up in the code as 
+
+<emphasis id="strong1195" effect="bold">
+mx:Image
+
+</emphasis>
+ 
+instead of 
+
+<emphasis id="strong1196" effect="bold">
+s:Image
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h21005">
+<title>
+<emphasis id="The_Flex_4_project_named_SliderChangeEvent03" effect="bold">
+
+The Flex 4 project 
+named SliderChangeEvent03
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1146">
+Updating the mxml code in Listing 5 by applying the properties from Listing 
+7 to the 
+
+<emphasis id="strong1197" effect="bold">
+Label
+
+</emphasis>
+ and
+
+
+<emphasis id="strong1198" effect="bold">
+HSlider
+
+</emphasis>
+ components produces the complete Flex 4 project named 
+
+
+<emphasis id="strong1199" effect="bold">
+SliderChangeEvent03
+
+</emphasis>
+ shown in Listing 8.
+
+</para>
+
+
+	
+
+<para id="p1147">
+If you 
+
+<link id="a1044" target-id="Click">
+
+run
+
+</link>
+
+ the online versions of 
+
+<emphasis id="strong1200" effect="bold">
+
+	SliderChangeEvent0
+
+</emphasis>
+2 and 
+
+<emphasis id="strong1201" effect="bold">
+SliderChangeEvent03
+
+</emphasis>
+ 
+	side-by-side in different browser windows, you will probably notice a few 
+	subtle differences in the look and feel of the two programs. Here are some 
+	of the differences that I have noticed:
+
+</para>
+
+
+
+
+<list id="ul1013" list-type="bulleted">
+
+	
+
+<item id="li1063">
+There is less space between the labels and the slider in the Flex 4 
+	version.
+
+</item>
+
+
+	
+
+<item id="li1064">
+There is less space between the edge of the Flash window and the top and 
+	left ends of the labels and the slider in the Flex 4 version.
+
+</item>
+
+
+	
+
+<item id="li1065">
+The overall length of the slider is shorter in the Flex 4 version.
+
+</item>
+
+
+	
+
+<item id="li1066">
+The treatment of the little popup window that shows the value of the 
+	slider is different between the two. It has black letters on a cream-colored 
+	background in the hybrid version as in Figure 3, but it has white letters on 
+	a black background in the Flex 4 version.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+
+
+</section>
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+
+</emphasis>
+
+Run the programs
+
+</title>
+
+
+
+
+
+
+
+<para id="p1148">
+I encourage you to 
+
+<link id="a1045" target-id="Click">
+
+run
+
+</link>
+
+ the online versions of the 
+programs from this lesson. Then copy the code from Listing 6, Listing 7, and 
+Listing 8. Use that code to create Flex 
+projects of your own. Compile and run your projects. Experiment with the code, 
+making changes, and observing the results of your changes. Make certain 
+that you can explain why your changes behave as they do.
+
+</para>
+
+
+
+
+
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Resources" effect="bold">
+
+Resources
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1149">
+I will publish a list containing links to Flex 
+resources as a separate document. Search for Flex 
+Resources in the Connexions search box.
+
+</para>
+
+
+
+
+
+
+
+</section>
+<section id="h11007">
+<title>
+<emphasis id="Complete_Program_Listings" effect="bold">
+
+
+</emphasis>
+
+Complete program listing
+
+</title>
+
+
+
+
+
+
+<para id="p1150">
+Complete listings of the programs discussed in this lesson are shown in Listing 6, 
+Listing 7, and Listing 8 below. 
+
+</para>
+
+
+
+
+
+<example id="listing1005" type="listing">
+<label>Listing</label>
+
+
+
+
+<title>
+<emphasis id="Listing_6" effect="bold">
+</emphasis>
+Complete listing of SliderChangeEvent01.
+</title>
+
+
+
+
+
+
+
+<code id="pre1005" display="block">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+
+&lt;!--
+SliderChangeEvent01
+Illustrates the use of inline event handling for slider
+change events.
+--&gt;
+
+&lt;mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"&gt;
+    &lt;mx:Label text="Put your name here" fontSize="16" 
+        fontWeight="bold"/&gt;
+
+    &lt;mx:Label text="Image Height in Pixels" 
+        fontWeight="bold" fontSize="14"/&gt;
+        
+    &lt;mx:HSlider minimum="100" maximum="250" value="250"
+        toolTip="Height"
+        change="myimg.height=event.currentTarget.value"
+        liveDragging="true" /&gt;
+    
+    &lt;mx:Image id="myimg" source="@Embed('myimage.jpg')"
+        height="250"&gt;
+    &lt;/mx:Image&gt;
+&lt;/mx:Application&gt;</code>
+
+
+
+
+</example>
+
+
+
+
+
+
+
+
+
+<para id="p1151">
+</para>
+
+
+
+
+<example id="listing1006" type="listing">
+<label>Listing</label>
+
+
+
+
+<title>
+<emphasis id="Listing_7" effect="bold">
+</emphasis>
+Complete listing of SliderChangeEvent02.
+</title>
+
+
+
+
+
+
+
+<code id="pre1006" display="block">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;s:Application 
+  xmlns:fx="http://ns.adobe.com/mxml/2009" 
+  xmlns:s="library://ns.adobe.com/flex/spark"
+  xmlns:mx="library://ns.adobe.com/flex/mx"&gt;
+  &lt;s:VGroup&gt;
+    &lt;mx:Label 
+      text="Put your name here" fontSize="16" 
+      fontWeight="bold"/&gt;
+    
+    &lt;mx:Label 
+      text="Image Height in Pixels" 
+      fontWeight="bold" fontSize="14"/&gt;
+    
+    &lt;mx:HSlider 
+      minimum="100" 
+      maximum="250" 
+      value="250"
+      toolTip="Height"
+      change="myimg.height=event.currentTarget.value"
+      liveDragging="true" /&gt;
+    
+    &lt;mx:Image 
+      id="myimg" source="@Embed('myimage.jpg')"
+      height="250"&gt;
+    &lt;/mx:Image&gt;
+    
+  &lt;/s:VGroup&gt;
+&lt;/s:Application&gt;</code>
+
+
+
+
+</example>
+
+
+
+
+
+
+
+<para id="p1152">
+</para>
+
+
+
+
+<example id="listing1007" type="listing">
+<label>Listing</label>
+
+
+
+
+<title>
+<emphasis id="Listing_8" effect="bold">
+</emphasis>
+Complete listing of SliderChangeEvent03.
+</title>
+
+
+
+
+
+
+
+<code id="pre1007" display="block">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+               xmlns:s="library://ns.adobe.com/flex/spark"
+               xmlns:mx="library://ns.adobe.com/flex/mx" 
+               minWidth="955" minHeight="600"&gt;
+
+  &lt;s:VGroup x="0" y="0" width="200" height="200"&gt;
+    &lt;s:Label 
+      text="Put your name here" fontSize="16" 
+      fontWeight="bold"/&gt;
+    &lt;s:Label 
+      text="Image Height in Pixels" 
+      fontWeight="bold" fontSize="14"/&gt;
+    &lt;s:HSlider 
+      minimum="100" 
+      maximum="250" 
+      value="250"
+      toolTip="Height"
+      change="myimg.height=event.currentTarget.value"
+      liveDragging="true" /&gt;
+    &lt;mx:Image id="myimg" source="@Embed('myimage.jpg')"
+              height="250"/&gt;
+  &lt;/s:VGroup&gt;
+&lt;/s:Application&gt;</code>
+
+
+
+
+</example>
+
+
+
+
+
+
+
+<para id="p1153">
+</para>
+
+
+
+
+
+
+
+</section>
+<section id="h11008">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+
+<note id="note1001" type="miscellaneous">
+
+
+
+
+
+
+
+<emphasis id="strong1202" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+
+
+<list id="ul1014" list-type="bulleted">
+
+
+
+<item id="li1067">
+Module name: Handling Slider Change Events in Flex 3 and Flex 4
+
+</item>
+
+
+
+
+<item id="li1068">
+Files:
+
+<list id="ul1015" list-type="bulleted">
+
+
+
+<item id="li1069">
+Flex0104\Flex0104.htm
+
+</item>
+
+
+
+
+<item id="li1070">
+Flex0104\Connexions\FlexXhtml0104.htm
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</note>
+
+
+
+
+
+
+
+
+
+<note id="note1002" type="miscellaneous">
+
+
+
+
+<emphasis id="strong1203" effect="bold">
+PDF disclaimer:
+
+</emphasis>
+ Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+
+</note>
+
+
+
+
+
+
+
+
+<para id="p1154">
+-end- 
+
+</para>
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

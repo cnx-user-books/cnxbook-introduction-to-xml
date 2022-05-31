@@ -1,0 +1,671 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Preface, Introduction to XML</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m47965</md:content-id>
+  <md:title>Preface, Introduction to XML</md:title>
+  <md:abstract>This module is a preface to the collection titled Introduction to XML.</md:abstract>
+  <md:uuid>28fbff54-eeca-4a9d-87fd-e3c1661e4daf</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Welcome">
+
+Welcome
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1001">
+<link id="a1001" target-id="ITSE1356">
+
+ITSE1356
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1002">
+<link id="a1002" target-id="Flex">
+
+Flex
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1003">
+<link id="a1003" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Welcome" effect="bold">
+
+Welcome
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1000">
+Welcome to my collection titled 
+
+<emphasis id="em1000" effect="italics">
+
+
+
+<link url="/content/col11207/latest/" id="a1004">
+
+Introduction to XML
+
+</link>
+
+
+</emphasis>
+. This collection 
+contains a set of lesson modules designed to teach the fundamentals of XML. Some of the modules use Adobe Flex as the teaching vehicle.
+
+</para>
+
+
+
+
+<para id="p1001">
+This collection consists of two major sub-collections: 
+
+</para>
+
+
+
+
+<list id="ul1001" list-type="bulleted">
+
+	
+
+<item id="li1004">
+<link id="a1005" target-id="ITSE1356">
+
+ITSE1356
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1005">
+<link id="a1006" target-id="Flex">
+
+Flex
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+<section id="h11002">
+<title>
+<emphasis id="ITSE1356" effect="bold">
+
+ITSE1356
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1002">
+The material in the ITSE1356 sub-collection, beginning with the module titled
+
+
+<link url="/content/m34546/latest/?collection=col11207/latest" id="a1007">
+
+A Brief Introduction to XML
+
+</link>
+
+, 
+contains material that I use to teach the course identified as 
+
+<emphasis id="strong1000" effect="bold">
+ITSE 1356 - 
+Extensible Markup Language (XML)
+
+</emphasis>
+ at Austin Community College in Austin, TX.
+
+</para>
+
+
+
+
+<para id="p1003">
+As of the Spring 2014 semester, the textbook for this course is 
+
+<emphasis id="em1001" effect="italics">
+XML: Visual 
+QuickStart Guide, 2nd Edition
+
+</emphasis>
+, By Kevin Howard Goldberg.
+
+</para>
+
+
+
+
+<para id="p1004">
+<emphasis id="strong1001" effect="bold">
+Fundamentals of XML
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1005">
+The first three modules in the ITSE1356 sub-collection provide tutorial material 
+written by me on the fundamentals of XML including:
+
+</para>
+
+
+
+
+<list id="ul1002" list-type="bulleted">
+
+	
+
+<item id="li1006">
+Structured documents
+
+</item>
+
+
+	
+
+<item id="li1007">
+Tags
+
+</item>
+
+
+	
+
+<item id="li1008">
+Elements
+
+</item>
+
+
+	
+
+<item id="li1009">
+Content
+
+</item>
+
+
+	
+
+<item id="li1010">
+Attributes
+
+</item>
+
+
+	
+
+<item id="li1011">
+Valid XML documents
+
+</item>
+
+
+	
+
+<item id="li1012">
+Well-formed XML documents
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1006">
+These modules are provided to supplement the material in the Goldberg 
+textbook.
+
+</para>
+
+
+
+
+<para id="p1007">
+<emphasis id="strong1002" effect="bold">
+Review questions
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1008">
+The next three modules in the ITSE1356 sub-collection provide review questions, answers, and explanations 
+keyed to various chapters of the Goldberg textbook.
+
+</para>
+
+
+
+
+<para id="p1009">
+<emphasis id="strong1003" effect="bold">
+JSON
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1010">
+The review modules are followed by several modules on 
+
+<emphasis id="strong1004" effect="bold">
+JSON
+
+</emphasis>
+
+
+
+<emphasis id="em1002" effect="italics">
+(JavaScript Object Notation)
+
+</emphasis>
+. As a lightweight data-interchange format, 
+JSON is emerging as a strong alternative to the use of XML for that purpose.
+
+</para>
+
+
+
+
+<para id="p1011">
+An introductory section on JSON is scheduled to be introduced into the ITSE 
+1356 course beginning in the Fall 2014 semester. JSON material is not included 
+in the Goldberg textbook mentioned earlier. Therefore, these JSON modules will 
+constitute the primary learning resource for the JSON section of the course.
+
+</para>
+
+
+
+
+<para id="p1012">
+<emphasis id="strong1005" effect="bold">
+Flex
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1013">
+In addition to being the material that I use to teach the course identified 
+above, knowledge of the material in this sub-collection is a prerequisite for 
+understanding the material in the Flex sub-collection discussed below.
+
+</para>
+
+
+
+
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Flex" effect="bold">
+
+Flex
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1014">
+The Flex material is not a part of the ITSE1356 course.
+
+</para>
+
+
+
+
+<para id="p1015">
+Flex is an XML application that can be used to create programs that run in 
+Adobe's Flash player. Flex is an alternative to the approach explained in
+
+
+<link url="/content/col11202/latest/" id="a1008">
+
+Object-Oriented Programming (OOP) with ActionScript
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1016">
+The material in the ITSE1356 sub-collection is somewhat theoretical in 
+nature. The material in the Flex sub-collection, beginning with the module titled
+
+
+<link url="/content/m34600/latest/?collection=col11207/latest" id="a1009">
+
+XML - Namespaces - Flex 3
+
+</link>
+
+, 
+explains in practical terms how to use the Flex application. 
+
+</para>
+
+
+	
+
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1017">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1000" type="miscellaneous">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1006" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1003" list-type="bulleted">
+
+					
+
+<item id="li1013">
+Module name: Preface
+
+</item>
+
+
+					
+
+<item id="li1014">
+File: Flex0070Preface.htm
+
+
+</item>
+
+
+					
+
+<item id="li1015">
+Published: 11/08/13
+
+</item>
+
+
+					
+
+<item id="li1016">
+Revised: 02/02/14
+
+</item>
+
+
+				
+
+</list>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+	
+
+<note id="note1001" type="miscellaneous">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1007" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1018">
+<emphasis id="strong1008" effect="bold">
+Financial
+
+</emphasis>
+: Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+</para>
+
+
+				
+
+<para id="p1019">
+I also want you to know that, I receive no financial compensation from the Connexions website even if you purchase 
+	the PDF version of the module.
+
+</para>
+
+
+				
+
+<para id="p1020">
+In the past, unknown individuals have copied my modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing me as the author. I 
+				neither receive compensation for those sales nor do I know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a module that is freely 
+				available on cnx.org and that it was made and published without 
+				my prior knowledge.
+
+</para>
+
+
+				
+
+<para id="p1021">
+<emphasis id="strong1009" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+	
+
+<para id="p1022">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

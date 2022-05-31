@@ -1,0 +1,3863 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>XML - Namespaces - Flex 4</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m34602</md:content-id>
+  <md:title>XML - Namespaces - Flex 4</md:title>
+  <md:abstract>Learn about namespace differences and some of the other differences between Flex 3 and Flex 4.</md:abstract>
+  <md:uuid>f9aca92e-f01c-4e71-bdbf-249e34880ca8</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<note id="note1000" type="miscellaneous">
+
+
+
+
+
+	
+
+<emphasis id="Click" effect="bold">
+
+Click
+
+</emphasis>
+
+ 
+
+<link id="a1000" url="Namespace02.html">
+
+Namespace02
+
+</link>
+
+
+to run the Flex program from this lesson. 
+
+<emphasis id="em1000" effect="italics">
+
+(Click the "Back" button in your browser
+to return to this page.)
+
+</emphasis>
+
+
+
+</note>
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1001" target-id="Preface">
+
+Preface
+
+</link>
+
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1002" target-id="General">
+
+General
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1002">
+<link id="a1003" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+				
+
+<item id="li1003">
+<link id="a1004" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1004">
+<link id="a1005" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+			
+
+</list>
+
+
+			
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1005">
+<link id="a1006" target-id="Supplemental_material">
+
+Supplemental material
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1006">
+<link id="a1007" target-id="General_background_information">
+
+General background information
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+		
+
+<item id="li1007">
+<link id="a1008" target-id="Historical_perspective">
+
+Historical perspective
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1008">
+<link id="a1009" target-id="What_is_Flex">
+
+What is Flex?
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1009">
+<link id="a1010" target-id="Preview">
+
+Preview
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1010">
+<link id="a1011" target-id="Discussion_and_sample_code">
+
+Discussion and sample code
+
+</link>
+
+
+<list id="ul1005" list-type="bulleted">
+
+		
+
+<item id="li1011">
+<link id="a1012" target-id="Skeleton_MXML_code_and_namespaces">
+
+Skeleton mxml code and 
+		namespaces
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1012">
+<link id="a1013" target-id="The_sample_program_named_Namespace02">
+
+The sample program 
+		named Namespace02
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1013">
+<link id="a1014" target-id="Run_the_program">
+
+Run the program
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1014">
+<link id="a1015" target-id="Resources">
+
+Resources
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1015">
+<link id="a1016" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+
+</section>
+<section id="h11001">
+<title>
+ 
+
+<emphasis id="Preface" effect="bold">
+
+
+</emphasis>
+
+Preface
+
+</title>
+
+
+
+
+
+
+<section id="h21000">
+<title>
+ 
+
+<emphasis id="General" effect="bold">
+
+General
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+
+
+
+<para id="p1000">
+This tutorial lesson is part of a series of lessons dedicated to programming 
+using Adobe Flex.
+
+</para>
+
+
+	
+
+
+<note id="note1001" type="miscellaneous">
+
+
+
+
+
+	The material in these lessons is based on Flex version 3 and Flex version 4. 
+	A distinction between the two will usually be made in those situations where 
+	that distinction is important.
+
+
+</note>
+
+
+
+
+	
+
+
+<para id="p1001">
+ A previous lesson in this series titled 
+
+
+<link url="/content/m34600/latest/" id="a1017">
+
+XML - Namespaces - Flex 3
+
+</link>
+
+ 
+concentrated on teaching the XML concept of 
+
+<emphasis id="em1001" effect="italics">
+namespaces
+
+</emphasis>
+ and illustrated the 
+concept using a program written in Flex version 3.
+
+</para>
+
+
+
+
+<para id="p1002">
+ 
+
+<emphasis id="strong1000" effect="bold">
+Differences in namespaces between Flex 3 and Flex 4
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1003">
+ Some of the first things that one is likely to notice when 
+
+<link id="a1018" url="http://www.adobe.com/devnet/flex/articles/flex3and4_differences.html">
+
+
+comparing Flex version 3 to Flex version 4
+
+</link>
+
+  are some obvious differences in 
+the use of namespaces. Therefore, this is an opportune place in the series to 
+introduce Flex version 4 and to explain some of the differences between the two versions.
+
+</para>
+
+
+
+
+</section>
+<section id="h21001">
+<title>
+ 
+
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1004">
+ I recommend that you open another copy of this document in a separate 
+browser window and use the following links to easily find and view the figures 
+and listings while you are reading about them.
+
+</para>
+
+
+
+
+<section id="h31000">
+<title>
+ 
+
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1006" list-type="bulleted">
+
+	
+
+<item id="li1016">
+<link id="a1019" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Output from Namespace01. 
+
+</item>
+
+
+	
+
+<item id="li1017">
+<link id="a1020" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. Output from Namespace02. 
+
+</item>
+
+
+	
+
+<item id="li1018">
+<link id="a1021" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. 
+Project tree 
+	for the project named Namespace02.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+<section id="h31001">
+<title>
+ 
+
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1007" list-type="bulleted">
+
+	
+
+<item id="li1019">
+<link id="a1022" target-id="Listing_1">
+
+Lasting 1
+
+</link>
+
+. Skeleton mxml code for a new Flex 3 
+	project.
+
+</item>
+
+
+	
+
+<item id="li1020">
+<link id="a1023" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. Skeleton mxml code for a new Flex 4 
+	project. 
+
+</item>
+
+
+	
+
+<item id="li1021">
+<link id="a1024" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. 
+The main mxml file for 
+	Namespace01. 
+
+
+</item>
+
+
+	
+
+<item id="li1022">
+<link id="a1025" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+. The main mxml file for Namespace02. 
+
+</item>
+
+
+	
+
+<item id="li1023">
+<link id="a1026" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+. Contents of the file named 
+	Label.mxml. 
+
+</item>
+
+
+	
+
+<item id="li1024">
+<link id="a1027" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+. Contents of the file named 
+	Button.mxml. 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+</section>
+<section id="h21002">
+<title>
+ 
+
+<emphasis id="Supplemental_material" effect="bold">
+
+Supplemental material
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1005">
+ I recommend that you also study the other lessons in my extensive collection 
+of online programming tutorials. You will find a consolidated index at
+
+
+<link id="a1028" url="http://www.dickbaldwin.com/toc.htm">
+
+
+www.DickBaldwin.com
+
+</link>
+
+.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h11002">
+<title>
+ 
+
+<emphasis id="General_background_information" effect="bold">
+
+General background 
+information
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<section id="h21003">
+<title>
+<emphasis id="Historical_perspective" effect="bold">
+
+Historical perspective
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1006">
+Adobe's Flex is an XML-based programming language that is used to create 
+programs that execute in the
+
+
+<link id="a1029" url="http://www.adobe.com/products/flashplayer/">
+
+Adobe Flash Player
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1007">
+<emphasis id="strong1001" effect="bold">
+Teaching XML using Flex
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1008">
+In the Spring semester of 2010, I introduced Adobe's 
+
+<emphasis id="em1002" effect="italics">
+Flex version 3
+
+</emphasis>
+ and the
+
+
+<emphasis id="em1003" effect="italics">
+Flex Builder 3
+
+</emphasis>
+ 
+
+<emphasis id="em1004" effect="italics">
+IDE
+
+</emphasis>
+ into a course named 
+
+<emphasis id="strong1002" effect="bold">
+Introduction to XML
+
+</emphasis>
+ 
+that I had been teaching for several years at Austin Community College in Austin, TX. The concept of using 
+Flex as the programming vehicle to teach XML was well received by the students.
+
+</para>
+
+
+
+
+<para id="p1009">
+During that same semester, Adobe released 
+
+<emphasis id="em1005" effect="italics">
+Flex version 4
+
+</emphasis>
+ and replaced 
+
+<emphasis id="em1006" effect="italics">
+
+Flex Builder 3
+
+</emphasis>
+ with a new IDE named 
+
+<emphasis id="em1007" effect="italics">
+Flash Builder 4
+
+</emphasis>
+. The new IDE 
+supports both Flex 3 and Flex 4.
+
+</para>
+
+
+
+
+<para id="p1010">
+<emphasis id="strong1003" effect="bold">
+A fortunate circumstance
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1011">
+This is a fortunate circumstance insofar as the concept of using Flex to 
+teach XML is concerned. Flex 4 is similar to, but very different from, and 
+somewhat more complicated than Flex 3. The availability of the two versions of 
+Flex makes it possible for the students to gain experience with two similar but 
+different flavors of XML, both supported by the same IDE and both supported by 
+similarly formatted documentation.
+
+</para>
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="What_is_Flex" effect="bold">
+
+What is Flex?
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1012">
+As mentioned above, Flex is an XML-based programming language that is used to 
+create programs that execute in Adobe's Flash Player. In order to understand 
+Flex, and particularly the differences between Flex 3 and Flex 4, we need to 
+start with the Flash Player and work backwards to Flex.
+
+</para>
+
+
+
+
+<para id="p1013">
+<emphasis id="strong1004" effect="bold">
+What is the Flash Player?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1014">
+According to the 
+
+<link id="a1030" url="http://www.adobe.com/products/flashplayer/">
+
+Flash Player
+
+</link>
+
+ website:
+
+</para>
+
+
+
+
+<quote id="blockquote1000" display="block">
+Adobe Flash Player is a cross-platform browser-based application 
+runtime that delivers uncompromised viewing of expressive applications, content, 
+and videos across screens and browsers. Flash Player delivers breakthrough web 
+experiences to over 98% of Internet users.
+
+</quote>
+
+
+
+
+<para id="p1015">
+<emphasis id="strong1005" effect="bold">
+Flash Player is widely available
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1016">
+Many of the popular websites that people frequently visit require that the 
+Flash Player be installed on the local computer in order to view the material on 
+the website.
+
+</para>
+
+
+
+
+<para id="p1017">
+Typically if you visit a website that requires the Flash Player and you don't 
+have it installed on your computer, you will be guided through the installation 
+process. Therefore, a very large percentage of computers already have the Flash 
+Player installed.
+
+</para>
+
+
+
+
+<para id="p1018">
+<emphasis id="strong1006" effect="bold">
+An execution engine
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1019">
+In short, the Flash Player is an execution engine that is used to execute or
+
+
+<emphasis id="em1008" effect="italics">
+play
+
+</emphasis>
+ programs that are written in the 
+
+<emphasis id="em1009" effect="italics">
+ActionScript
+
+</emphasis>
+ programming 
+language. 
+
+<emphasis id="em1010" effect="italics">
+(See 
+
+</emphasis>
+<link id="a1031" url="http://www.dickbaldwin.com/tocActionScript.htm">
+
+
+
+
+<emphasis id="em1011" effect="italics">
+Baldwin's 
+	ActionScript programming website
+
+</emphasis>
+</link>
+
+
+<emphasis id="em1012" effect="italics">
+.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1020">
+<emphasis id="strong1007" effect="bold">
+What is ActionScript?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1021">
+According to the
+
+
+<link id="a1032" url="http://www.adobe.com/devnet/actionscript/">
+
+ActionScript Technology 
+Center,
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+<quote id="blockquote1001" display="block">
+
+	"Adobe ActionScript is the programming language of the Adobe Flash Platform. 
+	Originally developed as a way for developers to program interactivity, 
+	ActionScript enables efficient programming of Adobe Flash Platform 
+	applications for everything from simple animations to complex, data-rich, 
+	interactive application interfaces.
+
+</quote>
+
+
+
+
+<quote id="blockquote1002" display="block">
+
+	First introduced in Flash Player 9, ActionScript 3.0 is an object-oriented 
+	programming (OOP) language based on ECMAScript -- the same standard that is 
+	the basis for JavaScript -- and provides incredible gains in runtime 
+	performance and developer productivity."
+
+</quote>
+
+
+
+
+<para id="p1022">
+<emphasis id="strong1008" effect="bold">
+What is the Adobe Flash 
+Platform?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1023">
+According to
+
+
+<link id="a1033" url="http://www.adobe.com/flashplatform/">
+
+Adobe Flash Platform
+
+</link>
+
+,
+
+</para>
+
+
+
+
+<quote id="blockquote1003" display="block">
+
+	"The Adobe Flash Platform is an integrated 
+	set of technologies surrounded by an established ecosystem of support 
+	programs, business partners, and enthusiastic user communities. Together, 
+	they provide everything you need to create and deliver the most compelling 
+	applications, content, and video to the widest possible audience."
+
+
+</quote>
+
+
+
+
+<para id="p1024">
+The primary delivery mechanisms for applications 
+built with the Adobe Flash Platform are the
+
+
+<link id="a1034" url="http://www.adobe.com/products/flashplayer/?promoid=DJDWD">
+
+Adobe Flash 
+Player
+
+</link>
+
+ and 
+
+<link id="a1035" url="http://www.adobe.com/products/air/?promoid=DJDTL">
+
+Adobe 
+Air
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1025">
+<emphasis id="strong1009" effect="bold">
+What is Adobe Air?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1026">
+According to
+
+
+<link id="a1036" url="http://www.adobe.com/products/air/?promoid=DJDTL">
+
+Adobe Air
+
+</link>
+
+,
+
+</para>
+
+
+
+
+<quote id="blockquote1004" display="block">
+
+	"The Adobe AIR runtime lets developers use 
+	proven web technologies to build rich Internet applications that run outside 
+	the browser on multiple operating systems."
+
+
+</quote>
+
+
+
+
+<para id="p1027">
+<emphasis id="strong1010" effect="bold">
+Once again, what is Flex?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1028">
+Flex is an 
+
+<emphasis id="em1013" effect="italics">
+XML-based
+
+</emphasis>
+ programming language that can be used to create 
+
+
+<emphasis id="em1014" effect="italics">
+ActionScript
+
+</emphasis>
+ programs for execution in the 
+
+<emphasis id="em1015" effect="italics">
+Flash Player
+
+</emphasis>
+. When you compile a Flex 
+project, it is first converted into an ActionScript program and the 
+ActionScript program is compiled into a form suitable for execution by the Flash 
+Player.
+
+</para>
+
+
+
+
+<para id="p1029">
+According to
+
+
+<link id="a1037" url="http://www.wiley.com/WileyCDA/WileyTitle/productCd-0470488956.html">
+
+The 
+Adobe Flash Builder 4 and Flex 4 Bible
+
+</link>
+
+ by David Gassner, 
+
+</para>
+
+
+
+
+<quote id="blockquote1005" display="block">
+When you compile a Flex application, your MXML code is rewritten in 
+the background into pure ActionScript 3. MXML can be described as a "convenience 
+language" for ActionScript 3 that makes it easier and faster to write your 
+applications that if you had to code completely in ActionScript.
+
+</quote>
+
+
+
+
+<para id="p1030">
+<emphasis id="strong1011" effect="bold">
+Easier and faster is debatable
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1031">
+In my opinion, as a person with many years of object-oriented programming 
+experience, it is debatable whether coding ActionScript programs in Flex is 
+
+<emphasis id="em1016" effect="italics">
+
+easier and faster
+
+</emphasis>
+ than coding them in pure ActionScript. Any program that 
+can be coded in Flex can also be coded in pure ActionScript, but the reverse is 
+not true.
+
+</para>
+
+
+
+
+<para id="p1032">
+<emphasis id="strong1012" effect="bold">
+XML, not ActionScript
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1033">
+In any event, the purpose of the lessons in this series is to teach XML and 
+not to teach ActionScript programming. 
+
+<emphasis id="em1017" effect="italics">
+(ActionScript OOP is a different course that I 
+teach at the college.)
+
+</emphasis>
+ Therefore, insofar as practical, the lessons in this 
+series will concentrate on Flex programming and not on ActionScript programming.
+
+</para>
+
+
+
+
+<para id="p1034">
+However, to understand the differences between Flex 3 and Flex 4, it will 
+sometimes be necessary to refer to ActionScript, particularly insofar as the 
+documentation is concerned.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Preview" effect="bold">
+
+Preview
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1035">
+<emphasis id="strong1013" effect="bold">
+Run the Flex program named Namespace02
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1036">
+If you have the Flash Player plug-in 
+
+<emphasis id="em1018" effect="italics">
+(version 10 or later)
+
+</emphasis>
+ installed 
+in your browser, click 
+
+<link id="a1038" target-id="Click">
+
+here
+
+</link>
+
+ to 
+run the program that I will explain in this lesson.
+
+</para>
+
+
+
+
+<para id="p1037">
+If you don't have the proper Flash Player installed, you should be notified 
+of that fact and given an opportunity to download and install the Flash Player 
+plug-in program.
+
+</para>
+
+
+
+
+<para id="p1038">
+<emphasis id="strong1014" effect="bold">
+Namespaces is an XML concept
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1039">
+The concept of 
+
+<emphasis id="strong1015" effect="bold">
+namespaces
+
+</emphasis>
+ is an XML concept. It is not a 
+concept that is exclusive to Flex. However, because Flex is an XML-based 
+programming language, Flex makes heavy use of namespaces.
+
+</para>
+
+
+
+
+<para id="p1040">
+I explained the concept of XML namespaces in the earlier lesson titled 
+
+
+<link url="/content/m34600/latest/" id="a1039">
+
+XML - Namespaces - Flex 3
+
+</link>
+
+ . I also presented and explained a relatively 
+simple Flex program that illustrated the use of XML namespaces to resolve name 
+conflicts.
+
+</para>
+
+
+
+
+<para id="p1041">
+<emphasis id="strong1016" effect="bold">
+Some of the differences between Flex 3 and Flex 4
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1042">
+In this lesson, I will present a somewhat broader view of namespaces and will 
+also present and explain a program that illustrates some of the differences 
+between Flex 3 and Flex 4.
+
+</para>
+
+
+
+
+<para id="p1043">
+In explaining the differences between Flex 3 and Flex 4, I will need to dig a 
+little more deeply into the Flex programming language than was the case in the 
+earlier lesson.
+
+</para>
+
+
+
+
+<para id="p1044">
+The program that I explained in the earlier lesson was written exclusively 
+using Flex 3. The program that I will explain in this lesson was written 
+exclusively in Flex 4. The new Flex 4 program approximates the look and feel of the 
+Flex 3 program 
+from the earlier lesson.
+
+</para>
+
+
+
+
+
+
+</section>
+<section id="h11004">
+<title>
+ 
+
+<emphasis id="Discussion_and_sample_code" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+<para id="p1045">
+<emphasis id="strong1017" effect="bold">
+Two ways to create Flex projects
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1046">
+As I explained in the 
+earlier lesson, Flex projects can be created using nothing more than a text 
+editor and a Flex software development kit 
+
+<emphasis id="em1019" effect="italics">
+(SDK)
+
+</emphasis>
+ that is freely available from 
+the Adobe website. However, to make the development of Flex projects a little 
+easier, Adobe previously sold a product named 
+
+<emphasis id="em1020" effect="italics">
+Flex Builder 3
+
+</emphasis>
+ and now sells a 
+replacement product named 
+
+<emphasis id="em1021" effect="italics">
+Flash Builder 4
+
+</emphasis>
+, which includes the Flex 3 and 
+Flex 4 SDKs along with a 
+visual project editor.
+
+</para>
+
+
+
+
+<para id="p1047">
+The project that I explained 
+in the earlier lesson was created using Flex Builder 3. The project that I will 
+explain in this lesson was created using Flash Builder 4. 
+
+</para>
+
+
+
+
+<para id="p1048">
+<emphasis id="strong1018" effect="bold">
+Free for educational 
+use
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1049">
+As of June 2010, Adobe 
+provides 
+
+<link id="a1040" url="http://www.adobe.com/devnet/flex/free/index.html">
+
+free copies
+
+</link>
+
+ of Adobe Flash Builder 4 Standard to:
+
+</para>
+
+
+
+
+<list id="ul1008" list-type="bulleted">
+
+	
+
+<item id="li1025">
+
+	Students, faculty and 
+	staff of eligible educational institutions
+	
+
+</item>
+
+
+	
+
+<item id="li1026">
+
+		Software developers who are affected by the current economic condition and 
+	are currently unemployed
+
+</item>
+
+
+	
+
+<item id="li1027">
+
+		Event attendees who 
+	receive a special promotional code at their event
+	
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<section id="h21005">
+<title>
+
+
+
+<emphasis id="Skeleton_MXML_code_and_namespaces" effect="bold">
+
+Skeleton mxml code and namespaces
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1050">
+<emphasis id="strong1019" effect="bold">
+Skeleton mxml code for a new Flex 
+3 project
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1051">
+When you create a new Flex 3 project in Flex Builder 3 or Flash Builder 4, a 
+skeleton of the required mxml file is created for you. Listing 1 shows the 
+contents of such a skeleton mxml file for a Flex 3 project.
+
+</para>
+
+
+
+
+<example id="listing1000" type="listing">
+<label>Listing</label>
+
+
+
+
+<title>
+<emphasis id="Listing_1" effect="bold">
+</emphasis>
+Skeleton mxml code for a new Flex 3 project.
+</title>
+
+
+
+
+
+
+
+<code id="pre1000" display="block">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+
+&lt;mx:Application 
+  xmlns:mx="http://www.adobe.com/2006/mxml" 
+  layout="absolute"&gt;
+
+&lt;/mx:Application&gt;</code>
+
+
+
+
+</example>
+
+
+
+
+
+
+
+<para id="p1052">
+<emphasis id="strong1020" effect="bold">
+Created using Flex Builder 3
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1053">
+The skeleton code shown in Listing 1 was created using Flex Builder 3, but 
+the skeleton code for a Flex 3 project is essentially the same regardless of 
+whether it is created using Flex Builder 3 or Flash Builder 4. 
+
+<emphasis id="em1022" effect="italics">
+(Flash 
+Builder 4 inserts a couple of relatively insignificant size attributes that are not inserted by Flex 
+Builder 3.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1054">
+<emphasis id="strong1021" effect="bold">
+The namespace (xmlns) attribute
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1055">
+In the earlier lesson, I explained the concept of the 
+
+<emphasis id="em1023" effect="italics">
+root element
+
+</emphasis>
+, 
+and I explained that the term 
+
+<emphasis id="strong1022" effect="bold">
+xmlns
+
+</emphasis>
+ is the required name for a
+
+
+<emphasis id="em1024" effect="italics">
+namespace
+
+</emphasis>
+ attribute. 
+
+<emphasis id="em1025" effect="italics">
+(This is true for XML in general and not just 
+for Flex mxml.)
+
+</emphasis>
+ While it isn't necessary in general to include a namespace attribute in the root element, when a namespace 
+attribute is included in the root element, it becomes the 
+
+<emphasis id="em1026" effect="italics">
+default namespace
+
+</emphasis>
+ 
+for the entire document.
+
+</para>
+
+
+
+
+<para id="p1056">
+<emphasis id="strong1023" effect="bold">
+Namespace is always required for a 
+Flex project
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1057">
+Even though it isn't necessary to include a namespace attribute in the root 
+element of a general XML document, it is always necessary to include the namespace attribute shown in Listing 1 
+in the root element of the main mxml document for a Flex 3 project. That is why Flex Builder 3 
+includes it in the skeleton code for the project.
+
+</para>
+
+
+
+
+<para id="p1058">
+<emphasis id="strong1024" effect="bold">
+What does this mean?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1059">
+The inclusion of the default namespace attribute 
+shown in Listing 1 means that all elements with names that refer to components 
+from the standard Flex 3 library of components must be prefixed with 
+
+<emphasis id="strong1025" effect="bold">
+"mx:"
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1060">
+<emphasis id="strong1026" effect="bold">
+Skeleton mxml code for a new Flex 
+4 project
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1061">
+As with a Flex 3 project, when you create a new Flex 4 project in Flash 
+Builder 4, a skeleton of the mxml file is created for you. Listing 2 shows the 
+contents of such a skeleton mxml file for a Flex 4 project.
+
+</para>
+
+
+
+
+
+
+
+
+<example id="listing1001" type="listing">
+<label>Listing</label>
+
+
+
+
+<title>
+<emphasis id="Listing_2" effect="bold">
+</emphasis>
+Skeleton mxml code for a new Flex 4 project.
+</title>
+
+
+
+
+
+
+
+<code id="pre1001" display="block">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+               xmlns:s="library://ns.adobe.com/flex/spark"
+               xmlns:mx="library://ns.adobe.com/flex/mx" 
+               minWidth="955" 
+               minHeight="600"&gt;
+  &lt;fx:Declarations&gt;
+    &lt;!-- Place non-visual elements (e.g., services, 
+    value objects) here --&gt;
+  &lt;/fx:Declarations&gt;
+&lt;/s:Application&gt;</code>
+
+
+
+
+</example>
+
+
+
+
+
+
+
+<para id="p1062">
+<emphasis id="strong1027" effect="bold">
+More namespace attributes in the root element
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1063">
+If you compare Listing 2 with Listing 1, you will see that the namespace 
+attributes in Listing 2 are different from those in Listing 1, and there are 
+more of them in Listing 2.
+
+</para>
+
+
+
+
+<para id="p1064">
+Listing 1 has only one namespace attribute while Listing 2 has three 
+namespace attributes.
+
+</para>
+
+
+
+
+<para id="p1065">
+<emphasis id="strong1028" effect="bold">
+Mix or match Flex components
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1066">
+You can use Flash Builder 4 to create projects that 
+
+</para>
+
+
+
+
+<list id="ul1009" list-type="bulleted">
+
+	
+
+<item id="li1028">
+use Flex 3 exclusively
+
+</item>
+
+
+	
+
+<item id="li1029">
+use Flex 4 exclusively
+
+</item>
+
+
+	
+
+<item id="li1030">
+use a mixture of the two
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1067">
+<emphasis id="strong1029" effect="bold">
+Must specify compiler version for project
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1068">
+When you create a new project in Flash Builder 4, you must specify whether 
+the project is to be compiled using the Flex 3 compiler or the Flex 4 compiler.
+
+</para>
+
+
+
+
+<para id="p1069">
+<emphasis id="strong1030" effect="bold">
+Different versions of the skeleton code
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1070">
+If you specify the Flex 3 compiler, the skeleton code will look like Listing 
+1 
+
+<emphasis id="em1027" effect="italics">
+(with a couple of additional sizing attributes)
+
+</emphasis>
+. For that case, you 
+must use Flex 3 components exclusively.
+
+</para>
+
+
+
+
+<para id="p1071">
+If you specify the Flex 4 
+compiler, the skeleton code will look like Listing 2. In that case, you can use Flex 3 components, 
+Flex 4 components, or a mixture of the two.
+
+</para>
+
+
+
+
+<para id="p1072">
+<emphasis id="strong1031" effect="bold">
+What do these namespace attributes mean?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1073">
+Building on what I explained earlier, the inclusion of the namespace attributes with the 
+name 
+
+<emphasis id="strong1032" effect="bold">
+"mx"
+
+</emphasis>
+ in Listing 1 and Listing 2 means that all 
+elements with names that refer to components from the Flex 3 library of 
+components must be prefixed with 
+
+<emphasis id="strong1033" effect="bold">
+"mx:"
+
+</emphasis>
+. 
+
+<emphasis id="em1028" effect="italics">
+(You will see 
+examples of this in code fragments later in this lesson.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1074">
+The inclusion of the namespace attribute with the name 
+
+<emphasis id="strong1034" effect="bold">
+"s"
+
+</emphasis>
+ 
+in Listing 2 means that all elements with names that refer to the new components 
+from the Flex 4 library of components must be prefixed with 
+
+<emphasis id="strong1035" effect="bold">
+"s:"
+
+</emphasis>
+.
+
+
+<emphasis id="em1029" effect="italics">
+(You will also see examples of this in code fragments later in this lesson.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1075">
+<emphasis id="strong1036" effect="bold">
+Resolution of duplicate names
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1076">
+The Flex 3 library and the Flex 4 library contain many components with 
+the same names, such as 
+
+<emphasis id="strong1037" effect="bold">
+Label
+
+</emphasis>
+ and 
+
+<emphasis id="strong1038" effect="bold">
+Button
+
+</emphasis>
+. 
+Therefore, the name of the component alone is not sufficient to identify which of two 
+components having the same name is to be used at a particular location in the 
+program. The 
+
+<emphasis id="strong1039" effect="bold">
+"mx:" 
+
+</emphasis>
+ prefix and the 
+
+<emphasis id="strong1040" effect="bold">
+"s:" 
+
+</emphasis>
+ prefix are 
+the mechanisms by which you identify the correct component to the compiler.
+
+</para>
+
+
+	
+
+
+<note id="note1002" type="miscellaneous">
+
+
+
+
+
+	For those with knowledge of ActionScript or Java programming, this is 
+	analogous to using a package name to identify a class in those programming 
+	languages.
+
+
+</note>
+
+
+
+
+	
+	
+
+<para id="p1077">
+You can read more on the topic of required namespaces
+	
+
+<link id="a1041" url="http://www.adobe.com/devnet/flex/articles/flex3and4_differences_03.html">
+
+
+	here
+
+</link>
+
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h21006">
+<title>
+<emphasis id="The_sample_program_named_Namespace02" effect="bold">
+
+The sample program named 
+Namespace02
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1078">
+Figure 1 shows the output from the Flex 3 program named 
+
+<emphasis id="strong1041" effect="bold">
+Namespace01
+
+</emphasis>
+ 
+that I explained in the earlier lesson on this topic.
+
+</para>
+
+
+
+
+
+<figure id="figure1000" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_1" effect="bold">
+</emphasis>
+Output from Namespace01.
+</title>
+
+
+
+		
+
+<media id="media1000" alt="Missing image." display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/flex0086a1.jpg" width="218" height="181"/>
+</media>
+
+
+
+
+<caption>Output from Namespace01.</caption>
+</figure>
+
+
+
+
+
+
+
+<para id="p1079">
+Figure 2 shows the output from the Flex 4 program named 
+
+<emphasis id="strong1042" effect="bold">
+Namespace02
+
+</emphasis>
+ 
+that I will explain in this lesson.
+
+</para>
+
+
+
+
+<figure id="figure1001" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_2" effect="bold">
+</emphasis>
+Output from Namespace02.
+</title>
+
+
+
+		
+
+<media id="media1001" alt="Missing image." display="block">
+<image id="img1001" mime-type="image/jpeg" src="../../media/flex0086a2.jpg" width="173" height="152"/>
+</media>
+
+
+
+
+<caption>Output from Namespace02.</caption>
+</figure>
+
+
+
+
+
+
+
+<para id="p1080">
+<emphasis id="strong1043" effect="bold">
+Mostly default look and feel
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1081">
+In both programs, the top portion of the output was purposely colored red and 
+the bottom portion was purposely colored cyan. Otherwise, the colors, sizes, 
+	positions, and 
+shapes of the components in both programs were allowed to take on default 
+values.
+
+</para>
+
+
+
+
+<para id="p1082">
+<emphasis id="strong1044" effect="bold">
+The project tree for the project named Namespace02
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1083">
+The project tree for the Flex 4 project named 
+
+<emphasis id="strong1045" effect="bold">
+Namespace02
+
+</emphasis>
+ is shown 
+in Figure 3.
+
+</para>
+
+
+
+
+<figure id="figure1002" type="figure">
+<label>Figure</label>
+
+
+<title>
+<emphasis id="Figure_3" effect="bold">
+</emphasis>
+Project tree  	for the project named Namespace02.
+</title>
+
+
+
+			
+
+<media id="media1002" alt="Missing image." display="block">
+<image id="img1002" mime-type="image/jpeg" src="../../media/flex0086a3.jpg" width="339" height="383"/>
+</media>
+
+
+
+
+<caption>Project tree  	for the project named Namespace02.</caption>
+</figure>
+
+
+
+
+
+
+
+<para id="p1084">
+A comparable image for the Flex 3 project named 
+
+<emphasis id="strong1046" effect="bold">
+Namespace01
+
+</emphasis>
+ 
+was provided in the earlier lesson. If you compare the two, 
+you will see that more information is displayed in the project tree for the Flex 
+4 project in Figure 3.
+
+</para>
+
+
+
+
+<para id="p1085">
+<emphasis id="strong1047" effect="bold">
+Major items of interest
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1086">
+For purposes of this lesson, we will be primarily interested in the following 
+items showing in Figure 3. Those are the items that I had to create in 
+order to create the project.
+
+</para>
+
+
+
+
+<list id="ul1010" list-type="bulleted">
+
+	
+
+<item id="li1031">
+The file named Namespace02.mxml
+
+</item>
+
+
+	
+
+<item id="li1032">
+The folder named customComps
+
+</item>
+
+
+	
+
+<item id="li1033">
+The file named Button.mxml
+
+</item>
+
+
+	
+
+<item id="li1034">
+The file named Label.mxml
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1087">
+<emphasis id="strong1048" effect="bold">
+Two buttons, three labels, etc.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1088">
+As I explained in the earlier lesson, the project named 
+
+<emphasis id="strong1049" effect="bold">
+Namespace01
+
+</emphasis>
+ 
+creates a GUI with two buttons and three labels in 
+
+<emphasis id="strong1050" effect="bold">
+VBox
+
+</emphasis>
+ 
+containers with red and cyan backgrounds as shown in Figure 1.
+
+</para>
+
+
+
+
+<para id="p1089">
+<emphasis id="strong1051" effect="bold">
+All are mx components
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1090">
+Because that 
+project was created exclusively using Flex 3, all of the components shown in 
+Figure 1 are Flex 3 
+components. I will sometimes refer to them as 
+
+<emphasis id="strong1052" effect="bold">
+"mx"
+
+</emphasis>
+ components 
+because of the name of the namespace attribute shown in Listing 1.
+
+</para>
+
+
+
+
+<para id="p1091">
+<emphasis id="strong1053" effect="bold">
+No VBox components in Namespace02
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1092">
+Because the Flex 4 program named 
+
+<emphasis id="strong1054" effect="bold">
+Namespace02
+
+</emphasis>
+ was intended to 
+replicate 
+
+<emphasis id="strong1055" effect="bold">
+Namespace01
+
+</emphasis>
+, it also contains two buttons and three 
+labels. However, as you will see later, they are not in 
+
+<emphasis id="strong1056" effect="bold">
+VBox
+
+</emphasis>
+ 
+containers because there is no 
+
+<emphasis id="strong1057" effect="bold">
+VBox
+
+</emphasis>
+ container in Flex 4. 
+Instead, they are in containers named 
+
+<emphasis id="strong1058" effect="bold">
+Group
+
+</emphasis>
+ and 
+
+<emphasis id="strong1059" effect="bold">
+VGroup
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1093">
+<emphasis id="strong1060" effect="bold">
+All are Spark components
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1094">
+Because 
+
+<emphasis id="strong1061" effect="bold">
+Namespace02
+
+</emphasis>
+ was created exclusively using Flex 4, 
+all of the components are Flex 4 components. I will sometimes refer to them as 
+
+<emphasis id="strong1062" effect="bold">
+
+"Spark"
+
+</emphasis>
+ components on the basis of the last word in the value of the 
+namespace attribute named 
+
+<emphasis id="strong1063" effect="bold">
+"s"
+
+</emphasis>
+ in Listing 2.
+
+</para>
+
+
+	
+
+
+<note id="note1003" type="miscellaneous">
+
+
+
+
+
+	The names "mx" and "Spark" actually derive from ActionScript package names, 
+	but an explanation of that is beyond the scope of this lesson. 
+
+</note>
+
+
+
+
+	
+	
+
+<para id="p1095">
+<emphasis id="strong1064" effect="bold">
+The main mxml file for Namespace01
+
+</emphasis>
+
+
+</para>
+
+
+	
+
+
+<para id="p1096">
+Listing 3 shows the code in the main mxml file for the Flex 3 project named
+
+
+<emphasis id="strong1065" effect="bold">
+Namespace01
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<example id="listing1002" type="listing">
+<label>Listing</label>
+
+
+
+
+<title>
+<emphasis id="Listing_3" effect="bold">
+</emphasis>
+The main mxml file for Namespace01.
+</title>
+
+
+
+
+
+
+
+<code id="pre1002" display="block">&lt;?xml version="1.0"?&gt;
+&lt;!--
+Namespace01
+Illustrates the use of namespaces to avoid name conflicts.
+--&gt;
+&lt;mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"
+                xmlns:MyComps="customComps.*"
+                backgroundColor="#FFFF00"&gt;
+
+  &lt;!--Add a standard VBox container--&gt;
+  &lt;mx:VBox backgroundColor="#FF0000"&gt;
+  
+    &lt;mx:Label text="Standard Label" 
+      color="#FFFF00" 
+      fontSize="12" 
+      fontWeight="bold"/&gt;
+    &lt;mx:Button label="Standard Button" /&gt;
+    
+    &lt;MyComps:Label id="customLabel"/&gt;
+    &lt;MyComps:Button id="customButton"/&gt;
+  &lt;/mx:VBox&gt;
+
+&lt;/mx:Application&gt;</code>
+
+
+
+
+</example>
+
+
+
+
+
+
+
+<para id="p1097">
+<emphasis id="strong1066" effect="bold">
+The Application element
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1098">
+I will explain 
+
+<emphasis id="strong1067" effect="bold">
+mxml
+
+</emphasis>
+ syntax in more detail in future lessons, so I'm not going 
+to go into syntax issues at this point in time. Suffice it to 
+say that the
+
+<emphasis id="strong1068" effect="bold">
+ Application
+
+</emphasis>
+ element in Listing 3 represents the 
+entire program. The 
+behavior as well as the look and feel of the program is defined by the 
+attributes and the content of the 
+
+<emphasis id="strong1069" effect="bold">
+
+Application
+
+</emphasis>
+ element. Everything in the program is part of the 
+attributes or the content 
+of the 
+
+<emphasis id="strong1070" effect="bold">
+Application
+
+</emphasis>
+ element.
+
+</para>
+
+
+	
+
+<para id="p1099">
+<emphasis id="strong1071" effect="bold">
+An mx:VBox element
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1100">
+From what you already know about XML, you can see that an element named
+
+
+<emphasis id="strong1072" effect="bold">
+mx:VBox
+
+</emphasis>
+ is part of the content of the 
+
+<emphasis id="strong1073" effect="bold">
+Application
+
+</emphasis>
+ element. Very 
+briefly, in Flex, an 
+
+<emphasis id="strong1074" effect="bold">
+mx:VBox
+
+</emphasis>
+ element is a container element that 
+can contain other elements. Couched in visual terms such as Figure 1, an 
+
+<emphasis id="strong1075" effect="bold">
+
+mx:VBox
+
+</emphasis>
+ object can contain other components such as labels and buttons.
+
+</para>
+
+
+
+
+<para id="p1101">
+Note that the 
+
+<emphasis id="strong1076" effect="bold">
+mx:VBox
+
+</emphasis>
+ element name has an 
+
+<emphasis id="strong1077" effect="bold">
+mx
+
+</emphasis>
+ 
+prefix, meaning that it represents a component from the Flex 3 library as 
+explained earlier.
+
+</para>
+
+
+	
+
+<para id="p1102">
+<emphasis id="strong1078" effect="bold">
+The backgroundColor attribute of the mx:VBox element
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1103">
+Also note that the 
+
+<emphasis id="strong1079" effect="bold">
+mx:VBox
+
+</emphasis>
+ element has an attribute named
+
+
+<emphasis id="strong1080" effect="bold">
+backgroundColor
+
+</emphasis>
+ with a value of 
+
+<emphasis id="strong1081" effect="bold">
+"#FF0000"
+
+</emphasis>
+. In a future lesson, 
+I will explain that this is a hexadecimal value that represents the color red at maximum intensity. This attribute produces the red background color that 
+you see in the upper portion of Figure 1.
+
+</para>
+
+
+	
+
+
+<note id="note1004" type="miscellaneous">
+
+
+
+
+
+	The lower portion of Figure 1 also has a red background color, but it is 
+	covered by another mx:VBox element with an opaque cyan background color. 
+
+</note>
+
+
+
+
+	
+	
+
+<para id="p1104">
+<emphasis id="strong1082" effect="bold">
+The backgroundColor attribute for the Application element
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1105">
+While we are discussing background colors, it is also worth mentioning that 
+	the 
+
+<emphasis id="strong1083" effect="bold">
+application
+
+</emphasis>
+ element has 
+	an attribute named 
+
+<emphasis id="strong1084" effect="bold">
+backgroundColor
+
+</emphasis>
+ with a value of 
+
+<emphasis id="strong1085" effect="bold">
+
+	"#FFFF00"
+
+</emphasis>
+. This is the hexadecimal value for yellow and causes the 
+	background color of the entire Flash Player window to be yellow.
+
+</para>
+
+
+	
+
+<para id="p1106">
+<emphasis id="strong1086" effect="bold">
+Contents of the mx:VBox element
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1107">
+The 
+
+<emphasis id="strong1087" effect="bold">
+mx:VBox
+
+</emphasis>
+ element contains the following four 
+	elements:
+
+</para>
+
+
+
+
+<list id="ul1011" list-type="bulleted">
+
+	
+
+<item id="li1035">
+mx:Label
+
+</item>
+
+
+	
+
+<item id="li1036">
+mx:Button
+
+</item>
+
+
+	
+
+<item id="li1037">
+MyComps:Label
+
+</item>
+
+
+	
+
+<item id="li1038">
+MyComps:Button
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1108">
+In the earlier lesson, I explained that the first two of these four elements 
+represent components from the standard Flex 3 library. 
+
+<emphasis id="em1030" effect="italics">
+(Hence the "mx:" 
+prefix.)
+
+</emphasis>
+ The last two represent 
+custom components that were constructed using components from the standard Flex 
+3 library.
+
+</para>
+
+
+
+
+<para id="p1109">
+<emphasis id="strong1088" effect="bold">
+The
+MyComps:Button element
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1110">
+If you go back to the
+
+
+<link url="/content/m34600/latest/#Listing_4" id="a1042">
+
+earlier lesson
+
+</link>
+
+ and examine the code for the custom component named 
+
+<emphasis id="strong1089" effect="bold">
+
+MyComps:Button
+
+</emphasis>
+, you will see that it has an 
+
+<emphasis id="strong1090" effect="bold">
+mx:Label
+
+</emphasis>
+ 
+and an 
+
+<emphasis id="strong1091" effect="bold">
+mx:Button
+
+</emphasis>
+ in an 
+
+<emphasis id="strong1092" effect="bold">
+mx:VBox
+
+</emphasis>
+ container with 
+a backgroundColor value of 
+
+<emphasis id="strong1093" effect="bold">
+"#00FFFF"
+
+</emphasis>
+ 
+
+<emphasis id="em1031" effect="italics">
+(cyan)
+
+</emphasis>
+. This 
+produces the cyan rectangle containing the label and the button in the 
+bottom portion of Figure 1. 
+
+</para>
+
+
+
+
+<para id="p1111">
+<emphasis id="strong1094" effect="bold">
+The main mxml file for Namespace02
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1112">
+The main mxml file for the Flex 4 project named 
+
+<emphasis id="strong1095" effect="bold">
+Namespace02
+
+</emphasis>
+ is shown in 
+Listing 4.
+
+</para>
+
+
+
+
+<example id="listing1003" type="listing">
+<label>Listing</label>
+
+
+
+
+<title>
+<emphasis id="Listing_4" effect="bold">
+</emphasis>
+The main mxml file for Namespace02.
+</title>
+
+
+
+
+
+
+
+<code id="pre1003" display="block">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+
+&lt;!--File: Namespace02.mxml
+This is a Flex 4 version of the Flex 3 program
+named Namespace01--&gt;
+
+&lt;!--Declare a namespace as the folder named customComps,
+which contains a custom label component and a second
+custom component consisting of a Spark Label and a
+Spark Button. Then declare the three namespaces required
+by Flex 4. Finally cause the background to be yellow.--&gt;
+&lt;s:Application xmlns:MyComps="customComps.*"
+               xmlns:fx="http://ns.adobe.com/mxml/2009" 
+               xmlns:s="library://ns.adobe.com/flex/spark" 
+               xmlns:mx="library://ns.adobe.com/flex/mx"
+               backgroundColor="0xFFFF00"&gt;
+  
+  &lt;!--Put a Spark Label and a Spark Button along with two
+  custom components in a Spark Group with a red background
+  color.--&gt;
+  &lt;s:Group horizontalCenter="0" verticalCenter="0"&gt;
+    
+    &lt;!--Create a red rectangle to serve as the background
+    color for the Group--&gt;
+    &lt;s:Rect width="100%" height="100%"&gt;
+      &lt;s:fill&gt;
+        &lt;s:SolidColor color="0xFF0000" /&gt;
+      &lt;/s:fill&gt;
+    &lt;/s:Rect&gt;
+    
+    &lt;!--Add a Spark VGroup to contain the components and
+    cause them to be laid out vertically.--&gt;
+    &lt;s:VGroup&gt;
+      &lt;!--Add two Spark components to the VGroup--&gt;
+      &lt;s:Label text="Spark Label" 
+                color="#FFFF00" 
+                fontSize="12" 
+                fontWeight="bold"/&gt;
+      &lt;s:Button label="Spark Button" /&gt;
+      
+      &lt;!--Add two custom components to the VGroup--&gt;
+      &lt;MyComps:Label id="customLabel"/&gt;
+      &lt;MyComps:Button id="customButton"/&gt;
+    &lt;/s:VGroup&gt;
+
+  &lt;/s:Group&gt;
+
+&lt;/s:Application&gt;</code>
+
+
+
+
+</example>
+
+
+
+
+
+
+
+<para id="p1113">
+<emphasis id="strong1096" effect="bold">
+Lots of comments
+
+</emphasis>
+</para>
+
+
+<para id="p1114">
+As you can see, I included lots of 
+comments in Listing 4 in an attempt to make it as self-explanatory as possible.
+
+</para>
+
+
+
+
+<para id="p1115">
+In this lesson, I will concentrate on the differences between this 
+Flex 4 project and the Flex 3 project named 
+
+<emphasis id="strong1097" effect="bold">
+Namespace01 
+
+</emphasis>
+that 
+arise from creating the two projects using different versions of Flex.
+
+</para>
+
+
+<para id="p1116">
+
+
+
+<emphasis id="strong1098" effect="bold">
+Order of attributes is not important
+
+</emphasis>
+</para>
+
+
+<para id="p1117">
+Let me begin by 
+explaining that in XML, the order in which you write the attributes 
+for an element doesn't matter so long as they are all there with the correct 
+syntax, the correct names, and the correct values.
+
+</para>
+
+
+<para id="p1118">
+<emphasis id="strong1099" effect="bold">
+More and different 
+namespace attributes
+
+</emphasis>
+</para>
+
+
+<para id="p1119">
+As I explained earlier, a Flex 4 project often 
+has three required namespace attributes and almost always has two. 
+
+<emphasis id="em1032" effect="italics">
+
+(Because I didn't use any mx components in this program, I could have removed 
+the namespace attribute named mx from Listing 4.)
+
+</emphasis>
+</para>
+
+
+<para id="p1120">
+Other than the namespace attributes, 
+the 
+
+<emphasis id="strong1100" effect="bold">
+application
+
+</emphasis>
+ element in Listing 4 has the same attribute 
+names and values as the 
+
+<emphasis id="strong1101" effect="bold">
+application
+
+</emphasis>
+ element in Listing 3.
+
+</para>
+
+
+<para id="p1121">
+
+
+
+<emphasis id="strong1102" effect="bold">
+No VBox element in Namespace02
+
+</emphasis>
+</para>
+
+
+<para id="p1122">
+The next thing to notice is 
+that there is no 
+
+<emphasis id="strong1103" effect="bold">
+mx:VBox
+
+</emphasis>
+ element in Listing 4. Instead, there 
+is an 
+
+<emphasis id="strong1104" effect="bold">
+s:Group
+
+</emphasis>
+ element 
+
+<emphasis id="em1033" effect="italics">
+(a Flex 4 Spark component)
+
+</emphasis>
+ that 
+replaces the 
+
+<emphasis id="strong1105" effect="bold">
+mx:VBox
+
+</emphasis>
+ element and serves as a container for the 
+labels and the buttons.
+
+</para>
+
+
+<para id="p1123">
+<emphasis id="strong1106" effect="bold">
+No backgroundColor attribute
+
+</emphasis>
+</para>
+
+
+<para id="p1124">
+The 
+
+<emphasis id="strong1107" effect="bold">
+s:Group
+
+</emphasis>
+ element has two 
+positioning attributes that cause it to appear in the center of the Flash Player 
+window, but it does not have an attribute named 
+
+<emphasis id="strong1108" effect="bold">
+backgroundColor
+
+</emphasis>
+. 
+Like many of the Spark components, and unlike many of the mx components, the
+
+
+<emphasis id="strong1109" effect="bold">
+s:Group
+
+</emphasis>
+ element does not have built-in attributes that are used 
+to control its appearance. Instead, other ways must be found to control the 
+appearance of many Spark components.
+
+</para>
+
+
+<para id="p1125">
+<emphasis id="strong1110" effect="bold">
+A red rectangle
+
+</emphasis>
+</para>
+
+
+<para id="p1126">
+In this case, Listing 4 causes the
+
+
+<emphasis id="strong1111" effect="bold">
+s:Group
+
+</emphasis>
+ element to appear to have a red background by causing 
+it to contain a red rectangle of exactly the right dimensions to completely fill 
+the 
+
+<emphasis id="strong1112" effect="bold">
+s:Group
+
+</emphasis>
+ element. This produces the red background color in 
+the upper portion of Figure 2.
+
+</para>
+
+
+<note id="note1005" type="miscellaneous">
+
+
+
+
+
+	As with Figure 1, the lower portion of Figure 2 also has a red background color, but it is 
+	covered by another smaller rectangle with an opaque cyan color. 
+
+</note>
+
+
+
+
+	
+	
+
+<para id="p1127">
+<emphasis id="strong1113" effect="bold">
+Add an s:VGroup container
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1128">
+Then Listing 4 adds a Spark 
+
+<emphasis id="strong1114" effect="bold">
+s:VGroup
+
+</emphasis>
+ container to serve 
+essentially the same purpose as the 
+
+<emphasis id="strong1115" effect="bold">
+mx:VBox
+
+</emphasis>
+ container in 
+Listing 3 
+
+<emphasis id="em1034" effect="italics">
+(except that it doesn't control the red background color)
+
+</emphasis>
+. 
+The following elements are added to 
+the 
+
+<emphasis id="strong1116" effect="bold">
+s:VGroup
+
+</emphasis>
+ element in Listing 4 In a manner very similar to 
+Listing 3:
+
+</para>
+
+
+<list id="ul1012" list-type="bulleted">
+
+	
+
+<item id="li1039">
+s:Label
+
+</item>
+
+
+	
+
+<item id="li1040">
+s:Button
+
+</item>
+
+
+	
+
+<item id="li1041">
+MyComps:Label
+
+</item>
+
+
+	
+
+<item id="li1042">
+MyComps:Button
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1129">
+The first two elements in the above list are Spark elements having similar 
+characteristics to the mx elements having the same names.
+
+</para>
+
+
+<para id="p1130">
+The last two 
+elements in the above list are custom components having similar characteristics 
+to the custom components having the same names in the earlier program.
+
+</para>
+
+
+<para id="p1131">
+
+
+
+<emphasis id="strong1117" effect="bold">
+Contents of the file named Label.mxml
+
+</emphasis>
+</para>
+
+
+<para id="p1132">
+The contents of the 
+custom component file named 
+
+<emphasis id="strong1118" effect="bold">
+Label.mxml
+
+</emphasis>
+ are shown in Listing 5.
+
+</para>
+
+
+
+
+<example id="listing1004" type="listing">
+<label>Listing</label>
+
+
+
+
+<title>
+<emphasis id="Listing_5" effect="bold">
+</emphasis>
+Contents of the file named Label.mxml.
+</title>
+
+
+
+
+
+
+
+<code id="pre1004" display="block">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+
+&lt;!--Create a custom label by putting a Spark Label in
+a Spark Group--&gt;
+&lt;s:Group xmlns:MyComps="customComps.*"
+         xmlns:fx="http://ns.adobe.com/mxml/2009" 
+         xmlns:s="library://ns.adobe.com/flex/spark" 
+         xmlns:mx="library://ns.adobe.com/flex/mx"&gt;
+
+  &lt;s:Label 
+    text="Custom Label" 
+    color="#FFFF00" 
+    fontSize="12" 
+    fontWeight="bold"/&gt;
+        
+&lt;/s:Group&gt;</code>
+
+
+
+
+</example>
+
+
+
+
+
+
+
+<para id="p1133">
+<emphasis id="strong1119" effect="bold">
+Contents of the file named Button.mxml
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1134">
+The contents of the custom component file named 
+
+<emphasis id="strong1120" effect="bold">
+Button.mxml
+
+</emphasis>
+ 
+are shown in Listing 6.
+
+</para>
+
+
+
+
+<example id="listing1005" type="listing">
+<label>Listing</label>
+
+
+
+
+<title>
+<emphasis id="Listing_6" effect="bold">
+</emphasis>
+Contents of the file named Button.mxml.
+</title>
+
+
+
+
+
+
+
+<code id="pre1005" display="block">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+
+&lt;!--Create a custom component by putting a Spark Label
+and a Spark Button in a Spark VGroup inside of a Spark
+Group with a Cyan background color.--&gt;
+&lt;s:Group  xmlns:MyComps="customComps.*"
+          xmlns:fx="http://ns.adobe.com/mxml/2009" 
+          xmlns:s="library://ns.adobe.com/flex/spark" 
+          xmlns:mx="library://ns.adobe.com/flex/mx"&gt;
+
+  &lt;!--Fill the entire group with a cyan rectangle--&gt;
+  &lt;s:Rect width="100%" height="100%"&gt;
+    &lt;s:fill&gt;
+      &lt;s:SolidColor color="0x00FFFF" /&gt;
+    &lt;/s:fill&gt;
+  &lt;/s:Rect&gt;
+  
+  &lt;!--Put a Spark VGroup in the Group and put a Spark
+  Label and a Spark Button in the VGroup--&gt;
+  &lt;s:VGroup&gt;
+    &lt;s:Label
+      text="Custom Component." 
+      color="#000000" 
+      fontSize="12" fontWeight="bold"/&gt;
+    
+    &lt;s:Button
+      label="Button"/&gt;
+  &lt;/s:VGroup&gt;
+&lt;/s:Group&gt;
+</code>
+
+
+
+
+</example>
+
+
+
+
+
+
+
+<para id="p1135">
+<emphasis id="strong1121" effect="bold">
+No further explanation needed
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1136">
+Assuming that you understand the contents of the files named 
+
+<emphasis id="strong1122" effect="bold">
+
+Label.mxml
+
+</emphasis>
+ and 
+
+<emphasis id="strong1123" effect="bold">
+Button.mxml
+
+</emphasis>
+ in the Flex 3 program in 
+the earlier lesson, and assuming that you understood the explanation of the 
+differences between the two main mxml files given above, the comments in Listing 
+5 and Listing 6 should serve as a sufficient explanation of the code in Listing 
+5 and Listing 6.
+
+</para>
+
+
+
+
+
+
+</section>
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+<para id="p1137">
+I encourage you to
+
+
+<link id="a1043" target-id="Click">
+
+run
+
+</link>
+
+ this program from the web. 
+Then copy the code from Listing 4 through Listing 6. Use that code to 
+create your own projects. Compile and run the projects. Experiment with 
+the code, making changes, and observing the results of your changes. Make 
+certain that you can explain why your changes behave as they do.
+
+</para>
+
+
+
+
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Resources" effect="bold">
+
+Resources
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1138">
+I will publish a list containing links to Flex resources as a 
+separate document. Search for Flex Resources in the 
+Connexions search box.
+
+</para>
+
+
+
+
+
+
+</section>
+<section id="h11007">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1139">
+This section contains a variety of miscellaneous materials.
+
+</para>
+
+
+
+
+
+
+
+<note id="note1006" type="miscellaneous">
+
+
+
+
+
+
+
+<emphasis id="strong1124" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+
+
+<list id="ul1013" list-type="bulleted">
+
+
+
+<item id="li1043">
+Module name: XML - Namespaces - Flex 4
+
+</item>
+
+
+
+
+<item id="li1044">
+Files:
+
+<list id="ul1014" list-type="bulleted">
+
+
+
+<item id="li1045">
+Flex0086a\Connexions\FlexXhtml0086a.htm
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</note>
+
+
+
+
+
+
+
+
+
+<note id="note1007" type="miscellaneous">
+
+
+
+
+<emphasis id="strong1125" effect="bold">
+PDF disclaimer:
+
+</emphasis>
+ Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+
+</note>
+
+
+
+
+
+
+
+
+
+<para id="p1140">
+-end- 
+
+</para>
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>
